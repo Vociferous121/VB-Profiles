@@ -3,12 +3,13 @@
 //		Group Cooldowns
 //	Group Cooldown 1	-	Regrowth casts twice? even with set cooldown
 //	Group Cooldown 2	-	Faerie Fire
-//	Group Cooldown 3	-	
-//	Group Cooldown 4	-	
+//	Group Cooldown 3	-	Now we're spamming cat form again... Fix it later add a GCD
+//	Group Cooldown 4	-	Just in case bear form wants to spam too
 //	
 //		Triggers List
 //	Trigger 1	-	Regrowth + Cat Form > Rejuvention
-//	
+//	Trigger 2	-	More Regrowth + Cat Form
+//
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 //
@@ -40,6 +41,16 @@ gcd:1650
 
 //~~~~~~~~>>Food & Drink
 
+//Cat Form
+//	Full health & mana - you're probably wandering
+castspell:768;3025
+selfbuff!768;3025
+selfhp>91
+mana>91
+!incombat
+!havetarget
+cooldown:4200;3
+
 
 //Out of form to drink
 castspell:768;3025
@@ -57,7 +68,7 @@ selfbuff=768;3025
 selfhp<71
 !incombat
 triggers:1
-cooldown:4200
+cooldown:4200;3
 
 //Cheak health before drinking
 //	Why waste mana?
@@ -114,7 +125,7 @@ selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 triggers:1
 selfhp<51
 mana>32
-cooldown:4200
+cooldown:4200;3
 incombat
 
 //Low health in bear form
@@ -124,7 +135,7 @@ selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 triggers:1
 selfhp<51
 mana>26
-cooldown:4200
+cooldown:4200;4
 incombat
 
 //Regrowth
@@ -192,7 +203,7 @@ selfbuff!5487;9634
 incombat
 combatcount<2
 mana>26
-cooldown:4200
+cooldown:4200;3
 backpedal:0623
 
 //Bear Form
@@ -202,7 +213,7 @@ selfbuff!5487;9634
 selfbuff!768;3025
 combatcount>1
 mana>26
-cooldown:4200
+cooldown:4200;4
 backpedal:0247
 incombat
 
@@ -215,10 +226,20 @@ havetarget
 incombat
 combatcount>1
 mana>26
-cooldown:4200
+cooldown:4200;3
 backpedal:0247
 
 //~~~~~~~~>>Cat Form Attacks
+
+//Faerie Fire - Feral
+//	Cat form
+castspell:16857;17390;17391
+targetbuff!16857;17390;17391
+selfbuff=768;3025
+distance<30
+cooldown:6000;2
+autoattacking
+incombat
 
 //Rip
 castspell:1079;9492;9493;9752;9894;9896
@@ -244,16 +265,6 @@ energy>30
 autoattacking
 cooldown:1000
 nogcd
-
-//Faerie Fire - Feral
-//	Cat form
-castspell:16857;17390;17391
-targetbuff!16857;17390;17391
-selfbuff=768;3025
-distance<30
-cooldown:6000;2
-autoattacking
-incombat
 
 //Faerie Fire - Feral
 //	Bear form
@@ -320,7 +331,7 @@ castspell:5487;9634
 selfbuff=5487;9634
 selfbuff!768;3025
 !incombat
-cooldown:4200
+cooldown:4200;4
 
 //Bear Form
 //	HoT's active
@@ -330,7 +341,7 @@ selfbuff!768;3025
 selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 combatcount>1
 mana>15
-cooldown:4200
+cooldown:4200;4
 incombat
 
 //Auto Attack
@@ -396,7 +407,7 @@ selfbuff!5487;9634
 selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 combatcount<2
 mana>15
-cooldown:4200
+cooldown:4200;3
 incombat
 
 //Cat Form
@@ -407,7 +418,7 @@ selfbuff!5487;9634
 havetarget
 !incombat
 mana>16
-cooldown:4200
+cooldown:4200;3
 
 //Cat Form
 //	Caught in combat - combatcount<2
@@ -417,7 +428,7 @@ selfbuff!5487;9634
 incombat
 combatcount<2
 mana>16
-cooldown:4200
+cooldown:4200;3
 backpedal:0623
 
 //auto attack
