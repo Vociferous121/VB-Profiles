@@ -1,0 +1,337 @@
+//Rogue Combat Spec
+
+//*****Group Cooldowns*****//
+
+//1 is *Eviscerate* Group Cooldown
+//2 is *Sprint* Group Cooldown
+//3 is *Gouge* Group Cooldown
+//4 is *Bandage* Group Cooldown
+//5 is *Evasion* Group Cooldown
+//6 is *Stealth* Group Cooldown
+
+//*****Trigger Counts*****//
+//1 is *Bandage* Trigger
+//2 is *BackStab BackPedal* Trigger
+//3 is _ Trigger
+//4 is _ Trigger
+//5 is _ Trigger
+//6 is _ Trigger
+
+gcd:1202
+
+//poison macro 1 MH
+cast:52
+!mainhandbuffed
+triggers:10
+!incombat
+cooldown:5000
+nogcd
+level>20
+
+//poison cast MH
+cast:53
+triggeredby:10
+!mainhandbuffed
+!incombat
+level>20
+
+//poison macro 2 OH
+cast:52
+!offhandbuffed
+triggers:11
+!incombat
+cooldown:5000
+nogcd
+level>20
+
+//poison cast OH
+cast:54
+!offhandbuffed
+triggeredby:11
+!incombat
+level>20
+
+//Eat level>10
+use:food
+selfhp<60
+channelingtime:18000
+cooldown:18000
+breakonfullhp
+breakoncombat
+!incombat
+level>10
+
+//stealth
+castspell:1784;1785;1786;1787
+selfbuff!1784;1785;1786;1787;14792
+!incombat
+
+//stealth
+castspell:1784;1785;1786;1787
+selfbuff!1784;1785;1786;1787;14792
+cooldown:6000;6
+havetarget
+!incombat
+
+//health potion
+use:health potion
+selfhp<50
+cooldown:120000
+incombat
+
+//bandage low health selfhp<75 level>10
+use:bandage
+selfbuff!11196;744;8318
+selfhp<75
+!havetarget
+channelingtime:6000
+cooldown:60000;4
+breakoncombat
+breakonfullhp
+!incombat
+level>10
+
+//rest if not eating
+cast:10
+selfhp<85
+!havetarget
+channelingtime:3000
+cooldown:9000
+breakoncombat
+breakonfullhp
+!incombat
+
+//stealth
+castspell:1784;1785;1786;1787
+selfbuff!1784;1785;1786;1787;14792
+!havetarget
+cooldown:6000;6
+!incombat
+
+//health potion
+use:health potion
+selfhp<30
+cooldown:120000
+incombat
+
+//blade flurry level>30
+castspell:13877
+selfbuff!13877
+incombat
+combatcount>1
+targethp>25
+distance<5
+cooldown:120000
+level>30
+
+//vanish
+castspell:1856;1857
+selfbuff!1856;1857;1784;1785;1786;1787
+selfhp<8
+backpedal:6000
+castonce
+cooldown:210000
+incombat
+level>24
+
+//sprint 5% chance level>10
+castspell:2983;8696;11305
+selfbuff!2983;8696;11305
+chance:5
+cooldown:210000
+!incombat
+level>10
+
+//Evasion low hp
+castspell:5277
+selfhp<35
+targethp>20
+cooldown:210000;5
+level>7
+nogcd
+incombat
+level>10
+
+//Evasion combatcount>1
+castspell:5277
+combatcount>1
+cooldown:210000;5
+backpedal:0200
+level>7
+nogcd
+incombat
+level>10
+
+//adrenaline rush
+castspell:13750
+selfbuff!13750
+combatcount>1
+targethp>25
+cooldown:300000
+level>40
+incombat
+
+//stealth
+castspell:1784;1785;1786;1787
+selfbuff!1784;1785;1786;1787;14792
+selfhp>71d
+!havetarget
+level>10
+!incombat
+
+//pull with ranged weapon pullcount>2 (or is it 1? check that...)
+castspell:7918
+!wandcasting
+distance>8
+distance<31
+castonce
+havetarget
+meleepullcount>1
+!incombat
+
+//cheap shot to pull
+castspell:1833
+selfbuff=1784;1785;1786;1787
+distance<4
+havetarget
+!incombat
+level>30
+
+//sinister strike to pull
+castspell:1752;1757;1758;1759;1760;8621;11293;11294
+selfbuff!1784;1785;1786;1787
+!wandcasting
+energy>45
+distance<4
+combopoints<4
+havetarget
+!incombat
+
+//sinister strike to pull low level
+castspell:1752;1757;1758;1759;1760;8621;11293;11294
+!wandcasting
+energy>45
+distance<4
+combopoints<4
+havetarget
+!incombat
+level<30
+
+//Auto Attack to pull
+castspell:6603
+targetbuff!1776;1777;8629;11285;11286
+!wandcasting
+distance<4
+!autoattacking
+nogcd
+!incombat
+
+//cheap shot to pull stuck in combat
+castspell:1833
+selfbuff=1784;1785;1786;1787
+distance<5
+havetarget
+incombats
+
+//Auto Attack
+castspell:6603
+targetbuff!1776;1777;8629;11285;11286
+!wandcasting
+distance<4
+!autoattacking
+nogcd
+incombat
+
+//DEATH RAY OMG
+cast:55
+distance<6
+havetarget
+cooldown:300000
+channelingtime:3500
+autoattacking
+incombat
+
+//riposte
+castspell:14251
+energy>10
+distance<5
+cooldown:3000
+havetarget
+incombat
+nogcd
+level>20
+
+//kick
+castspell:1766;1767;1768;1769
+distance<5
+enemycasting
+cooldown:10000
+incombat
+level>12
+
+//bandage
+use:bandage
+targetbuff=1776;1777;8629;11285;11286
+!wandcasting
+selfbuff!11196
+cooldown:60000;4
+selfhp<60
+incombat
+level>10
+
+//gouge on low health - triggers bandage level>10
+castspell:1776;1777;8629;11285;11286
+targetbuff!1776;1777;8629;11285;11286
+!wandcasting
+energy>45
+selfhp<40
+distance<5
+combatcount<2
+cooldown:10000;3
+incombat
+level>6
+
+//stealth
+castspell:1784;1785;1786;1787
+selfbuff!1784;1785;1786;1787
+level>2
+!incombat
+
+//slice and dice combopoints>1
+castspell:5171;6774
+selfbuff!5171;6774;1784;1785;1786;1787
+targetbuff!1776;1777;8629;11285;11286
+!wandcasting
+energy>25
+combopoints>1
+castonce
+distance<5
+cooldown:4000
+incombat
+level>10
+
+//expose armor after slice and dice combopoints>1
+castspell:8647;8649;8650;11197;11198
+selfbuff=5171;6774;8647;8649;8650;11197;11198
+castonce
+combopoints>1
+energy>25
+distance<5
+incombat
+level>26
+
+//eviscerate
+castspell:2098;6760;6761;6762;8623;8624;11299;11300
+combopoints>3
+energy>35
+distance<5
+incombat
+
+//sinister strike (make new later for targethp>5 (or so) to account for DoT effects with targetbuff! )
+castspell:1752;1757;1758;1759;1760;8621;11293;11294
+targetbuff!1776;1777;8629;11285;11286
+!wandcasting
+energy>40
+distance<5
+combopoints<5
+incombat

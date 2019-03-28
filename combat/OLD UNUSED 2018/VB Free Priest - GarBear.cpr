@@ -1,0 +1,145 @@
+gcd:1533
+
+//~Power Word: Fortitude
+//Spellbar 4,4
+//If not active already
+//Mana is greater than 50%
+//Cooldown - cast every 10 mintues? (10mins x 60 seconds = 600 seconds = 600 + 000)
+//Do not cast while in combat
+cast:44
+selfbuff!1243;1244;1245;2791;10937;10938
+mana>50
+cooldown:600000
+!incombat
+
+//~Inner Fire
+//Spellbar 3,4
+//If not already active
+//Mana is greater than 5%
+//Cooldown - let's do every 3 mintues? (3mins x 60 seconds = 180 seconds = 180 + 000)
+/Do not cast while wandcasting
+cast:34
+selfbuff!588;7128;602;1006;10951;10952
+mana>5
+cooldown:180000
+!wandcasting
+
+///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//~STOP WAND CASTING 
+//DO NOT TOUCH!  --- TRY NOT TO MESS WITH GCD UNLESS NEEDED, ALSO...
+//SERIOUSLY....
+
+//>Using Renew!
+cast:65
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+wandcasting
+selfhp<85
+channelingtime:3200
+cooldown:12000
+incombat
+nogcd
+
+///////>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+//~Flash Heal
+//Spellbar 6,7
+//Mana is more than 22%
+//Self health is less than 65%
+//Do not cast while wandcasting
+cast:67
+mana>22
+selfhp<65
+!wancasting
+
+//~Power Word: Shield
+//Spellbar 6,4
+//If not already active
+//Mana is greater than 40%
+//Self health is less than 90%
+//Cooldown is 15 seconds (15 + 000)
+//Do not cast while wandcasting
+cast:64
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+mana>40
+selfhp<90
+cooldown:15000
+!wandcasting
+
+//~Renew
+//Spellbar 6,5
+//If not already active
+//Mana is more than 25%
+//Self health is less than 85%
+//Cooldown is 15 seconds (15 + 000)
+//Do not cast while wandcasting
+cast:65
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+mana>25
+selfhp<85
+cooldown:15000
+!wandcasting
+
+//~Fear
+//Spellbar 1,8
+//More than 1 target in combat
+//Distance is less than 8 yds
+//Cooldown is 30 seconds (30 + 000)
+//Do not cast while wandcasting
+cast:18
+combatcount>1
+distance<8
+cooldown:30000
+!wandcasting
+
+//~Mind Blast
+//SpellBar 2,4
+//Mana is more than 25%
+//Cooldown is 8 seconds (8 + 000. - 12 seconds would be 12 + 000)
+//Target health is greater than 15%
+//Distance is less than 30 yds
+//Do not cast while wandcasting
+cast:24
+mana>25
+cooldown:8000
+targethp>15
+distance<30
+!wandcasting
+
+//~Shadow Word: Pain
+//Spellbar 2,3
+//If not already active on target
+//Mana is more than 20%
+//Cooldown is 18 seconds (18 + 000)
+//Target health is greater than 10%
+//Distance is less than 30 yds
+//Do not cast while wandcasting
+cast:23
+targetbuff!589;594;970;992;2767;10892;10893;10894
+mana>20
+cooldown:18000
+targethp>10
+distance<30
+!wandcasting
+
+//~Smite
+//Spellbar 2,2
+//Mana is more than 50%
+//Target health is greater than 50%
+//Distance is less than 30 yds
+//Do not cast while wandcasting
+cast:22
+mana>50
+targethp>50
+distance<30
+!wandcasting
+
+//~Wand Auto-Shoot
+//Spellbar 1,1
+//Distance is less than 30yds
+//Channeling time of spell (This is based on your wand speed CHECK YOUR WAND!!!)
+//Do not cast while wandcasting
+cast:11
+distance<30
+channelingtime:1500
+!wandcasting

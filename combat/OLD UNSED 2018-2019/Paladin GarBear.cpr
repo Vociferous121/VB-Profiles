@@ -1,0 +1,148 @@
+gcd:1500
+
+//~>Devotion Aura
+castspell:465;10290;643;10291;1032;10292;10293
+selfbuff!465;10290;643;10291;1032;10292;10293
+!ismounted
+
+//~>Drink
+use:drink
+mana<31
+channelingtime:24000
+cooldown:5000
+breakoncombat
+breakonfullmana
+!incombat
+nostand
+nogcd
+
+//~>Lay on Hands
+castspell:633;2800;10310
+selfhp<7
+cooldown:3605000
+incombat
+
+//divine favor
+castspell:20216
+selfbuff!20216
+cooldown:30000
+mana<15
+selfhp<26
+
+//~>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<51
+mana>22
+cooldown:6000
+
+//~>Flash of Light
+castspell:19750;19939;19940;19941;19942;19943
+selfhp<31
+mana>6
+incombat
+
+//~>Stone Form (Dwarf Racial)
+castspell:20594;20612
+combatcount>1
+cooldown:180000
+incombat
+!ismounted
+
+//~>Blessing of Wisdom
+//>	Not with Wisdom or Sanctuary
+castspell:19742;19850;19852;19853;19854
+selfbuff!19742;19850;19852;19853;19854
+cooldown:2500
+!ismounted
+
+//~>Mount
+castspell:13819
+selfbuff!13820
+selfhp>80
+mana>80
+!incombat
+!havetarget
+cooldown:15000
+channelingtime:3800
+!ismounted
+level>59
+
+//~>Unmount
+castspell:13819
+selfbuff=13819
+incombat
+cooldown:2500
+ismounted
+level>40
+
+//~>Unmount
+castspell:13819
+selfbuff=13819
+havetarget
+targethp>1
+cooldown:2500
+ismounted
+level>40
+
+/////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+//holy shock
+castspell:20473;20929;20930
+distance<20
+mana>25
+cooldown:30000
+
+//~>Seal of Wisdom
+castspell:20166;20356;20357
+selfbuff!20166;20356;20357
+distance<6
+havetarget
+incombat
+
+//~>Seal of Light
+castspell:20165;20347;20348;20349
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+combatcount>2
+selfhp<51
+mana>16
+distance<6
+havetarget
+
+//~>Judgement Light + Wisdom
+castspell:20271
+targetbuff!20167;20333;20334;20340
+targetbuff!20186;20268;20352;20354;20353;20355
+selfbuff=20165;20347;20348;20349
+selfbuff=20166;20356;20357
+cooldown:10750
+mana>11
+distance<5
+targethp>21
+!ismounted
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+incombat
+nogcd
+!ismounted
+
+//~>Hammer of Justice
+castspell:853;5588;5589;10308
+distance<7
+combatcount>1
+mana>19
+cooldown:60000
+incombat
+!ismounted
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+nogcd
+!ismounted
+!ismounted

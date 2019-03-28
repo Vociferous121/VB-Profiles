@@ -1,0 +1,439 @@
+gcd:1550
+
+//////////////// 	MADE BY GarBear 2018/2019
+//////////////////////////////////////////////////////////////
+
+/////			Triggers List
+
+///////////////
+
+//~~>>	Trigger # 1  ; Into Car Form
+//~~>>	Trigger # 2  ; *CAT FORM* ???
+//~~>>	Trigger # 3  ; * ????? *
+//~~>>	Trigger # 4  ; Out Of Cat Form MotW
+//~~>>	Trigger # 5  ; Out Of Cat Form Thorns
+//~~>>	Trigger # 6  ; Out Of Cat Form Drink
+//~~>>	Trigger # 7  ; Regrowth Then Rejuvenation
+//~~>>	Trigger # 8  ; Out Of Cat Form Heal
+//~~>>	Trigger # 9  ; Regrowth Then Rejuvenation Cat Form
+//~~>>	Trigger # 10 ; Healing Touch Then Regrowth Trigger
+//~~>>	Trigger # 11 ; Moonfire To Pull Target
+
+
+///// 			Group Cooldowns
+
+///////////////
+
+//~~>>	group cooldown 1 ; Buffs - Don't spam forms
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+
+///////////// DRINKS AND POTIONS
+
+//~>Out of Cat form to drink
+castspell:768;3025
+selfbuff=768;3025
+!havetarget
+mana<31
+!incombat
+triggers:6
+channelingtime:1750
+cooldown:10000
+
+//~>Drink
+use:drink
+selfbuff!768;3025
+triggeredby:6
+!havetarget
+channelingtime:21000
+cooldown:2500
+!incombat
+breakoncombat
+breakonfullmana
+
+//~>Drink if not in Cat form
+use:drink
+selfbuff!768;3025
+mana<31
+channelingtime:21000
+cooldown:2500
+!incombat
+breakoncombat
+breakonfullmana
+
+////////////////  Cat FORM SPECIFIC CHECKLIST TRIGGERS
+
+//~>Back into Cat form trigger stopped
+//~>With regrowth and rejuvenation active
+castspell:768;3025
+selfbuff!768;3025
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+incombat
+mana>16
+selfhp>66
+channelingtime:1750
+cooldown:5000
+
+//~>Into Cat Form Trigger
+castspell:768;3025
+selfbuff!768;3025
+mana>16
+triggeredby:1
+channelingtime:1750
+cooldown:5000
+
+//~>Regrowth Before Combat Still Low HP
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!768;3025
+selfhp<96
+!incombat
+mana>51
+havetarget
+distance<30
+cooldown:7500;2
+
+//////////////// BUFFS
+
+////////// Buff if not in form anyways
+//~>Mark of the Wild
+//~>Not with Cat Form
+castspell:1126;5232;6756;5234;8907;9884;9885
+selfbuff!1126;5232;6756;5234;8907;9884;9885
+selfbuff!768;3025
+mana>51
+!incombat
+cooldown:5000
+
+//~>Thorns
+//~>Not with Cat Form
+castspell:467;782;1075;8914;9756;9910
+selfbuff!467;782;1075;8914;9756;9910
+selfbuff!768;3025
+mana>51
+!incombat
+cooldown:5000
+
+////////// Triggers to buff
+
+//~>Out Of Cat Form Trigger
+//~>Mark of the Wild
+castspell:768;3025
+selfbuff=768;3025
+selfbuff!1126;5232;6756;5234;8907;9884;9885
+triggers:4
+mana>25
+cooldown:12000;1
+!incombat
+channelingtime:1750
+
+//~>Out Of Cat Form Trigger
+//~>Thorns
+castspell:768;3025
+selfbuff=768;3025
+selfbuff!467;782;1075;8914;9756;9910
+triggers:5
+mana>25
+cooldown:12000;1
+!incombat
+channelingtime:1750
+
+////////// BUFFS
+
+//~>Mark of the Wild
+castspell:1126;5232;6756;5234;8907;9884;9885
+triggeredby:4
+triggers:15
+cooldown:5000
+
+//~>Thorns
+castspell:467;782;1075;8914;9756;9910
+selfbuff!467;782;1075;8914;9756;9910
+triggeredby:15
+cooldown:5000
+
+//~>Thorns
+castspell:467;782;1075;8914;9756;9910
+selfbuff!467;782;1075;8914;9756;9910
+triggeredby:5
+cooldown:5000
+
+//////////////// HEALS
+
+//~>Out of Cat Form Not In Combat
+castspell:768;3025
+selfbuff=768;3025
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfhp<71
+triggers:12
+!incombat
+channelingtime:1700
+cooldown:5000
+
+//~>Rejuvenation out of combat
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+triggeredby:12
+!incombat
+cooldown:5000
+
+//////// Heal if not in form
+
+//~>Regrowth
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!768;3025
+selfhp<56
+mana>36
+triggers:7
+cooldown:7500;2
+channelingtime:1750
+
+//~>Rejuvenation
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+triggeredby:7
+cooldown:7500;2
+
+///////// Triggers To Heal
+
+//~>Out of Cat form
+//~>Healing Touch
+castspell:768;3025
+selfbuff=768;3025
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfhp<51
+targethp>16
+triggers:8
+channelingtime:1750
+cooldown:5000
+
+//~>Out of Cat form
+//~>Regrowth Then Rejuvenation
+castspell:768;3025
+selfbuff=768;3025
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfhp<41
+targethp>16
+triggers:10
+channelingtime:1750
+cooldown:5000
+
+/////// Heals
+
+//~>Healing Touch Low Health
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!768;3025
+selfhp<46
+mana>18
+triggers:1
+cooldown:5000
+
+//~>Healing Touch Still Low Health IN COMBAT
+//~>With Rejuvenation and Regrowth
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!768;3025
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfhp<67
+mana>18
+triggers:1
+incombat
+cooldown:5000
+
+//~>Regrowth
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!768;3025
+selfhp<61
+mana>21
+triggeredby:8
+triggers:9
+cooldown:7500;2
+channelingtime:1750
+
+//~>Rejuvenation
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+triggeredby:9
+triggers:1
+cooldown:5000
+
+//////////////// PULLS + OTHERS OUT OF FORM
+
+//~>Moonfire meleepullcount>1
+castspell:8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+targetbuff!8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+selfbuff!768;3025
+mana>36
+meleepullcount>1
+distance<29
+!incombat
+triggers:1
+
+//~>Moonfire IN CAT FORM meleepullcount>1
+castspell:768;3025
+selfbuff=768;3025
+meleepullcount>1
+distance<29
+!incombat
+triggers:11
+cooldown:5000
+
+//~>Moonfire
+castspell:8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+targetbuff!8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+selfbuff!768;3025
+triggeredby:11
+channelingtime:3000
+distance<29
+triggers:1
+!incombat
+
+//////////////// CAT FORM ATACKS
+
+//~>Into Cat Form Before Combat
+castspell:768;3025
+selfbuff!768;3025
+havetarget
+distance<26
+!incombat
+channelingtime:1750
+cooldown:5000
+
+//~>Into Cat Form IN Combat
+castspell:768;3025
+selfbuff!768;3025
+havetarget
+distance<26
+incombat
+selfhp>81
+channelingtime:1750
+cooldown:5000
+
+//~>Prowl
+//castspell:
+//selfbuff=768;3025
+//selfbuff!
+//havetarget
+//distance<36
+//!incombat
+//triggeredby:17
+//level>59
+
+//~>Prowl
+//castspell:5215;6783;9919
+//selfbuff!5215;6783;9919
+//selfbuff=768;3025
+//havetarget
+//distance<36
+//!incombat
+//cooldown:11000
+//level>59
+
+//~>Claw While Prowling Caught IN COMBAT
+//castspell:1082;3029;5201;9849;9850
+//selfbuff=768;3025
+//selfbuff=5215;6783;9919
+//combopoints<4
+//energy>40
+//distance<5
+//incombat
+//level>59
+
+//~>Claw While Prowling
+//castspell:1082;3029;5201;9849;9850
+//selfbuff=768;3025
+//selfbuff=5215;6783;9919
+//combopoints<4
+//energy>40
+//distance<4
+//!incombat
+//level>59
+
+//~>Auto Attack -- Priority
+castspell:6603
+selfbuff=768;3025
+!autoattacking
+distance<4
+nogcd
+
+//~>Tiger's Fury
+castspell:5217;6793;9845;9846
+selfbuff!5217;6793;9845;9846
+selfbuff=768;3025
+incombat
+energy>30
+distance<5
+cooldown:6050
+
+//Rip
+castspell:1079;9492;9493;9752;9894;9896
+targetbuff!1079;9492;9493;9752;9894;9896
+selfbuff=768;3025
+combopoints>3
+energy>30
+distance<4
+incombat
+nogcd
+cooldown:1000
+
+//~>Rake
+castspell:1822;1823;1824;9904
+targetbuff!1822;1823;1824;9904
+selfbuff=768;3025
+energy>35
+incombat
+distance<4
+
+//~>Claw
+castspell:1082;3029;5201;9849;9850
+selfbuff=768;3025
+combopoints<5
+energy>40
+distance<4
+incombat
+nogcd
+cooldown:1000
+
+//~>Auto Attack - Cancel Target Ran Away
+castspell:6603
+selfbuff=768;3025
+autoattacking
+distance>6
+incombat
+nogcd
+
+//~>Auto Attack
+castspell:6603
+selfbuff=768;3025
+!autoattacking
+distance<4
+incombat
+nogcd
+
+///////////////////
+
+//~>Auto Attack
+//>Stuck in combat NO BEAR FORM
+castspell:6603
+selfbuff!768;3025
+!autoattacking
+incombat
+distance<4
+nogcd

@@ -1,0 +1,104 @@
+//~~~~~~>>	Druid - Feral	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger 1	-	Regrowth + Cat Form > Rejuvention
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+//Cat Form
+//768;3025
+//Bear Form
+//
+///////////////////////////////////////////////
+
+
+gcd:1100
+
+//Tiger's Fury
+//	Always active
+castspell:5217;6793;9845;9846
+selfbuff!5217;6793;9845;9846
+selfbuff=768;3025
+incombat
+energy>30
+autoattacking
+cooldown:1000
+nogcd
+
+//Cat Form
+castspell:768;3025
+selfbuff!768;3025
+havetarget
+mana>16
+distance<26
+cooldown:1000
+
+//~~~~~~~~>>Cat Form Attacks
+
+//Auto Attack
+castspell:6603
+selfbuff=768;3025
+!autoattacking
+distance<5
+!incombat
+nogcd
+
+//Auto Attack
+castspell:6603
+selfbuff=768;3025
+!autoattacking
+distance<5
+incombat
+nogcd
+
+//Rip
+castspell:1079;9492;9493;9752;9894;9896
+targetbuff!1079;9492;9493;9752;9894;9896
+selfbuff=768;3025
+combopoints>2
+energy>30
+distance<5
+incombat
+autoattacking
+
+//Rake
+castspell:1822;1823;1824;9904
+targetbuff!1822;1823;1824;9904
+selfbuff=768;3025
+energy>35
+incombat
+distance<5
+cooldown:1000
+
+//Claw
+castspell:1082;3029;5201;9849;9850
+targetbuff=1822;1823;1824;9904
+selfbuff=768;3025
+energy>40
+distance<5
+incombat
+autoattacking

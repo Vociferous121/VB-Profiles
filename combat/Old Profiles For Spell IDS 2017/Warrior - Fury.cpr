@@ -1,0 +1,77 @@
+//setting global cooldown (in milliseconds)
+gcd:1500
+
+//eat
+use:food
+selfhp<60
+!incombat
+channelingtime:18000
+breakoncombat
+afterloot
+breakonfullhp
+
+//set combat stance
+castspell:2457
+selfbuff!2457
+
+//charge
+castspell:100;6178;11578
+distance>8
+distance<25
+cooldown:15000
+!incombat
+
+//death wish
+castspell:12328
+incombat
+rage>10
+cooldown:18000
+targethp>40
+
+//execute
+castspell:5308;20658;20660;20661;20662
+targethp<20
+distance<5
+rage>15
+
+//auto attack
+castspell:6603
+distance<4
+!autoattacking
+
+//bloodthirst
+castspell:23881;23892;23893;23894
+cooldown:6000
+rage>30
+distance<5
+targethp>10
+
+//move into range if autoattacking is on but mob walks away
+cast:20
+distance<4
+cooldown:5000
+nogcd
+rage<15
+
+//cleave
+castspell:845;7369;11608;11609;20569
+combatcount>1
+rage>30
+nogcd
+distance<5
+
+//rend
+//castspell:772;6546;6547;6548;11573;11574
+//targetbuff!772;6546;6547;6548;11573;11574
+//targethp>32
+//rage>10
+//distance<5
+
+//heroic strike
+castspell:78;284;285;1608;11564;11565;11566;25286
+distance<5
+targethp>30
+rage>30
+autoattacking
+combatcount<2
+nogcd

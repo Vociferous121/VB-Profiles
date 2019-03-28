@@ -1,0 +1,11 @@
+gcd:2000
+
+castspell:1804
+cooldown:10650
+distance<6
+triggers:1
+
+//~>Buffer
+cast:31
+channelingtime:2500
+triggeredby:1

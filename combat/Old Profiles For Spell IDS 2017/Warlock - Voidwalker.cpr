@@ -1,0 +1,105 @@
+gcd:1500
+
+//drink
+use:drink
+mana<40
+!incombat
+channelingtime:15000
+breakoncombat
+afterloot
+breakonfullmana
+
+//Health funnel
+castspell:755;3698;3699;3700;11693;11694;11695
+channelingtime:10000
+selfhp>65
+pethealth<50
+petactive
+!incombat
+
+//wait for voidwalker health
+cast:20
+!incombat
+petactive
+pethealth<50
+channelingtime:10000
+breakoncombat
+
+//drain soul
+castspell:1120;8288;8289;11675
+haveitem:6265<1
+targethp<40
+distance<30
+mana>10
+breakonkill
+
+//pet (voidwalker)
+castspell:697
+!incombat
+!petactive
+haveitem:6265>0
+
+//demon skin/armor
+castspell:687;696;706;1086;11733;11734;11735
+selfbuff!687;696;706;1086;11733;11734;11735
+
+//shadowbolt on nightfall
+castspell:686;695;705;1088;1106;7641;11659;11660;11661;25307
+distance<30
+selfbuff=17941
+mana>10
+
+//deathcoil
+castspell:6789;17925;17926
+mana>15
+distance<30
+selfhp<50
+cooldown:120000
+
+//life tap
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>65
+mana<15
+
+//corruption
+castspell:172;6222;6223;7648;11671;11672;25311
+mana>10
+distance<30
+targetbuff!172;6222;6223;7648;11671;11672;25311
+
+//curse of agony
+castspell:980;1014;6217;11711;11712;11713
+mana>10
+distance<30
+targetbuff!980;1014;6217;11711;11712;11713
+
+//siphon life
+castspell:18265;18879;18880;18881
+mana>10
+distance<30
+selfhp<80
+targetbuff!18265;18879;18880;18881
+
+//drain life
+castspell:689;699;709;7651;11699;11700
+selfhp<60
+distance<23
+channelingtime:5000
+breakonkill
+mana>10
+
+//immolate
+castspell:348;707;1094;2941;11665;11667;11668;25309
+mana>10
+distance<30
+targetbuff!348;707;1094;2941;11665;11667;11668;25309
+
+//shadowbolt
+castspell:686;695;705;1088;1106;7641;11659;11660;11661;25307
+mana>10
+distance<30
+
+//wand
+castspell:5019
+!wandcasting
+distance<30

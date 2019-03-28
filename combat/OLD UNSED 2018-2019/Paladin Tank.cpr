@@ -1,0 +1,34 @@
+gcd:1500
+
+//~>Devotion Aura
+castspell:465;10290;643;10291;1032;10292;10293
+selfbuff!465;10290;643;10291;1032;10292;10293
+
+//~>Stone Form (Dwarf Racial)
+castspell:20594;20612
+combatcount>2
+cooldown:180000
+incombat
+
+//KNGS
+castspell:20217
+selfbuff!20217
+mana>51
+cooldown:2500
+
+/////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+//~>Seal of Righteousness
+//>	Not with Righteouesness - Not with Crusdaer - Not with Light
+//>	Target has Crusader
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293
+mana>21
+distance<6
+havetarget
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+nogcd

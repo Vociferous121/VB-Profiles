@@ -1,0 +1,336 @@
+//~~~~~~>>	Hunter - Beast Mastery	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script 1	-	Pet Attack Current Target
+//			
+//			/script PetAttack(Target)
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Pet Target 2nd Attacker
+//
+// 			/script TargetNearestEnemy();
+//			/script PetAttack(Target)
+//			/script TargetLastEnemy()
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Pet Follow Command
+//
+//			/script PetFollow()
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>	Food Drink Potion Consumable
+
+//~>Low Level Rest
+cast:21
+selfhp<71
+channelingtime:6000
+cooldown:12000
+breakonfullhp
+breakoncombat
+!incombat
+level<4
+
+//~>Low Level Rest
+cast:21
+mana<36
+channelingtime:3000
+cooldown:15000
+breakonfullmana
+breakoncombat
+!incombat
+!havetarget
+level<10
+
+//~>Eat Low Level
+use:food
+selfhp<61
+channelingtime:21000
+cooldown:4000
+breakonfullhp
+breakoncombat
+nostand
+!incombat
+level>4
+level<10
+
+//~>Drink
+use:drink
+mana<26
+channelingtime:21000
+cooldown:4000
+breakonfullmana
+breakoncombat
+nostand
+!incombat
+level>10
+
+//~>Eat
+use:food
+selfhp<56
+channelingtime:21000
+cooldown:4000
+breakonfullhp
+breakoncombat
+nostand
+!incombat
+level>10
+
+//~~~~~~~~>>	TRIGGERS
+
+//>Serpent Sting - Trigger 1
+//triggered by Auto Shot {{Start Combat]]
+castspell:1978;13549;13550;13551;13552;13553;13554;13555
+targetbuff!1978;13549;13550;13551;13552;13553;13554;13555
+triggeredby:1
+level>6
+mana>30
+distance>7
+distance<36
+cooldown:10000
+
+//~~~~~~~~>>	Debuff Removal
+
+//~~~~~~~~>>	Buffs
+
+//~>Aspect of the Hawk
+castspell:13165;14318;14319;14320;14321;14322
+selfbuff!13165;14318;14319;14320;14321;14322
+mana>10
+level>10
+
+//~>Aspect of the Monkey
+//not with hawk active
+castspell:13163
+selfbuff!13163
+selfbuff!13165;14318;14319;14320;14321;14322
+mana>10
+level>4
+level<8
+
+//~~~~~~~~>>	Before Combat
+
+//~~~~~~~~>>	Crowd Control
+
+//~>Blood Fury - Orc Racial
+//healing debuff ; 23230
+castspell:20572
+combatcount>1
+distance<7
+autoattacking
+!wandcasting
+cooldown:120000
+
+//~>Disengage
+castspell:781;14272;14273
+autoattacking
+mana>20
+distance<8
+cooldown:10000
+backpedal:2000
+level>16
+
+//~>Multi-Shot
+castspell:2643;14288;14289;14290
+mana>50
+distance>8
+distance<36
+combatcount>2
+cooldown:10000
+level>16
+
+//~~~~~~~~>>	Start Combat
+
+//~>Concussive Shot
+castspell:5116
+targetbuff!5116
+targetbuff=1130;14323;14324;14325
+mana>40
+distance>7
+distance<36
+!incombat
+triggers:1
+cooldown:12000
+level>8
+
+//~>Hunter's Mark
+castspell:1130;14323;14324;14325
+targetbuff!1130;14323;14324;14325
+mana>5
+distance>7
+distance<50
+cooldown:5000
+level>6
+
+//~>Auto Shot
+castspell:75
+!wandcasting
+distance>7
+distance<36
+!incombat
+level<8
+level>6
+nogcd
+triggers:1
+
+//~>Auto Shot
+castspell:75
+!wandcasting
+distance>7
+distance<36
+!incombat
+level<8
+level<6
+
+//~~~~~~~~>>	In Combat Player Low Health
+
+//Feign Death
+castspell:5384
+selfbuff!5384
+selfhp<10
+channelingtime:7000
+cooldown:120000
+backpedal:4000
+incombat
+level>30
+
+//~~~~~~~~>>	In Combat Pet Skills
+
+//~>Intimidation
+castspell:19577
+combatcount>1
+cooldown:60000
+nogcd
+incombat
+level>30
+
+//~~~~~~~~>>	In Combat Ranged
+
+//~>Auto Shot
+castspell:75
+!wandcasting
+distance>7
+distance<36
+incombat
+nogcd
+
+//>Arcane Shot
+castspell:3044;14281;14282;14283;14284;14285;14286;14287
+mana>45
+distance>7
+distance<36
+cooldown:8000
+incombat
+level>6
+
+//>Serpent Sting
+castspell:1978;13549;13550;13551;13552;13553;13554;13555
+targetbuff!1978;13549;13550;13551;13552;13553;13554;13555
+mana>30
+distance>7
+distance<36
+cooldown:10000
+incombat
+level>6
+
+//~~~~~~~~>>	In Combat Melee
+
+//~>Raptor's Strike
+//added extra 2sec to cooldown for lag and cast time (KEEP NOGCD)
+castspell:2973;14260;14261;14262;14263;14264;14265;14266
+autoattacking
+!wandcasting
+distance<8
+mana>20
+cooldown:7500
+incombat
+nogcd
+
+//~>Wing Clip
+castspell:2974;14267;14268;27633
+targetbuff!2974;14267;14268;27633
+autoattacking
+!wandcasting
+distance<6
+mana>20
+nogcd
+cooldown:10000
+incombat
+level>12
+
+//~>Auto Attack Melee
+castspell:6603
+!autoattacking
+!wandcasting
+distance<4
+incombat
+nogcd
+
+//~~~~~~~~>>	Other ~~~ To Do / Notes
+
+//>Rapid Fire
+//castspell:3045
+//selfbuff!3045
+
+//>Mend Pet
+//castspell:136;3111;3661;3662;13542;13543;13544
+
+//>Call Pet
+//castspell:883
+
+//>Revive Pet
+//castspell:982
+
+//>Aspect of the Cheetah
+//castspell:5118
+//selfbuff!5118
+
+//>concussive shot
+//castspell:5116
+//targetbuff!5116
+
+//>beastial wrath
+//castspell:19574
+
+//>scorpid sting
+//castspell:3034;14275;14276;14277
+//targetbuff!3034;14275;14276;14277
+
+//frost trap
+//castspell:13809
+
+//immolate trap
+//castspell:13795;;14302;14303;14304;14305
+
+//freezing trap
+//castspell:1499;14310;41311
+
+//mongoose bite
+//castspell:1495;14269;14270;14271
+
+
+

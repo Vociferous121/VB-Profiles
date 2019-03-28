@@ -1,0 +1,308 @@
+gcd:1500
+
+//eat
+use:food
+selfhp<50
+channelingtime:16000
+cooldown:16000
+breakonfullhp
+breakoncombat
+!incombat
+!ismounted
+
+//drink if low on health also
+use:drink
+mana<50
+channelingtime:16000
+cooldown:16000:1
+breakonfullmana
+breakoncombat
+!incombat
+!ismounted
+
+//imp If We Need
+//castspell:688;23503
+//mana>25
+//!petactive
+//!incombat
+//channelingtime:10000
+//castonce
+//cooldown:15000
+
+//Summon Voidwalker
+castspell:697
+haveitem:6265>0
+!petactive
+mana>40
+channelingtime:10000
+!incombat
+cooldown:15000
+!ismounted
+
+//Summon Voidwalker
+castspell:697
+haveitem:6265>0
+petactive
+petmana<10
+mana>40
+channelingtime:10000
+!incombat
+cooldown:15000
+!ismounted
+
+//Demon Armor Buff
+castspell:687;696;706;1086;11733;11734;11735
+selfbuff!687;696;706;1086;11733;11734;11735
+!incombat
+cooldown:5000
+!ismounted
+
+//Heal Pet Consume Shadows
+cast:51
+pethealth<50
+petmana>10
+petactive
+cooldown:10000
+channelingtime:2000
+!incombat
+!ismounted
+
+//Health Funnel Pet Needs Health Out of Combat and has no mana
+castspell:755;3698;3699;3700;11693;11694;11695
+channelingtime:10000
+breakoncombat
+pethealth<30
+petmana<22
+selfhp>55
+petactive
+mana>10
+!incombat
+!ismounted
+
+//life tap out of combat
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>60
+mana<75
+!incombat
+!ismounted
+
+////============= Health Stones ==============////
+
+//Lesser Healthstone (12+)
+cast:19
+selfhp<25
+haveitem:5511<0
+level>11
+level<24
+incombat
+
+//Healthstone (24+)
+cast:19
+selfhp<25
+haveitem:5509<0
+level>23
+level<36
+incombat
+
+//Greater Healthstone (36+)
+cast:19
+selfhp<25
+haveitem:5510>0
+level>35
+level<48
+incombat
+!ismounted
+
+//Major Healthstone (48+)
+cast:19
+selfhp<25
+haveitem:9421>0
+level>47
+incombat
+!ismounted
+
+////============ Use Health Stone/Potion ============////
+
+//Healthstone
+use:5511;5509;5510;9421
+haveitem:5511;5509;5510;9421<0
+selfhp<25
+incombat
+cooldown:120000
+
+//Potion
+use:health potion
+selfhp<25
+incombat
+cooldown:120000
+
+//mana pot
+use:mana potion
+mana<25
+incombat
+cooldown:120000
+
+//MOUNT
+cast:20
+!havetarget
+mana>10
+channelingtime:3000
+cooldown:3500
+!incombat
+!ismounted
+
+//unmount
+cast:20
+havetarget
+distance<31
+ismounted
+!incombat
+
+////========== Start Pull ============////
+
+//immolate to pull chance 25%
+castspell:348;707;1094;2941;11665;11667;11668;25309
+targetbuff!348;707;1094;2941;11665;11667;11668;25309
+mana>10
+distance<30
+cooldown:2100
+!incombat
+!ismounted
+
+//corruption to pull chance 25%
+castspell:172;6222;6223;7648;11671;11672;25311
+targetbuff!172;6222;6223;7648;11671;11672;25311
+mana>10
+distance<30
+cooldown:2100
+!incombat
+!ismounted
+
+//curse of agony to pull chance 25%
+castspell:980;1014;6217;11711;11712;11713
+targetbuff!980;1014;6217;11711;11712;11713
+mana>10
+distance<30
+cooldown:1500
+!incombat
+!ismounted
+
+////======== Start DoTs ========////
+
+//immolate to pull chance 25%
+castspell:348;707;1094;2941;11665;11667;11668;25309
+targetbuff!348;707;1094;2941;11665;11667;11668;25309
+mana>10
+distance<30
+cooldown:2100
+incombat
+!ismounted
+
+//corruption to pull chance 25%
+castspell:172;6222;6223;7648;11671;11672;25311
+targetbuff!172;6222;6223;7648;11671;11672;25311
+mana>10
+distance<30
+cooldown:2100
+incombat
+!ismounted
+
+//curse of agony to pull chance 25%
+castspell:980;1014;6217;11711;11712;11713
+targetbuff!980;1014;6217;11711;11712;11713
+mana>10
+distance<30
+cooldown:1500
+incombat
+!ismounted
+
+//siphon life
+castspell:18265;18879;18880;18881
+targetbuff!18265;18879;18880;18881
+mana>10
+distance<30
+cooldown:1500
+incombat
+!ismounted
+
+////======== Combat After DoTs ========////
+
+//Shadowbolt Nightfall Proc
+castspell:686;695;705;1088;1106;7641;11659;11660;11661;25307
+selfbuff=17941
+mana>5
+distance<30
+cooldown:1500
+incombat
+!ismounted
+
+//Fear chance 55%
+castspell:5782;6213;6214;6215
+targetbuff!5782;6213;6214;6215
+mana>10
+distance<10
+chance:55
+cooldown:5000
+incombat
+!ismounted
+
+//Health Funnel
+castspell:755;3698;3699;3700;11693;11694;11695
+channelingtime:10000
+breakoncombat
+pethealth<40
+selfhp>50
+petactive
+mana>10
+incombat
+!ismounted
+
+//Drain Soul if need soulshards
+castspell:1120;8288;8289;11675
+channelingtime:10000
+haveitem:6265<3
+breakonkill
+targethp<15
+distance<25
+mana>10
+incombat
+!ismounted
+
+//Life Tap (in combat)
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>65
+mana<10
+incombat
+!ismounted
+
+//drain life if pet hp is 30% or more
+castspell:689;699;709;7651;11699;11700
+selfhp<85
+mana>5
+distance<25
+channelingtime:5000
+breakonkill
+incombat
+!ismounted
+
+//drain mana
+//castspell:
+//selfhp>60
+//mana<25
+//distance<25
+//channelingtime:5000
+//cooldown:5500
+//breakonkill
+//incombat
+
+//shadowbolt
+castspell:686;695;705;1088;1106;7641;11659;11660;11661;25307
+mana>10
+distance<30
+incombat
+
+//wand
+castspell:5019
+!wandcasting
+distance<30
+incombat

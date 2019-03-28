@@ -1,0 +1,12 @@
+gcd:1500
+
+//~>Heroic Strike
+castspell:78;284;285;1608;11564;11565;11566;11567
+rage>15
+distance<4
+autoattacking
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4

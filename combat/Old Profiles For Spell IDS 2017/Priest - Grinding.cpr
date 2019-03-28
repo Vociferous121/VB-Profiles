@@ -1,0 +1,60 @@
+GCD:1600
+
+////Drink (Have Conjure Water - Rank 1)
+Use:Drink
+Mana<45
+HaveItem:5350>1
+BreakOnFullMana
+BreakOnCombat
+ChannelingTime:18000
+CoolDown:2500
+!InCombat
+
+////Drink
+Use:Drink
+Mana<25
+BreakOnFullMana
+BreakOnCombat
+ChannelingTime:21000
+CoolDown:2500
+!InCombat
+
+////Power Word: Fortitude
+CastSpell:1243;1244;1245;2791;10937;10938
+SelfBuff!1243;1244;1245;2791;10937;10938
+Mana>50
+CoolDown:2500
+
+////Power Word: Shield
+CastSpell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+SelfBuff!17;592;600;3747;6065;6066;10898;10899;10900;10901;6788
+Mana>30
+selfhp<91
+CoolDown:6100
+Level>6
+
+////Lesser Heal
+CastSpell:2050;2052;2053
+SelfHP<45
+Mana>8
+CoolDown:3000
+
+////Shadow Word: Pain
+CastSpell:589;594;970;992;2767;10892;10893;10894
+TargetBuff!589;594;970;992;2767;10892;10893;10894
+Mana>10
+TargetHP>5
+Distance<30
+CoolDown:500
+
+////Smite
+CastSpell:585;591;598;984;1004;6060;10933;10934
+targetbuff=589;594;970;992;2767;10892;10893;10894
+Mana>20
+Distance<31
+
+////Auto Attack
+CastSpell:6603
+!AutoAttacking
+Distance<6
+NoGCD

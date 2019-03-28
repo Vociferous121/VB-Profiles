@@ -1,0 +1,122 @@
+gcd:1580
+
+//>		Conjurables		<\\
+
+//	Conjure Water Rank 1 - Level>4
+CastSpell:5504
+HaveItem:5350<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>4
+Level<10
+
+//	Conjure Food Rank 1 - Level>6
+CastSpell:587
+HaveItem:5349<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>6
+Level<12
+
+//> 		FOODS & DRINKS		<\\
+
+//	Rest For Health - Level<3
+Cast:30
+SelfHP<60
+ChannelingTime:4600
+Cooldown:15000
+!InCombat
+Level<3
+
+//	Rest For Mana - Level<3
+Cast:30
+Mana<40
+ChannelingTime:10600
+Cooldown:25000
+!InCombat
+breakoncombat
+breakonfullmana
+Level<3
+
+//	Use Food - Health - Level>3
+Use:Food
+SelfHP<75
+Triggers:1
+CoolDown:3000
+NoStand
+!InCombat
+Level>3
+
+//	Use Food - Auto Trigger Drink - Level>3
+Use:Drink
+SelfBuff!430;431;432;1133;1135;1137
+TriggeredBy:1
+CoolDown:10000
+ChannelingTime:30000
+BreakOnCombat
+BreakOnFullHP
+NoStand
+!InCombat
+
+//	Use Drink - Mana - Level>3
+Use:Drink
+SelfBuff!430;431;432;1133;1135;1137
+Mana<60
+Triggers:2
+CoolDown:3000
+NoStand
+!InCombat
+Level>3
+
+//	Use Drink - Auto Trigger Food - Level>3
+Use:Food
+TriggeredBy:2
+CoolDown:10000
+ChannelingTime:30000
+BreakOnCombat
+BreakOnFullMana
+NoStand
+!InCombat
+level>3
+
+//>		BUFFS		<\\
+
+//>Frost Armor
+castspell:168;7300;7301
+selfbuff!168;7300;7301
+mana>40
+cooldown:7500
+!incombat
+
+//>Arcane Intellect
+castspell:1459;1460;1461;10156;10157
+selfbuff!1459;1460;1461;10156;10157
+mana>40
+cooldown:7500
+level>2
+
+//>		COMBAT		<\\
+
+//>Fireball
+castspell:133
+distance<30
+mana>20
+level<3
+
+//>Frostbolt
+castspell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
+distance<30
+mana>20
+level>4
+
+//>Auto Attack
+castspell:6603
+!autoattacking
+distance<5
+nogcd

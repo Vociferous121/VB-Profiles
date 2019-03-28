@@ -1,0 +1,74 @@
+gcd:1525
+
+//>Aspect of the Hawk - Active for combat
+//>Will ALWAYS be active unless changed
+castspell:13165;14318;14319;14320;14321;14322
+selfbuff!13165;14318;14319;14320;14321;14322
+mana>15
+
+//>Auto Shot
+castspell:75
+!wandcasting
+!autoattacking
+distance>8
+distance<35
+nogcd
+triggers:1
+
+//>Sending Pet
+cast:21
+triggeredby:1
+nogcd
+cooldown:3000
+
+//>Multi-Shot
+castspell:2643;14288;14289;14290
+wandcasting
+!autoattacking
+mana>25
+distance>9
+distance<35
+combatcount>2
+cooldown:11000
+triggers:1
+
+//>Serpent Sting
+castspell:1978;13549;13550;13551;13552;13553;13554;13555
+targetbuff!1978;13549;13550;13551;13552;13553;13554;13555
+wandcasting
+!autoattacking
+distance>7
+distance<35
+mana>50
+cooldown:3500
+triggers:1
+
+//>		MELEE RANGE
+
+//>Disengage
+castspell:781;14272;14273
+autoattacking
+!wandcasting
+mana>20
+distance<8
+cooldown:7200
+incombat
+triggers:1
+
+//>Raptor Strike
+castspell:2973;14260;14261;14262;14263;14264;14265;14266
+autoattacking
+!wandcasting
+distance<8
+mana>20
+cooldown:6200
+incombat
+triggers:1
+
+//>Auto Attack
+castspell:6603
+!autoattacking
+!wandcasting
+distance<8
+nogcd
+incombat

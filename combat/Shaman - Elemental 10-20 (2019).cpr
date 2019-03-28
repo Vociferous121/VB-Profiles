@@ -1,0 +1,197 @@
+//~~~~~~>>	Shaman - Spec	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Drink
+use:drink
+haveitem:159>1
+haveitem:1179>1
+mana<31
+!incombat
+breakoncombat
+breakonfullmana
+channelingtime:21000
+cooldown:60000
+
+//Drink
+use:drink
+mana<31
+meleepullcount>1
+!incombat
+breakoncombat
+breakonfullmana
+channelingtime:21000
+cooldown:21000
+
+//Rest
+cast:20
+selfhp<65
+!incombat
+breakoncombat
+breakonfullhp
+channelingtime:4514
+cooldown:15158
+
+//Rest
+cast:20
+mana<30
+!incombat
+breakoncombat
+breakonfullmana
+channelingtime:4514
+cooldown:15158
+
+//~~~~~~~~>>Debuff Removal
+
+
+//~~~~~~~~>>Buffs
+
+//flametongue
+castspell:8024;8027;8030;16339;16341;16342
+!mainhandbuffed
+mana>10
+
+//lightning shield
+castspell:324;325;905;945;8134;10431;10432
+selfbuff!324;325;905;945;8134;10431;10432
+mana>36
+!incombat
+
+//lightning shield
+castspell:324;325;905;945;8134;10431;10432
+selfbuff!324;325;905;945;8134;10431;10432
+mana>36
+distance<30
+incombat
+
+//~~~~~~~~>>Heals
+
+//Healing Wave
+castspell:331;332;547;913;939;959;8005;10395;10396;25357
+selfhp<51
+mana>27
+!incombat
+
+//~~~~~~~~>>Heals In Combat
+
+//Healing Wave
+castspell:331;332;547;913;939;959;8005;10395;10396;25357
+selfhp<51
+mana>27
+incombat
+//~~~~~~~~>>Before Combat
+
+
+//~~~~~~~~>>Crowd Control
+
+//Stoneskin Totem
+castspell:8071;8054;8154;8155;10406;10407;10408
+selfbuff!8072;8156;8157;10403;10404;10405
+combatcount>1
+mana>15
+incombat
+
+//~~~~~~~~>>Start Combat
+
+//Lightning Bolt
+castspell:403;529;548;915;943;6041;10391;10392;15207;15208
+meleepullcount>1
+mana>31
+distance<30
+!incombat
+
+//Flame Shock
+castspell:8050;8052;8053;10447;10448;29228
+targetbuff!8050;8052;8053;10447;10448;29228
+mana>26
+selfhp>51
+cooldown:6000;1
+distance<20
+!incombat
+
+//Lightning Bolt
+castspell:403;529;548;915;943;6041;10391;10392;15207;15208
+mana>31
+selfhp>51
+distance<30
+!incombat
+
+//~~~~~~~~>>In Combat
+
+//Flame Shock
+castspell:8050;8052;8053;10447;10448;29228
+targetbuff!8050;8052;8053;10447;10448;29228
+mana>26
+selfhp>51
+cooldown:6000;1
+distance<20
+incombat
+
+//Earth Shock
+castspell:8042;8044;8045;8046;10412;10413;10414
+mana>31
+cooldown:6000;1
+distance<20
+targethp>6
+incombat
+
+//Auto Attack
+castspell:6603
+!autoattacking
+nogcd
+distance<5
+incombat
+
+//Lightning Bolt 1
+castspell:403;529;548;915;943;6041;10391;10392;15207;15208
+mana>31
+distance<30
+incombat
+
+//Lightning Bolt 2
+castspell:403;529;548;915;943;6041;10391;10392;15207;15208
+mana>31
+combatcount>1
+distance<30
+incombat
+
+//~~~~~~~~>>Other ~~~ To Do / Notes

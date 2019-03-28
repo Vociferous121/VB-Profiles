@@ -1,0 +1,81 @@
+gcd:1550
+
+//>Power Word: Fortitude
+castspell:1243;1244;1245;2791;10937;10938
+selfbuff!1243;1244;1245;2791;10937;10938
+mana>50
+!incombat
+!wandcasting
+level>2
+
+//>Power Word: Shield
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+havetarget
+distance<40
+cooldown:4100
+!wandcasting
+level>6
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfhp<50
+mana>15
+!wandcasting
+level>20
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfhp<20
+mana>13
+wandcasting
+level>20
+
+//>Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfhp<85
+mana>20
+wandcasting
+level>8
+
+//>Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfhp<85
+mana>20
+!wandcasting
+level>8
+
+//>Inner Fire
+castspell:588;7128;602;1006;10951;10952
+selfbuff!588;7128;602;1006;10951;10952
+mana>5
+!wandcasting
+cooldown:2500
+level>12
+
+//>Mind Blast
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+mana>30
+targethp>15
+cooldown:8200
+!wandcasting
+distance<30
+level>10
+
+//>Shadow Word: Pain
+castspell:589;594;970;992;2767;10892;10893;10894
+targetbuff!589;594;970;992;2767;10892;10893;10894
+mana>20
+targethp>10
+distance<30
+level>4
+
+//>Auto Wand
+castspell:5019
+!wandcasting
+distance<30
+channelingtime:1250
+level>8
+nogcd

@@ -1,0 +1,406 @@
+//>This profile is controlled by !InCombat and InCombat commands - !HaveAggro & HaveAggro
+//>Few Controlled by PetActive/PetAlive/HP Values
+//>MUST ADD FOLLOWING TO /MACRO
+
+//>		Script #1 - Pet Attack Macro
+//>	/script PetAttack(Target)
+
+//>		Script #2 - Pet Attack Switch Target Macro
+//>	/script TargetNearestEnemy();
+//>	/script PetAttack(Target)
+//>	/script TargetLastEnemy()
+//>	/script PetAttack(Target)
+
+//>		Script #3 - Pet Follow For Mend Pet
+//>	/script PetFollow()
+
+//>The Bot casts top to bottom - essentially starting over, top to bottom, once a command is run
+//>	Keep It Simple, Stupid	<\\
+
+//>Profile is Mana efficient and will conserve Mana for Mend Pet
+//>Profile checks for an active pet before combat at all times
+//>Profile base Mana is set at mana>7 (no lower value used)
+
+
+gcd:1500
+
+//>Mount
+cast:10
+!incombat
+!ismounted
+!havetarget
+cooldown:10000
+mana>90
+
+//>Unmount in combat
+cast:10
+ismounted
+incombat
+
+//>Unmount have target
+cast:10
+ismounted
+havetarget
+
+//>		BUFFS & OTHERS
+
+//>Drink for Mana
+use:drink
+mana<19
+nostand
+channelingtime:21000
+cooldown:2500
+breakonfullmana
+breakoncombat
+!incombat
+nogcd
+!havetarget
+
+//>Eat for HP
+use:food
+selfhp<30
+nostand
+channelingtime:21000
+cooldown:2500
+breakonfullhp
+breakoncombat
+!incombat
+nogcd
+!havetarget
+
+//>Rest for HP - We don't need food!
+//>Extra cooldown time added	:)
+//cast:20
+//selfhp<40
+//channelingtime:14256
+//cooldown:35602
+//breakonfullhp
+//breakoncombat
+//!incombat
+
+//>Aspect of the Cheetah
+castspell:5118
+selfbuff!5118
+selfhp>99
+mana>99
+!incombat
+!havetarget
+cooldown:120000
+!ismounted
+level>20
+level<40
+
+//>Aspect of the Cheetah off #1
+castspell:5118
+selfbuff=5118
+castonce
+nogcd
+cooldown:1500
+incombat
+!ismounted
+
+//>Aspect of the Cheetah off #2
+castspell:5118
+selfbuff=5118
+castonce
+nogcd
+havetarget
+cooldown:1500
+triggers:9
+!ismounted
+
+//>No GCD Aspect Cheetah - Hawk
+cast:21
+triggeredby:9
+castonce
+nogcd
+meleepullcount<2
+!ismounted
+
+//>Aspect of the Hawk - Active for combat
+//>Will ALWAYS be active unless changed
+castspell:13165;14318;14319;14320;14321;14322
+selfbuff!13165;14318;14319;14320;14321;14322;5118
+mana>10
+!ismounted
+
+//>Call Pet
+castspell:883
+!petactive
+cooldown:5000
+!ismounted
+
+//>Revive Pet
+castspell:982
+petactive
+!petalive
+cooldown:5000
+!incombat
+mana>75
+!ismounted
+
+//Feign Death - Have Aggro???
+castspell:5384
+selfbuff!5384
+distance<7
+haveaggro
+channelingtime:1500
+incombat
+cooldown:31000;2
+nogcd
+level>30
+
+//>		OUT OF COMBAT / BEFORE COMBAT COMMANDS	
+
+//>Mend Pet - Check Pet health before combat
+//>Heal if pethealth<75
+castspell:136;3111;3661;3662;13542;13543;13544
+pethealth<65
+mana>12
+channelingtime:5150
+cooldown:6145
+!incombat
+petalive
+petactive
+!ismounted
+
+//>Hunters Mark - Always active on a target
+castspell:1130;14323;14324;14325
+targetbuff!1130;14323;14324;14325
+mana>7
+distance<60
+cooldown:1750
+petalive
+petactive
+!ismounted
+triggers:1
+nogcd
+
+//>		STARTING COMBAT COMMANDS
+
+//>Start Auto Shot - Starts Trigger #2	***
+//>Multiple target pull - Does not use pet
+//>Triggers Concussive Shot
+castspell:75
+!wandcasting
+distance>8
+distance<35
+!incombat
+nogcd
+meleepullcount>1
+triggers:2
+petalive
+petactive
+nogcd
+
+//>Trigger #2 - Concussive Shot	***
+castspell:5116
+castonce
+distance>8
+distance<35
+triggeredby:2
+
+//>Start Auto Shot - Trigger #1 /script#1 (Sends pet first!)	***
+cast:21
+distance>8
+distance<35
+!incombat
+castonce
+havetarget
+triggers:1
+nogcd
+petalive
+petactive
+nogcd
+
+//>Trigger #1 - /script #1 - pet attack	***
+castspell:75
+!wandcasting
+nogcd
+distance>8
+distance<35
+triggeredby:1
+meleepullcount<2
+nogcd
+
+//>		IN COMBAT COMMANDS
+
+//>Auto Shot - In Combat
+castspell:75
+!wandcasting
+incombat
+distance>8
+distance<35
+nogcd
+
+//>Health Potion
+//>Use if selfhp<25 and combatcount<3
+//>Bot controlls cooldown timer on potions/scrolls
+use:health potion
+selfhp<25
+combatcount>1
+haveaggro
+incombat
+
+//>Mana Potion
+use:mana potion
+mana<18
+combatcount>1
+incombat
+
+//>Player Has Aggro - Use /script #2 - pet attack 2 targets	***
+cast:22
+cooldown:2500
+channelingtime:850
+incombat
+haveaggro
+
+//>Pet Too Far - Trigger #3 - /script #3
+cast:23
+channelingtime:2000
+pethealth<50
+distance>17
+incombat
+nogcd
+triggers:3
+cooldown:18000
+
+
+//>Trigger #3 - Pet Attack
+cast:21
+triggeredby:3
+nogcd
+
+//>Mend Pet #2
+castspell:136;3111;3661;3662;13542;13543;13544
+distance<20
+pethealth<25
+mana>10
+channelingtime:5150
+cooldown:6145
+nogcd
+incombat
+petalive
+petactive
+combatcount<1
+
+//>Mend Pet #1
+castspell:136;3111;3661;3662;13542;13543;13544
+distance<20
+pethealth<45
+mana>12
+channelingtime:5150
+cooldown:9000
+nogcd
+incombat
+petalive
+petactive
+combatcount>1
+
+//>Rapid Fire - Addcount>1
+castspell:3045
+selfbuff!3045
+wandcasting
+addcount>1
+incombat
+petalive
+petactive
+distance>8
+distance<35
+cooldown:300000;1
+level>26
+
+//>Rapid Fire
+castspell:3045
+selfbuff!3045
+wandcasting
+combatcount>1
+incombat
+petalive
+petactive
+distance>8
+distance<35
+cooldown:300000;1
+level>26
+
+//Pet - Intimidation
+castspell:19577
+petalive
+petactive
+combatcount>1
+incombat
+cooldown:61000
+nogcd
+level>30
+
+//Feign Death - Almost Dead??
+castspell:5384
+selfbuff!5384
+selfhp<5
+channelingtime:5000
+incombat
+cooldown:31000;2
+nogcd
+castonce
+level>30
+
+//>Serpent Sting
+castspell:1978;13549;13550;13551;13552;13553;13554;13555
+targetbuff!1978;13549;13550;13551;13552;13553;13554;13555
+distance>8
+distance<35
+cooldown:3500
+mana>35
+incombat
+petalive
+petactive
+
+//>Arcane Shot
+castspell:3044;14281;14282;14283;14284;14285;14286;14287
+mana>55
+distance>7
+distance<35
+cooldown:8400
+incombat
+petalive
+petactive
+
+//>Multi-Shot
+castspell:2643;14288;14289;14290
+mana>45
+distance>8
+distance<35
+combatcount>1
+cooldown:11000
+incombat
+petalive
+petactive
+
+//>		MELEE RANGE
+
+//>Disengage
+castspell:781;14272;14273
+autoattacking
+!wandcasting
+mana>20
+distance<8
+cooldown:7000
+incombat
+backpedal:2100
+
+//>Raptor Strike
+castspell:2973;14260;14261;14262;14263;14264;14265;14266
+autoattacking
+!wandcasting
+distance<8
+mana>20
+cooldown:6000
+incombat
+
+//>Auto Attack
+castspell:6603
+!autoattacking
+!wandcasting
+distance<8
+nogcd
+incombat

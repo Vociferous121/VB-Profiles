@@ -1,0 +1,383 @@
+//*****Group Cooldowns*****//
+
+//faerie fire normal
+//castspell:770;778;9746;9907;13424;13752
+//targetbuff!770;778;9746;9907;13424;13752
+
+//1 is *General Cooldown* Group Cooldown
+//2 is ** Group Cooldown
+//3 is _ Group Cooldown
+//4 is _ Group Cooldown
+//5 is _ Group Cooldown
+//6 is _ Group Cooldown
+
+//*****Trigger Counts*****//
+//1 is ** Trigger
+//2 is ** Trigger
+//3 is ** Trigger
+//4 is _ Trigger
+//5 is _ Trigger
+//6 is _ Trigger
+
+gcd:1000
+
+//drink
+use:drink
+selfbuff!5487;9634
+mana<30
+!incombat
+cooldown:20000
+channelingtime:20000
+breakoncombat
+breakonfullmana
+
+//travel form between combat
+castspell:783;5419
+selfbuff!783;5149;768;3025;5487;9634
+selfhp>75
+!havetarget
+!incombat
+cooldown:2500
+level>29
+
+//out of travel form before combat
+castspell:783;5419
+selfbuff=783;5149
+selfbuff!768;3025
+selfhp>75
+havetarget
+cooldown:2500
+!incombat
+level>29
+
+//caught in travel form incombat
+castspell:783;5419
+selfbuff=783;5149
+incombat
+level>29
+
+//*****Bear Form Controls*****//**********
+
+//have target into bear form level>10 <20
+castspell:5487;9634
+selfbuff!5487;9634
+havetarget
+castonce
+!incombat
+cooldown:1500;1
+level>9
+level<19
+
+//bear form in combat level>10 <20
+castspell:5487;9634
+selfbuff!5487;9634
+selfhp>75
+havetarget
+cooldown:1500;1
+incombat
+level>9
+level<19
+
+//out of bear form after combat level>10 <20
+castspell:5487;9634
+selfbuff=5487;9634
+!havetarget
+cooldown:1500;1
+!incombat
+level>9
+level<19
+
+//out of bear form to heal level>10 <20
+castspell:5487;9634
+selfbuff=5487;9634
+selfhp<75
+havetarget
+cooldown:1500;1
+incombat
+level>9
+level<19
+
+//*****Cat Form Controls*****//**********
+
+//have target into cat form level>20
+castspell:768;3025
+selfbuff!768;3025
+havetarget
+castonce
+!incombat
+cooldown:1500;1
+level>19
+
+//cat form in combat level>20
+castspell:768;3025
+selfbuff!768;3025
+selfhp>75
+havetarget
+cooldown:1500;1
+incombat
+level>19
+
+//out of cat form after combat level>20 (if we choose not to stealth around)
+castspell:768;3025
+selfbuff=768;3025
+!havetarget
+cooldown:1500;1
+!incombat
+level>19
+
+//out of cat form to heal level>20
+castspell:768;3025
+selfbuff=768;3025
+selfhp<75
+havetarget
+cooldown:1500;1
+level>19
+
+//*****Buffs*****//**********
+
+//Mark of the Wild
+castspell:1126;5232;6756;5234;8907;9884;9885
+selfbuff!5487;9634;1126;5232;6756;5234;8907;9884;9885;768;3025
+cooldown:1500;1
+!incombat
+level>1
+
+//Thorns
+castspell:467;782;1075;8914;9756;9910
+selfbuff!5487;9634;467;782;1075;8914;9756;9910;768;3025
+cooldown:1500;1
+!incombat
+level>3
+
+//*****Heals*****//*********
+
+//Rejuvenation
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!5487;9634;774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299;768;3025
+cooldown:1500;1
+selfhp<75
+mana>60
+level>3
+
+//regrowth
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5487;9634;8936;8938;8939;8940;8941;9750;9856;9857;9858;768;3025
+selfhp<60
+mana>20
+incombat
+Cooldown:2500
+level>9
+
+//Healing Touch
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!5487;9634;768;3025
+selfhp<40
+mana>20
+cooldown:1500;1
+
+//*****Pull Controls*****//**********
+
+//Wrath To Pull level<10
+castspell:5176;5177;5178;5179;5180;6780;8905;9912
+distance<30
+mana>25
+cooldown:1500;1
+!incombat
+level<9
+
+//auto attack bear form pull level>10 <20
+castspell:6603
+selfbuff=5487;9634
+distance<5
+!autoattacking
+nogcd
+!incombat
+level>9
+level<19
+
+//prowl level>20
+castspell:5215;6783;9919
+selfbuff=768;3025
+selfbuff!5215;6783;9919
+!incombat
+cooldown:10000
+level>19
+
+//claw cat form to pull level>20
+castspell:1082;3029;5201;9849;9850
+selfbuff=768;3025;5215;6783;9919
+distance<5
+energy>45
+havetarget
+!incombat
+level>19
+
+//auto attack cat form to pull level>20
+castspell:6603
+selfbuff=768;3025
+!autoattacking
+distance<5
+!incombat
+nogcd
+level>19
+
+//*****Attacks*****//**********
+
+//entangle roots level>8 <10
+castspell:339;1062;5195;5196;9852;9853
+targetbuff!339;1062;5195;5196;9852;9853
+distance<30
+mana>15
+backpedal:0700
+cooldown:1500;1
+incombat
+castonce
+level>7
+level<9
+
+//Wrath level<10
+castspell:5176;5177;5178;5179;5180;6780;8905;9912
+distance<30
+cooldown:1500;1
+mana>25
+incombat
+level<9
+
+//Moonfire level<10
+castspell:8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+targetbuff!8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+distance<30
+cooldown:1500;1
+mana>10
+level>3
+level<9
+incombat
+
+//auto attack level<10
+castspell:6603
+selfbuff!5487;9634;768;3025
+distance<5
+!autoattacking
+nogcd
+incombat
+level<9
+
+//********Bear Form********//*********
+
+//auto attack level>10 <20
+castspell:6603
+selfbuff=5487;9634
+selfbuff!768;3025
+!autoattacking
+distance<5
+incombat
+nogcd
+level>9
+level<19
+
+//enrage level>10 <20
+castspell:5229;25503
+selfbuff!5229;25503;768;3025
+selfbuff=5487;9634
+castonce
+incombat
+cooldown:60000
+level>9
+level<19
+
+//Bash level>14 <20
+castspell:5211;6798;8983
+selfbuff=5487;9634
+selfbuff!768;3025
+distance<5
+rage>10
+level>13
+level<19
+incombat
+cooldown:60000
+
+//swipe level>10 <20
+castspell:779;780;769;9754;9908
+selfbuff=5487;9634
+selfbuff!768;3025
+combatcount>1
+distance<5
+incombat
+rage>20
+cooldown:1500;1
+level>15
+level<19
+
+//Maul level>10 <20
+castspell:6807;6808;6809;8972;9745;9880;9881
+selfbuff=5487;9634
+selfbuff!768;3025
+distance<5
+rage>15
+level>9
+level<19
+incombat
+cooldown:1500;1
+
+//*****Cat Form*****//**********
+
+//auto attack level>10 <20
+castspell:6603
+selfbuff=768;3025
+selfbuff!5487;9634
+!autoattacking
+distance<5
+incombat
+nogcd
+level>19
+
+//Farie Fire Feral
+castspell:16857;17390;17391
+targetbuff!16857;17390;17391
+selfbuff=
+distance<30
+incombat
+cooldown:6000
+havetarget
+level>23
+
+//tigers fury
+castspell:5217;6793;9845;9846
+selfbuff=768;3025
+selfbuff!5217;6793;9845;9846
+distance<5
+energy>30
+havetarget
+castonce
+incombat
+level>23
+
+//rip level>20
+castspell:1079;9492;9493;9752;9894;9896
+selfbuff=768;3025
+distance<5
+combopoints>3
+energy>35
+havetarget
+incombat
+level>19
+
+//rake
+castspell:1822;1823;1824;9904
+selfbuff=768;3025
+targetbuff!1822;1823;1824;9904
+distance<5
+energy>40
+havetarget
+castonce
+incombat
+level>23
+
+//claw level>20
+castspell:1082;3029;5201;9849;9850
+selfbuff=768;3025
+distance<5
+energy>45
+havetarget
+incombat
+level>19

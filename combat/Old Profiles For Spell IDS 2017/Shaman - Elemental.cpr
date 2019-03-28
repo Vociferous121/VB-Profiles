@@ -1,0 +1,65 @@
+gcd:1500
+
+use:drink
+channelingtime:27000
+breakoncombat
+!incombat
+mana<40
+afterloot
+breakonfullmana
+
+//manaspring
+//castspell:5675;10495;10496;10497
+//selfbuff!5677;10491;10493;10494
+//channelingtime:30000
+
+//flametongue
+castspell:8024;8027;8030;16339;16341;16342
+!mainhandbuffed
+
+//attack
+castspell:6603
+distance<5
+!autoattacking
+mana<11
+nogcd
+
+//(lesser) healing wave
+castspell:331;332;547;913;8004;8008;8010;10466;10467;10468
+selfhp<55
+mana>10
+
+//lightning shield
+castspell:324;325;905;945;8134;10431;10432
+!incombat
+selfbuff!324;325;905;945;8134;10431;10432
+mana>25
+
+//chain lightning on multiple mobs
+castspell:421;930;2860;10605
+distance<30
+combatcount>1
+cooldown:6000
+mana>10
+
+//lightning bolt on clearcasting
+castspell:403;529;548;915;943;6041;10391;10392;15207;15208
+distance<30
+selfbuff=16246
+
+//earth shock
+castspell:8042;8044;8045;8046;10412;10413;10414
+distance<20
+mana>10
+cooldown:6000
+
+//attack
+castspell:6603
+distance<5
+!autoattacking
+nogcd
+
+//lightning bolt
+castspell:403;529;548;915;943;6041;10391;10392;15207;15208
+distance<30
+mana>10

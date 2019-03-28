@@ -1,0 +1,155 @@
+gcd:1520
+
+//>Script for targetting self and using Dispel Magic
+//>	Use /macro in-game
+//>	This is on action bar 2,1
+//>
+//>		/target *enter your name here*
+//>		/cast Dispel Magic
+//>
+
+//>Drink for Mana
+use:drink
+mana<30
+!incombat
+breakoncombat
+breakonfullmana
+cooldown:5000
+channelingtime:21000
+!wandcasting
+nostand
+
+//>Cure Disease
+//>Rabies ; 
+castspell:528
+selfbuff=3150
+mana>15
+cooldown:2500
+!wandcasting
+
+//>Dispel Magic
+//>Blood Howel ; 
+//cast:21
+//selfbuff=3264
+//mana>18
+//cooldown:2125
+//!wandcasting
+
+//>Power Word: Fortitude
+castspell:1243;1244;1245;2791;10937;10938
+selfbuff!1243;1244;1245;2791;10937;10938
+mana>50
+!incombat
+!wandcasting
+
+//>Inner Focus - Flash Heal
+castspell:14751
+selfbuff!14751
+selfhp<50
+mana<13
+havetarget
+distance<30
+triggers:6
+cooldown:180000;2
+nogcd
+!wandcasting
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+triggeredby:6
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfhp<50
+mana>12
+!wandcasting
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfhp<50
+mana>12
+wandcasting
+
+//>Heal
+//castspell:2054;2055;6063;6064
+//selfhp<36
+//mana>23
+//!wandcasting
+//!incombat
+
+//>Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfhp<85
+mana>20
+wandcasting
+
+//>Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfhp<85
+mana>20
+!wandcasting
+
+//>Lesser Heal
+//>Ranks 1+2 - 2050;2052;
+castspell:2053
+selfhp<66
+mana<11
+!wandcasting
+
+//>Power Word: Shield
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+havetarget
+selfhp<65
+mana>20
+distance<40
+cooldown:4100
+!wandcasting
+
+//>Inner Fire
+castspell:588;7128;602;1006;10951;10952
+selfbuff!588;7128;602;1006;10951;10952
+mana>5
+!wandcasting
+
+//>Holy Fire - Pull
+//castspell:14914;15262;15263;15264;15265;15266;15267;15261
+//targetbuff!14914;15262;15263;15264;15265;15266;15267;15261
+//distance<30
+//mana>35
+//targethp>98
+//!wandcasting
+//havetarget
+//cooldown:10000
+
+//>Mind Blast
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+mana>30
+targethp>15
+cooldown:8200
+!wandcasting
+distance<30
+
+//>Desperate Prayer
+castspell:13908;19236;19238;19240;19241;19242;19243
+cooldown:6000000
+selfhp<15
+incombat
+!wandcasting
+
+//>Shadow Word: Pain
+castspell:589;594;970;992;2767;10892;10893;10894
+targetbuff!589;594;970;992;2767;10892;10893;10894
+mana>20
+targethp>10
+!wandcasting
+distance<30
+
+//>Auto Wand
+castspell:5019
+!wandcasting
+havetarget
+distance<30
+cooldown:1220

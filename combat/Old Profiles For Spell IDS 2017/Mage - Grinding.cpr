@@ -1,0 +1,56 @@
+GCD:1650
+
+//Conjure Water Rank 1
+CastSpell:5504
+HaveItem:5350<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>4
+Level<10
+
+//Drink
+Use:Drink
+Mana<25
+BreakOnCombat
+ChannelingTime:18000
+CoolDown:2500
+BreakOnFullMana
+!InCombat
+NoGCD
+
+//Arcane Intellect
+CastSpell:1459;1460;1461;10156;10157
+SelfBuff!1459;1460;1461;10156;10157
+Mana>50
+CoolDown:5000
+Level>2
+
+//Frost Armor
+Castspell:168;7300;7301
+Selfbuff!168;7300;7301
+Mana>50
+Cooldown:5000
+
+//Auto Attack
+CastSpell:6603
+!AutoAttacking
+Distance<6
+HaveTarget
+NoGCD
+
+//FrostBolt
+CastSpell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
+CastOnce
+Distance<29
+Mana>25
+HaveTarget
+Level>4
+
+//Firebolt
+CastSpell:133
+Mana>11
+HaveTarget
+Distance<36

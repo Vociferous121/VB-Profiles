@@ -1,0 +1,165 @@
+GCD:1550
+
+
+// ||| Mend Pet ||| \\
+castspell:136;3111;3661;3662;13542;13543;13544
+mana>19
+Distance<18
+PetHealth<65
+channelingtime:5500
+cooldown:6500
+level>12
+
+//take off cheetah
+castspell:5118
+selfbuff=5118
+havetarget
+Distance<45
+level>20
+nogcd
+cooldown:2500
+
+// ||| Aspect Of The Monkey ||| \\	(	Always active with melee attacks - (cooldown controlled)	)
+CastSpell:13163
+SelfBuff!13163
+HaveTarget
+Distance<4
+SelfHP<50
+InCombat
+CoolDown:8000
+Level<8
+
+// ||| Aspect Of The Hawk ||| \\	(	Always active with ranged attacks - (cooldown controlled)	)
+CastSpell:13165;14318;14319;14320;14321;14322
+SelfBuff!5118;13165;14318;14319;14320;14321;14322
+HaveTarget
+Mana>5
+CoolDown:8000
+Level>7
+NoGCD
+
+// ||| Hunters Mark ||| \\	(	Attempt to cast hunters mark before combat	)
+CastSpell:1130;14323;14324;14325
+TargetBuff!1130;14323;14324;14325
+HaveTarget
+Mana>35
+Distance<60
+!InCombat
+CoolDown:2500
+Level>5
+
+// ||| Hunters Mark ||| \\	(	Attempt to cast hunters mark while in combat	)
+CastSpell:1130;14323;14324;14325
+TargetBuff!1130;14323;14324;14325
+HaveTarget
+Distance<60
+TargetHP>60
+InCombat
+CoolDown:2500
+Level>5
+
+// ||| Pet Attack ||| \\	(	SCRIPT PET ATTACK COMBAT START	)
+cast:28
+HaveTarget
+Distance<45
+CoolDown:5000
+!InCombat
+Level>9
+NoGCD
+
+// ||| Pet Attack ||| \\	(	SCRIPT PET ATTACK - Double check for extra target	)
+cast:29
+Distance<10
+CastOnce
+CoolDown:6000
+incombat
+level>9
+nogcd
+
+// ||| Pet Attack ||| \\	(	SCRIPT PET ATTACK - PLAYER LOW HP		)
+cast:29
+HaveTarget
+SelfHP<35
+CoolDown:5000
+!incombat
+level>9
+nogcd
+
+// ||| AutoShot BOW ||| \\	(	Will always cast auto shoot (bow) when a target is within distance and targeted		)
+CastSpell:75
+!WandCasting
+HaveTarget
+Distance>7
+Distance<35
+NOGCD
+
+/////concussive shot to pull level>8
+castspell:5116
+targetbuff!5116
+targetbuff=1130;14323;14324;14325
+mana>15
+havetarget
+Distance>9
+Distance<35
+cooldown:12000
+level>8
+
+// ||| Serpent Sting ||| \\	(	Only starts when auto shoot is active		)
+CastSpell:1978;13549;13550;13551;13552;13553;13554;13555
+TargetBuff!1978;13549;13550;13551;13552;13553;13554;13555
+HaveTarget
+Mana>15
+TargetHP>25
+Distance>7
+Distance<36
+InCombat
+CoolDown:10000
+Level>3
+
+// ||| Arcane Shot ||| \\	(	Only starts when auto shoot is active		)
+CastSpell:3044;14281;14282;14283;14284;14285;14286;14287
+HaveTarget
+Mana>7
+Distance>7
+Distance<36
+InCombat
+CoolDown:6250
+Level>5
+
+////multi shot
+castspell:2643;14288;14289;14290
+mana>20
+HaveTarget
+cooldown:11000
+Distance>9
+Distance<35
+incombat
+
+//disengage
+castspell:781;14272;14273
+!wandcasting
+AutoAttacking
+HaveTarget
+mana>20
+distance<6
+cooldown:5000
+incombat
+BackPedal:2100
+level>20
+
+// ||| Raptor Strike ||| \\	(	Cast raptor strike if in melee range		)
+CastSpell:2973;14260;14261;14262;14263;14264;14265;14266
+!WandCasting
+AutoAttacking
+HaveTarget
+Mana>8
+Distance<5
+CoolDown:6000
+
+// ||| AutoAttack MELEE ||| \\	(	Will always cast auto attack when target is too close for ranged attacked		)
+CastSpell:6603
+!WandCasting
+!AutoAttacking
+HaveTarget
+Distance<8
+NOGCD

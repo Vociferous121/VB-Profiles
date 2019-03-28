@@ -1,0 +1,63 @@
+gcd:1000
+
+//Auto Attack
+castspell:6603
+selfbuff!1784;1785;1786;1787
+distance<5
+!autoattacking
+nogcd
+
+//Riptose 1
+castspell:14251
+targetbuff!1833
+incombat
+nogcd
+cooldown:8000
+energy>10
+
+//Riptose 2
+castspell:14251
+targetbuff!1833
+incombat
+nogcd
+cooldown:5000
+energy>10
+
+//Eviscerate 4
+castspell:2098;6760;6761;6762;8623;8624;11299;11300
+energy>35
+combopoints>4
+targethp>41
+incombat
+
+//Eviscerate 3
+castspell:2098;6760;6761;6762;8623;8624;11299;11300
+energy>35
+combopoints>3
+targethp>31
+targethp<41
+incombat
+
+//Eviscerate 2
+castspell:2098;6760;6761;6762;8623;8624;11299;11300
+energy>35
+combopoints>2
+targethp>21
+targethp<31
+incombat
+
+//Eviscerate 1
+castspell:2098;6760;6761;6762;8623;8624;11299;11300
+energy>35
+combopoints>1
+targethp<21
+incombat
+
+//Sinister Strike
+castspell:1752;1757;1758;1759;1760;8621;11293;11294
+energy>40
+distance<5
+incombat
+cooldown:1250
+
+//~~~~~~~~>>Other ~~~ To Do / Notes

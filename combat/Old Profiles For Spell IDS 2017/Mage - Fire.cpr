@@ -1,0 +1,125 @@
+//setting global cooldown (in milliseconds)
+gcd:1500
+
+//health pot
+use:health potion
+selfhp<15
+incombat
+
+//mana shield
+castspell:1463;8494;8495;10191;10193
+targethp>10
+selfhp<20
+mana>40
+selfbuff!1463;8494;8495;10191;10193
+incombat
+
+//conjure food if none is available
+castspell:587;597;990;6129;8736;10144;10145;28612
+!incombat
+breakoncombat
+triggeredby:1
+
+//eat
+use:food
+selfhp<60
+!incombat
+channelingtime:19000
+breakoncombat
+afterloot
+breakonfullhp
+haveitem<10:trigger:1
+
+//evocation
+castspell:12051
+mana<40
+!incombat
+channelingtime:8000
+cooldown:480000
+breakoncombat
+aftercombat
+
+//combustion
+castspell:11129
+cooldown:180000
+selfbuff!11129
+!incombat
+
+//ice barrier
+castspell:11426;13031;13032;13033
+cooldown:30000
+selfbuff!11426;13031;13032;13033
+
+//conjure water
+castspell:5504;5505;5506;6127;10138;10139;10140
+!incombat
+breakoncombat
+triggeredby:2
+
+//drink
+use:drink
+mana<50
+!incombat
+channelingtime:19000
+breakoncombat
+afterloot
+breakonfullmana
+haveitem<10:trigger:2
+
+//ice armor
+castspell:168;7300;7301;7302;7320;10219;10220
+mana>70
+selfbuff!168;7300;7301;7302;7320;10219;10220
+!incombat
+
+//intellect
+castspell:1459;1460;1461;1475;10156;10157
+mana>70
+selfbuff!1459;1460;1461;1475;10156;10157
+!incombat
+
+//blast wave
+castspell:11113;13018;13019;13020;13021
+combatcount>2
+cooldown:45000
+mana>10
+distance<14
+
+//pyro
+castspell:11366;12505;12522;12523;12524;12525;12526;18809
+mana>10
+distance>25
+castonce
+!incombat
+
+//fireblast
+castspell:2136;2137;2138;8412;8413;10197;10199
+mana>10
+distance<12
+cooldown:10000
+
+//fireball
+castspell:133;143;145;3140;8400;8401;8402;10148;10149;10150;10151;25306
+mana>10
+distance<35
+targethp>10
+
+//as a finisher: scorch is preferred but as low levels don't have it
+//we will check whether it's possible with the level condition.
+//this is actually redundant as spells that are not found will be ignored
+//scorch
+castspell:2948;8444;8445;8446;10205;10206;10207
+targethp<11
+mana>10
+distance<30
+level>21
+
+//fireball
+castspell:133;143;145;3140;8400;8401;8402;10148;10149;10150;10151;25306
+mana>10
+distance<35
+
+//wand if no mana
+castspell:5019
+!wandcasting
+mana<11

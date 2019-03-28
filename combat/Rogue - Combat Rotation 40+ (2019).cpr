@@ -1,0 +1,114 @@
+//~~~~~~>>	Rogue - Combat	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1000
+
+//Stealth
+//castspell:1784;1785;1786;1787
+//selfbuff!1784;1785;1786;1787
+//selfbuff!7731;7367;16128;24339
+//!incombat
+//cooldown:8000
+
+//Cheap Shot
+castspell:1833
+selfbuff=1784;1785;1786;1787
+distance<5
+energy>60
+
+//>Kick
+castspell:1766;1767;1768;1769
+enemycasting
+energy>25
+cooldown:10000
+distance<5
+
+//Auto Attack
+castspell:6603
+!autoattacking
+distance<5
+nogcd
+
+//Riposte
+castspell:14251
+targetbuff!1833
+incombat
+nogcd
+cooldown:6000
+energy>10
+autoattacking
+distance<5
+
+//Eviscerate
+castspell:2098;6760;6761;6762;8623;8624;11299;11300
+selfbuff=5171;6774
+targethp<21
+energy>35
+combopoints>1
+distance<5
+
+//Slice and Dice
+castspell:5171;6774
+combopoints>1
+targethp<21
+energy>25
+cooldown:10000
+autoattacking
+distance<5
+
+//Slice and Dice
+castspell:5171;6774
+selfbuff!5171;6774
+combopoints>1
+energy>25
+autoattacking
+distance<5
+
+//Eviscerate
+castspell:2098;6760;6761;6762;8623;8624;11299;11300
+selfbuff=5171;6774
+energy>35
+combopoints>4
+distance<5
+
+//Sinister Strike
+castspell:1752;1757;1758;1759;1760;8621;11293;11294
+energy>40
+distance<5
+incombat
+autoattacking

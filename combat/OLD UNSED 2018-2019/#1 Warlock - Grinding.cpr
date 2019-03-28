@@ -1,0 +1,225 @@
+gcd:1500
+
+//~~>>			Auto Wand @ Mana < 25
+//~~> Group Cooldowns :
+//>>	1 -
+//>>	2 -
+//>>	3 -
+//>>	4 -
+
+//~~> Triggers :
+//>>	1 - Eat Then Drink
+//>>	2 - Drink Then Eat
+//>>	3 - Script Pet Attack
+
+//>Rest For Mana
+cast:21
+!incombat
+mana<40
+channelingtime:10000
+cooldown:30000
+breakoncombat
+breakonfullmana
+level<6
+
+//~>Eat Then Drink
+use:food
+selfhp<45
+mana<50
+!incombat
+cooldown:6000
+nostand
+triggers:1
+level>6
+
+//~>Eat Then Drink Triggered
+use:drink
+triggeredby:1
+channelingtime:21000
+breakoncombat
+breakonfullhp
+
+//~>Drink Then Eat
+use:drink
+mana<25
+selfhp<50
+!incombat
+cooldown:6000
+nostand
+triggers:2
+level>6
+
+//~>Drink Then Eat Triggered
+use:food
+triggeredby:2
+channelingtime:21000
+breakoncombat
+breakonfullmana
+
+//~>Drink
+use:drink
+mana<25
+!incombat
+cooldown:6000
+channelingtime:21000
+nostand
+level>6
+
+//~>Eat
+use:food
+selfhp<45
+!incombat
+channelingtime:21000
+nostand
+level>6
+
+//>Life Tap
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>95
+mana<80
+!incombat
+level>6
+
+//>Life Tap
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>85
+mana<70
+!incombat
+level>6
+
+//>Life Tap
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>75
+mana<60
+!incombat
+level>6
+
+//>Life Tap
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>65
+mana<50
+!incombat
+level>6
+
+//>Life Tap
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>55
+mana<40
+!incombat
+level>6
+
+//>Life Tap In Combat
+castspell:1454;1455;1456;11687;11688;11689
+selfhp>65
+mana<25
+combatcount<2
+incombat
+!wandcasting
+level>6
+
+//Summon Imp
+castspell:688;23503
+mana>50
+!petactive
+!petalive
+!incombat
+level>4
+
+//>Demon Skin
+castspell:687;696;706;1086;11733;11734;11735
+selfbuff!687;696;706;1086;11733;11734;11735
+mana>55
+!incombat
+
+//>Script Pet Attack
+cast:21
+havetarget
+distance<30
+petactive
+petalive
+castonce
+nogcd
+!wandcasting
+level>4
+
+//~>Script Pet Attack Triggered
+cast:21
+triggeredby:3
+cooldown:6000
+nogcd
+!wandcasting
+
+//~>Fear 
+//>castspell:5782;6213;6214;6215
+//>targetbuff!5782;6213;6214;6215
+cast:22
+combatcount>1
+cooldown:8000
+channelingtime:1500
+incombat
+havetarget
+distance<10
+level>8
+
+//~>Curse of Agony - Force Wand Off
+castspell:980;1014;6217;11711;11712;11713
+targetbuff!980;1014;6217;11711;11712;11713
+wandcasting
+cooldown:3000
+level>8
+
+//>Corruption
+castspell:172;6222;6223;7648;11671;11672;25311
+targetbuff!172;6222;6223;7648;11671;11672;25311
+distance<30
+mana>12
+targethp>12
+cooldown:4000
+!wandcasting
+level>4
+
+//~>Curse of Agony
+castspell:980;1014;6217;11711;11712;11713
+targetbuff!980;1014;6217;11711;11712;11713
+mana>8
+cooldown:2500
+distance<30
+!wandcasting
+level>8
+
+//>Immolate
+castspell:348;707;1094;2941;11665;11667;11668;25309
+targetbuff!348;707;1094;2941;11665;11667;11668;25309
+distance<30
+mana>20
+targethp>15
+cooldown:6000
+!wandcasting
+level>2
+level<8
+
+//>Shadowbolt
+castspell:686;695;705;1088;1106;7641;11659;11660;11661;25307
+distance<30
+mana>50
+targethp>25
+!wandcasting
+
+//~>Auto Wand
+castspell:5019
+!wandcasting
+distance<30
+havetarget
+cooldown:1500
+channelingtime:1500
+nogcd
+level>8
+
+//Auto Attack
+castspell:6603
+distance<4
+!autoattacking
+!wandcasting
+incombat
+nogcd
+level<8

@@ -1,0 +1,137 @@
+gcd:1500
+
+//~>Devotion Aura
+castspell:465;10290;643;10291;1032;10292;10293
+selfbuff!465;10290;643;10291;1032;10292;10293
+!ismounted
+
+//~>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<41
+mana>23
+
+//~>Flash of Light - Low Mana
+castspell:19750;19939;19940;19941;19942;19943
+selfhp<41
+mana<23
+mana>6
+incombat
+!ismounted
+
+//KNGS
+castspell:20217
+selfbuff!20217
+cooldown:2500
+
+/////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+//~~~>>>Seal of Light ||	selfbuff!20165;20347;20348;20349
+//~~~>>>Judgement of Light ||	targetbuff!20167;20333;20334;20340
+//~~~>>>Judgemnent of the Crusader ||	targetbuff!21183;20188;20300;20301;20302
+
+//~>Judgement - Crusader
+//>	Player has Crusader - Target does NOT
+//>Not with light
+//>Not with wisdom
+castspell:20271
+selfbuff=21082;20162;20305;20306;20307;20308
+targetbuff!21183;20188;20300;20301;20302
+targetbuff!20167;20333;20334;20340
+targetbuff!20186;20268;20352;20354;20353;20355
+cooldown:10750;1
+mana>21
+distance<5
+targethp>41
+!ismounted
+
+//~>Judgement - Righteousness
+//>	Player has Righteousness - Target has Crusader
+castspell:20271
+selfbuff=21084;20287;20288;20289;20290;20291;20292;20293
+targetbuff=21183;20188;20300;20301;20302
+cooldown:10750;1
+mana>36
+distance<5
+targethp>26
+!ismounted
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+incombat
+nogcd
+!ismounted
+
+//~>Seal of the Crusader
+//>	Not if Player or Target has Crusader - Not With light
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+targetbuff!21183;20188;20300;20301;20302
+mana>6
+distance<26
+targethp>51
+havetarget
+castonce
+!ismounted
+
+//~>Seal of the Crusader
+//>	Not if Player or Target has Crusader - Not With light
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+targetbuff!21183;20188;20300;20301;20302
+mana>6
+distance<26
+targethp>51
+havetarget
+castonce
+!ismounted
+
+//~>Seal of Righteousness
+//>	Not with Righteouesness - Not with Crusdaer - Not with Light
+//>	Target has Crusader
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+targetbuff=21183;20188;20300;20301;20302
+mana>6
+distance<6
+havetarget
+!ismounted
+
+//~>Hammer of Justice
+castspell:853;5588;5589;10308
+distance<7
+combatcount>1
+mana>19
+cooldown:60000
+incombat
+!ismounted
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+nogcd
+!ismounted
+
+//~>Seal of Righteousness
+//>	Not with Righteouesness - Not with Crusdaer - Not with Light
+//>	Target has Crusader
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+mana>6
+targethp<46
+distance<6
+havetarget
+!ismounted

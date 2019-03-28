@@ -1,0 +1,204 @@
+gcd:1875
+
+//cleanse
+cast:21
+!incombat
+cooldown:45000
+
+//drink
+use:drink
+mana<45
+channelingtime:20000
+cooldown:20000
+breakonfullmana
+breakoncombat
+!incombat
+!havetarget
+
+//rest for mana
+cast:20
+channelingtime:5000
+cooldown:7000
+breakonfullmana
+!incombat
+mana<40
+!havetarget
+level<20
+
+//auto attack to pull
+castspell:6603
+!autoattacking
+distance<5
+!incombat
+nogcd
+
+//auto attack
+castspell:6603
+!autoattacking
+distance<5
+incombat
+nogcd
+//*****Buffs*****//******
+
+//devotion aura
+castspell:465;10290;643;10291;1032;10292;10293
+selfbuff!465;10290;643;10291;1032;10292;10293;20218
+
+//blessing of might
+castspell:19740;19834;19835;19836;19837;19838;25291
+selfbuff!19740;19834;19835;19836;19837;19838;25291
+mana>75
+!incombat
+level>4
+
+//Blessing of Wisdom
+castspell:19742;19850;19852;19853;19854
+selfbuff!19742;19850;19852;19853;19854;19740;19834;19835;19836;19837;19838;25291
+mana<40
+!incombat
+level>14
+
+//divine protection
+castspell:498;5573
+selfbuff!498;5573;25771
+selfhp<10
+cooldown:300000
+level>4
+incombat
+
+//Blessing of Protection
+castspell:1022;5599;10278
+selfbuff!25771
+selfhp<10
+cooldown:300000
+level>10
+incombat
+
+//Divine Shield
+castspell:642;1020
+selfbuff!25771
+selfhp<10
+cooldown:300000
+level>34
+incombat
+
+//*****Heals*****//******
+
+//Lay on Hands
+castspell:633;2800;10310
+selfhp<10
+level>10
+incombat
+cooldown:1200000
+
+//Flash of Light
+castspell:19750;19939;19940;19941;19942;19943
+mana>7
+selfhp<25
+level>20
+incombat
+
+//holy light out of combat
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<80
+mana>17
+cooldown:4500
+!incombat
+
+//holy light in combat
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<75
+mana>17
+incombat
+cooldown:4500
+
+//seal of light
+castspell:20165;20347;20348;20349
+selfbuff!20165;20347;20348;20349
+selfhp<40
+incombat
+mana>10
+level>30
+
+//*****Pulls*****//*******
+
+//Seal of the Crusader before combat
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+distance<30
+mana>25
+havetarget
+level>5
+!incombat
+
+//seal of righteousness before combat
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293;21082;20162;20305;20306;20307;20308;20375;20915;20918;20919;20920
+havetarget
+distance<30
+mana>25
+!incombat
+level<6
+nogcd
+
+//judgement to pull
+castspell:20271
+selfbuff=21082;20162;20305;20306;20307;20308;20375;20915;20918;20919;20920
+cooldown:8350;1
+distance<10
+mana>25
+havetarget
+level>5
+!incombat
+nogcd
+
+//*****Attacks*****//********
+//judgement
+castspell:20271
+selfbuff=21084;20287;20288;20289;20290;20291;20292;20293;20375;20915;20918;20919;20920;21082;20162;20305;20306;20307;20308;20165;20347;20348;20349
+cooldown:8350;1
+distance<5
+mana>27
+level>4
+incombat
+nogcd
+
+//Seal of Command
+castspell:20375;20915;20918;20919;20920
+selfbuff!20375;20915;20918;20919;20920
+selfhp>40
+level>20
+incombat
+
+//hammer of wrath
+castspell:24239;24274;24275
+targethp<20
+distance<7
+mana>15
+incombat
+cooldown:6000
+level>36
+
+//Hammer of Justice
+castspell:853;5588;5589;10308
+distance<5
+cooldown:60000
+selfhp<25
+level>8
+incombat
+
+//seal of righteousness
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293;21082;20162;20305;20306;20307;20308;20375;20915;20918;20919;20920
+incombat
+level<20
+distance<5
+mana>25
+
+//auto attack
+castspell:6603
+!autoattacking
+distance<5
+incombat
+nogcd
+

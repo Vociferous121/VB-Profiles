@@ -1,0 +1,149 @@
+//*****Group Cooldowns*****//
+
+//1 is *Mind Blast* Group Cooldown
+//2 is *_* Group Cooldown
+//3 is *_* Group Cooldown
+//4 is *_* Group Cooldown
+//5 is *_* Group Cooldown
+//6 is _ Group Cooldown
+
+//*****Trigger Counts*****//
+//1 is *_* Trigger
+//2 is *_* Trigger
+//3 is _ Trigger
+//4 is _ Trigger
+//5 is _ Trigger
+//6 is _ Trigger
+
+gcd:1500
+
+//drink
+use:drink
+mana<45
+havetarget
+channelingtime:20000
+cooldown:20000
+breakonfullmana
+breakoncombat
+!incombat
+
+//*****BUFFS*****//*********
+//Inner Fire
+castspell:588;7128;602;1006;10951;10952
+selfbuff!588;7128;602;1006;10951;10952
+mana>30
+level>12
+!incombat
+
+//Power Word: Fortitude
+castspell:1243;1244;1245;2791;10937;10938
+selfbuff!1243;1244;1245;2791;10937;10938
+mana>30
+!incombat
+
+//Power Word: Shield
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!17;592;600;3747;6065;6066;10898;10899;10900;10901;6788
+havetarget
+level>6
+
+//*****HEALS*****//*********
+
+//Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfhp<25
+mana>10
+level>20
+incombat
+
+//Greater Heal
+castspell:2060;10963;10964;10965;25314
+selfhp<40
+mana>10
+level>39
+
+//Lesser Heal
+castspell:2050;2052;2053
+selfhp<50
+mana>10
+level<16
+level<20
+
+//Heal
+castspell:2054;2055;6063;6064
+selfhp<60
+mana>10
+level>16
+
+//Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfhp<80
+mana>10
+level>8
+
+//*****PULLS*****//**********
+
+//Smite to pull
+castspell:585;591;598;984;1004;6060;10933;10934
+distance<30
+havetarget
+!incombat
+level<20
+
+//holy fire to pull
+castspell:14914;15262;15263;15264;15265;15266;15267;15261
+targetbuff!14914;15262;15263;15264;15265;15266;15267;15261
+distance<30
+havetarget
+!incombat
+cooldown:10000
+level>20
+
+//*****IN COMBAT*****//*********
+
+//Fear combatcount>1
+castspell:8122;8124;10888;10890
+combatcount>1
+mana>15
+cooldown:30000
+incombat
+
+//Shadow Word: Pain
+castspell:589;594;970;992;2767;10892;10893;10894
+targetbuff!589;594;970;992;2767;10892;10893;10894
+targethp>20
+mana>10
+distance<30
+incombat
+level>4
+
+//Mind Blast on SWP
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+targetbuff=589;594;970;992;2767;10892;10893;10894
+mana>10
+distance<30
+incombat
+cooldown:8000;1
+level>10
+
+//Mind Blast
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+mana>10
+distance<30
+incombat
+cooldown:8000;1
+level>10
+
+//Smite incombat
+castspell:585;591;598;984;1004;6060;10933;10934
+mana>40
+distance<30
+incombat
+cooldown:5000
+
+//Wand Attack
+castspell:5019
+distance<30
+!wandcasting
+incombat

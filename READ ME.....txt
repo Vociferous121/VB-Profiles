@@ -1,0 +1,15 @@
+Farming profiles for 2018 and lower are all named and will not be changed.
+
+Farming profiles for 2019 and beyond are number. They correspond with the level of the area.
+
+Example... Un'Goro (2019) is ~ 49-52. Un'Goro 1 (2019) is ~ 51-55. And so on
+
+Death and Vendor waypoints are added as needed.
+
+Any farming profile with a '0' ( example: WPL 01 (2019) or Un'Goro 03 (2019) ) are not finished!
+They do not work properly or you will die often!
+
+
+
+Combat profiles for 2019 and beyond have INSTRUCTIONS at the top of each profile!
+You'd be wise to read...

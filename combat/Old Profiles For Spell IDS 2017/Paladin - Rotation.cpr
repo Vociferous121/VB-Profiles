@@ -1,0 +1,230 @@
+GCD:1600
+
+//**||| Group Cooldowns/Shared Cooldowns |||**\\
+
+//**|| CoolDown #1	-	Judgement  	  ||**\\
+//**|| CoolDown #2	-	Seals	  	  ||**\\
+//**|| CoolDown #3	-	Holy Light 	  ||**\\
+//**|| CoolDown #4	-	Hammer of Justice ||**\\
+
+// ||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// || List Of Spells In Order || \\
+
+// | Devotion Aura
+// | Blessing of Might
+// | Holy Light out of combat
+// | Holy Light in combat
+// | Divine Protection
+// | Auto Attack
+// | Low Mana - Level 1-6
+// | Drink - Level 6-60
+// | Seal of Righteousness
+// | Judgement - Seal of the Righteousness
+
+// ||| Levels 6-10 ||| \\
+
+// | Seal of the Crusader
+// | Judgement - Seal of the Crusader
+// | Seal of Righteousness - Will not activate if Seal of the Crusader is active
+// | Judgement - Seal of Righteousness
+// | Hammer of Justice
+
+// ________________________________________________ \\
+//						    \\
+//		       Made   By		    \\
+//			GARBEAR		       	    \\
+//__________________________________________________\\
+
+
+// ||| Devotion Aura ||| \\
+CastSpell:465;10290;643;10291;1032;10292;10293
+SelfBuff!465;10290;643;10291;1032;10292;10293
+Level>2
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Blessing Of Might ||| \\
+CastSpell:19740;19834;19835;19836;19837;19838;25291
+SelfBuff!19740;19834;19835;19836;19837;19838;25291
+Mana>30
+Level>4
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Holy Light ||| \\
+CastSpell:635;639;647;1026;1042;3472;10328;10329;25292
+SelfHP<88
+Mana>25
+!InCombat
+CoolDown:5000;3
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Holy Light ||| \\
+CastSpell:635;639;647;1026;1042;3472;10328;10329;25292
+SelfHP<58
+Mana>25
+InCombat
+CoolDown:5000;3
+
+// ||| Divine Protection ||| \\
+CastSpell:498;5573
+SelfBuff!498;5573;25771
+SelfHP<10
+Mana<5
+CoolDown:3000000
+InCombat
+Level>6
+
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+
+// |||  Auto Attack ||| \\
+CastSpell:6603
+!AutoAttacking
+Distance<4
+HaveTarget
+NoGCD
+
+// ||| Low Mana ||| \\
+Cast:29
+Mana<75
+ChannelingTime:4218
+Cooldown:8000
+BreakOnCombat
+BreakOnFullMana
+!InCombat
+!HaveTarget
+Level<5
+
+// ||| Drink ||| \\
+Use:Drink
+Mana<40
+Channelingtime:20000
+CoolDown:21000
+BreakOnCombat
+BreakOnFullMana
+!InCombat
+HaveTarget
+Level>6
+
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+
+// ||| Seal of Righteousness ||| \\ 	(	Always active below level 6	)
+CastSpell:21084;20287;20288;20289;20290;20291;20292;20293
+SelfBuff!21084;20287;20288;20289;20290;20291;20292;20293
+Mana>10
+Distance<15
+HaveTarget
+NoGCD
+Cooldown:500;2
+Level<5
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Judgement ||| \\		 (	Seal of Righteousness	)
+CastSpell:20271
+SelfBuff=21084;20287;20288;20289;20290;20291;20292;20293
+HaveTarget
+Mana>2
+Distance<10
+NoGCD
+CoolDown:11000;1
+Level>2
+Level<5
+
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+
+// ||||||||||||| Level>6||||||||||||| \\
+
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+
+// ||| Seal of the Crusader ||| \\
+CastSpell:21082;20162;20305;20306;20307;20308
+SelfBuff!21082;20162;20305;20306;20307;20308
+Mana>20
+Distance<15
+HaveTarget
+!InCombat
+NoGCD
+CoolDown:500;2
+Level>6
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Judgement ||| \\ 	(	Seal of Crusader	)
+CastSpell:20271
+SelfBuff=21082;20162;20305;20306;20307;20308
+HaveTarget
+Mana>2
+Distance<10
+NoGCD
+CoolDown:11000;1
+Level>6
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Seal of Righteousness ||| \\ 	(	Always active in combat above level 6	)
+CastSpell:21084;20287;20288;20289;20290;20291;20292;20293
+SelfBuff!21084;20287;20288;20289;20290;20291;20292;20293;21082;20162;20305;20306;20307;20308
+Mana>10
+Distance<15
+HaveTarget
+InCombat
+NoGCD
+Cooldown:500;2
+Level>6
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Judgement ||| \\		(	Seal of Righteousness	)
+CastSpell:20271
+SelfBuff=21084;20287;20288;20289;20290;20291;20292;20293
+HaveTarget
+Mana>2
+Distance<10
+NoGCD
+CoolDown:11000;1
+Level>6
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Hammer of Justice ||| \\		(	Used when enemy attmpts to run away	)
+CastSpell:853;5588;5589;10308
+HaveTarget
+Distance>8
+Distance<10
+TargetHP<25
+CoolDown:61500;4
+InCombat
+Level>8
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Hammer of Justice ||| \\		(	Used when Player has low health		)
+CastSpell:853;5588;5589;10308
+HaveTarget
+Distance<7
+SelfHP<25
+CoolDown:61500;4
+InCombat
+Level>8
+
+// |||||||||||||||||||||||||||||||||||||||||||||||| \\
+
+// ||| Hammer of Justice ||| \\		(	Random chance to stun		)
+CastSpell:853;5588;5589;10308
+HaveTarget
+Chance:16
+Distance<7
+CoolDown:61500;4
+InCombat
+Level>8

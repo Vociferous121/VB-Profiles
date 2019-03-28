@@ -1,0 +1,73 @@
+GCD:1500
+
+//>Use Food - Health
+Use:Food
+SelfHP<75
+Triggers:1
+CoolDown:3000
+!InCombat
+
+//>Use Drink - Auto Trigger Drink
+Use:Drink
+SelfBuff!430;431;432;1133;1135;1137
+TriggeredBy:1
+CoolDown:10000
+ChannelingTime:30000
+BreakOnCombat
+BreakOnFullHP
+NoStand
+!InCombat
+
+//>Use Drink - Mana
+Use:Drink
+SelfBuff!430;431;432;1133;1135;1137
+Mana<60
+Triggers:2
+CoolDown:3000
+NoStand
+!InCombat
+
+//>Use Food - Auto Trigger Food
+Use:Food
+TriggeredBy:2
+CoolDown:10000
+ChannelingTime:30000
+BreakOnCombat
+BreakOnFullMana
+NoStand
+!InCombat
+
+//>Life Tap
+CastSpell:1454;1455;1456;11687;11688;11689
+SelfHP>80
+Mana<80
+!InCombat
+
+//>Demon Skin
+CastSpell:687;696;706;1086;11733;11734;11735
+SelfBuff!687;696;706;1086;11733;11734;11735
+Mana>50
+
+//>Shadow Bolt
+CastSpell:686;695;705;1088;1106;7641;11659;11660;11661;25307
+Mana>30
+Distance<30
+
+//>Immolate - [Level 2]
+CastSpell:348;707;1094;2941;11665;11667;11668;25309
+TargetBuff!348;707;1094;2941;11665;11667;11668;25309
+Mana>30
+Distance<30
+
+//>Corruption - [Level - 4]
+CastSpell:172;6222;6223;7648;11671;11672;25311
+TargetBuff!172;6222;6223;7648;11671;11672;25311
+Mana>35
+Distance<30
+TargetHP>25
+
+//>AutoAttack Melee
+CastSpell:6603
+!AutoAttacking
+Distance<5
+NoGCD

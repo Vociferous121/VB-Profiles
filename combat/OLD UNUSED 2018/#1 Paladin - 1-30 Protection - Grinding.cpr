@@ -1,0 +1,215 @@
+gcd:1500
+
+//>	Group Cooldownds
+//>	1 - Hammer of Justice
+//>	2 - Judgement
+
+//>Drink for Mana
+use:drink
+mana<25
+!incombat
+channelingtime:21000
+cooldown:3500
+breakoncombat
+breakonfullmana
+nogcd
+nostand
+Level>10
+
+//>Drink for Mana
+use:drink
+mana<51
+meleepullcount>1
+!incombat
+channelingtime:21000
+cooldown:3500
+breakoncombat
+breakonfullmana
+nogcd
+Level>10
+
+//>Rest
+cast:21
+mana<25
+channelingtime:10000
+cooldown:30000
+!incombat
+breakoncombat
+breakonfullmana
+level<10
+
+//>Devotion Aura
+castspell:465;10290;643;10291;1032;10292;10293
+selfbuff!465;10290;643;10291;1032;10292;10293
+level>2
+
+//Flash of Light
+castspell:19750;19939;19940;19941;19942;19943
+mana>8
+selfhp<40
+level>20
+incombat
+
+//>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<78
+mana>23
+!incombat
+cooldown:2800
+
+//>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<68
+mana>23
+combatcount>1
+cooldown:2800
+
+//>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<51
+mana>23
+incombat
+cooldown:2800
+
+//~>Blessing of Sanctuary
+castspell:20911;20912;20913;20914
+selfbuff!20911;20912;20913;20194
+mana>10
+cooldown:2500
+level>30
+
+//~>Blessing of Kings
+castspell:20217
+selfbuff!20217
+mana>10
+cooldown:7500
+level>20
+level<30
+
+//Blessing of Wisdom
+//>Not with Might or kings
+castspell:19742;19850;19852;19853;19854
+selfbuff!19742;19850;19852;19853;19854
+selfbuff!20217
+mana<51
+!incombat
+level>14
+
+//>Blessing of Might
+//>Not with Wisdom or kings
+castspell:19740;19834;19835;19836;19837;19838;25291
+selfbuff!19740;19834;19835;19836;19837;19838;25291
+selfbuff!19742;19850;19852;19853;19854
+selfbuff!20217
+mana>35
+level>4
+
+//~>Blessing of Might
+//>With Wisdom or kings
+castspell:19740;19834;19835;19836;19837;19838;25291
+selfbuff!19740;19834;19835;19836;19837;19838;25291
+selfbuff!20217
+mana>85
+level>14
+
+//>Purify
+cast:10
+selfbuff=3150;3427;17230;7102;8139
+mana>15
+cooldown:10000
+
+//>Divine Protection
+castspell:498;5573
+selfbuff!498;5573;2577
+selfhp<12
+incombat
+cooldown:300000
+level>8
+
+//>Lay on Hands
+castspell:633;2800;10310
+selfhp<5
+cooldown:360000000
+incombat
+level>20
+
+//~>Stone Form (Dwarf Racial)
+castspell:20594;20612
+combatcount>1
+cooldown:180000
+incombat
+
+//~>Seal Then Judge - meleepullcount>!
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+distance<10
+meleepullcount>1
+triggers:1
+cooldown:11000
+
+//~>Triggered 2
+castspell:20271
+selfbuff=21082;20162;20305;20306;20307;20308
+distance<10
+triggeredby:1
+backpedal:2000
+//>Hammer of Justice
+castspell:853;5588;5589;10308
+distance<5
+targethp<20
+mana>15
+cooldown:60000;1
+level>8
+
+//>Hammer of Justice
+castspell:853;5588;5589;10308
+distance<5
+combatcount>1
+incombat
+mana>15
+cooldown:60000;1
+level>8
+
+//>Judgement - crusader - righteousness - light
+castspell:20271
+selfbuff=21082;20162;20305;20306;20307;20308;21084;20287;20288;20289;20290;20291;20292;20293
+mana>12
+targethp>10
+distance<5
+cooldown:10755
+
+//>Seal of the Crusader
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+targetbuff!21183;20188;20300;20301;20302
+havetarget
+mana>10
+distance<5
+backpedal:0324
+
+//Seal of Righteousness
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293;21082;20162;20305;20306;20307;20308
+targetbuff=21183;20188;20300;20301;20302
+mana>10
+distance<5
+havetarget
+backpedal:0124
+
+//~>Exorcism
+//castspell:879
+//targetbuff=21183;20188;20300;20301;20302
+//selfbuff=21084;20287;20288;20289;20290;20291;20292;20293
+//autoattacking
+//mana>15
+//cooldown:15354
+//backpedal:0549
+
+//>Auto Attack
+castspell:6603
+!autoattacking
+nogcd
+distance<4
+
+///////////////////////////////////
+//////////////////////////////////

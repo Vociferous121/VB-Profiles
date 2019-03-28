@@ -1,0 +1,73 @@
+GCD:1050
+
+//>
+//>	Keep It Simple, Stupid!
+//>
+
+//>Stealth - [Level 2]
+CastSpell:1784;1785;1786;1787
+SelfBuff!1784;1785;1786;1787
+CoolDown:10000
+!InCombat
+NoGCD
+Level>2
+
+//>Auto Attack
+CastSpell:6603
+SelfBuff!1784;1785;1786;1787
+Distance<5
+!AutoAttacking
+NoGCD
+
+//>Auto Attack (Stealth Low Level) - [Level 2]
+CastSpell:6603
+SelfBuff=1784;1785;1786;1787
+Distance<5
+!AutoAttacking
+NoGCD
+
+//>Eviscerate & 2
+CastSpell:2098;6760;6761;6762;8623;8624;11299;11300
+Energy>35
+Distance<5
+ComboPoints>1
+TargetHp<15
+
+//>Eviscerate & 3
+CastSpell:2098;6760;6761;6762;8623;8624;11299;11300
+Energy>35
+Distance<5
+ComboPoints>2
+TargetHP<30
+
+//>Eviscerate & 4
+CastSpell:2098;6760;6761;6762;8623;8624;11299;11300
+Energy>35
+Distance<5
+ComboPoints>3
+TargetHP<45
+
+//>Eviscerate & 5
+CastSpell:2098;6760;6761;6762;8623;8624;11299;11300
+Energy>35
+Distance<5
+ComboPoints>4
+
+//>Sinister Strike
+CastSpell:1752;1757;1758;1759;1760;8621;11293;11294
+SelfBuff!1784;1785;1786;1787
+Energy>45
+Distance<5
+ComboPoints<5
+InCombat
+
+//>Gouge - [Level 6]
+//>Casts when Player has low health
+CastSpell:1776;1777;8629;11285;11286
+SelfBuff!1784;1785;1786;1787
+Energy>45
+Distance<5
+SelfHP<15
+CoolDown:10000
+InCombat
+Level>6

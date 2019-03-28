@@ -1,0 +1,83 @@
+gcd:1525
+
+//>Devotion Aura
+castspell:465;10290;643;10291;1032;10292;10293
+selfbuff!465;10290;643;10291;1032;10292;10293
+level>2
+
+//Flash of Light
+castspell:19750;19939;19940;19941;19942;19943
+mana>8
+mana<23
+selfhp<40
+level>20
+
+//>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<56
+mana>23
+incombat
+
+//~>Blessing of Kings
+castspell:20217
+selfbuff!20217
+mana>10
+cooldown:7500
+level>20
+
+//>Divine Protection
+castspell:498;5573
+selfbuff!498;5573;2577
+selfhp<12
+incombat
+cooldown:300000
+level>8
+
+//~>Stone Form (Dwarf Racial)
+castspell:20594;20612
+combatcount>1
+cooldown:180000
+incombat
+
+//>Hammer of Justice
+castspell:853;5588;5589;10308
+distance<5
+combatcount>1
+incombat
+mana>15
+cooldown:60000;1
+level>8
+
+//>Judgement - crusader
+castspell:20271
+selfbuff=21082;20162;20305;20306;20307;20308;21084;20287;20288;20289;20290;20291;20292;20293
+mana>12
+targethp>10
+distance<10
+cooldown:10755
+nogcd
+
+//>Seal of the Crusader
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+targetbuff!21183;20188;20300;20301;20302
+havetarget
+mana>10
+distance<30
+
+//Seal of Righteousness
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293;21082;20162;20305;20306;20307;20308
+targetbuff=21183;20188;20300;20301;20302
+mana>10
+distance<5
+havetarget
+
+//>Auto Attack
+castspell:6603
+!autoattacking
+nogcd
+distance<6
+
+///////////////////////////////////
+//////////////////////////////////

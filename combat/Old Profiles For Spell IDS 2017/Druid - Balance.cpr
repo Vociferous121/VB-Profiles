@@ -1,0 +1,179 @@
+//Balance Druid Profile 
+//Talents - http://www.wowprovider.com/?talent=11215875_11_85c3503302551351q5005l
+
+//made by aoelus!
+
+gcd:1500
+
+//Drink Water
+use:drink
+mana<40
+channelingtime:25000
+breakoncombat
+!incombat
+afterloot
+breakonfullmana
+
+
+// - - - - - SHAPESHIFT CANCEL - - - - -
+
+//Cancel Moonkin Form (OOC)
+//used to re-apply MotW / Heal
+castspell:24858
+selfbuff=24858
+selfbuff!1126;5232;6756;5234;8907;9884;9885;24858
+mana>10
+selfhp<81
+!incombat
+
+//Cancel Moonkin Form (Combat)
+//In emergency only - put Barkskin on before leaving
+castspell:22812
+selfbuff=24858
+selfhp<40
+mana>10
+triggers:1
+nogcd
+incombat
+//now leave Moonkin Form
+castspell:24858
+selfbuff=24858
+triggeredby:1
+incombat
+
+
+// - - - - - BUFFS - - - - -
+
+//Mark of the Wild (OOC)
+castspell:1126;5232;6756;5234;8907;9884;9885
+selfbuff!1126;5232;6756;5234;8907;9884;9885;24858
+mana>5
+!incombat
+
+//Thorns (OOC)
+castspell:467;782;1075;8914;9756;9910
+selfbuff!467;782;1075;8914;9756;9910
+mana>5
+!incombat
+
+
+// - - - - - DEFENSIVE - - - - -
+
+//Rejuvenation (OOC)
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;24858
+channelingtime:12000
+breakoncombat
+selfhp<81
+cooldown:4000
+!incombat
+
+//Use Mana Potion (Combat)
+use:mana potion
+mana<20
+selfhp<50
+targethp>20
+cooldown:120000
+incombat
+
+//Use Healing Potion (Combat)
+use:healing potion
+selfhp<10
+targethp>30
+cooldown:120000
+incombat
+
+//Regrowth (Combat)
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858;24858
+selfhp<40
+mana>19
+cooldown:4000
+incombat
+
+//Rejuvenation (Combat)
+//Only happens with Regrowth active
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;24858
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfhp<50
+mana>9
+cooldown:6000
+incombat
+
+//Healing Touch (Combat)
+//Very low HP only
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!24858
+selfhp<25
+mana>24
+incombat
+
+//Innervate (Combat)
+//Only when you can't heal because of low mana
+castspell:29166
+selfbuff!24858
+mana<10
+cooldown:360000
+incombat
+
+
+// - - - - - OFFENSIVE - - - - -
+
+//Turn attack on (maybe out of mana, better than nothing...)
+castspell:6603
+!autoattacking
+distance<15
+nogcd
+incombat
+
+//Starfire
+castspell:2912;8949;8950;8951;9875;9876;25298
+selfbuff=24858
+targethp>80
+mana>9
+cooldown:6000
+distance<37
+havetarget
+
+//Moonfire
+castspell:8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+targetbuff!8921;8924;8925;8926;8927;8928;8929;9833;9834;9835
+selfbuff=24858
+targethp>9
+mana>9
+cooldown:3000
+distance<37
+incombat
+
+//Entangling Roots
+castspell:339;1062;5195;5196;9852;9853
+targetbuff!339;1062;5195;5196;9852;9853
+targethp>14
+distance>7
+distance<37
+incombat
+
+//Wrath
+castspell:5176;5177;5178;5179;5180;6780;8905;9912
+selfbuff=24858
+mana>4
+distance<36
+incombat
+
+
+// - - - - - SHAPESHIFT - - - - -
+
+//Moonkin Form (OOC)
+castspell:24858
+selfbuff!24858
+mana>10
+selfhp>80
+!incombat
+
+//Moonkin Form (Combat)
+castspell:24858
+selfbuff!24858
+mana>10
+selfhp>39
+incombat

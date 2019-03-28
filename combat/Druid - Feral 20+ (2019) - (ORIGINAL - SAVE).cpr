@@ -1,0 +1,295 @@
+NOT FOR USE
+PROFILE IS A TEMPLATE
+PROFILE HAS BUGS
+DO NOT USE!
+
+
+//~~~~~~>>	Druid - Feral	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger 1	-	Out of cat form to drink for mana
+//
+//	Trigger 2	-	Out of cat form to heal in combat
+//	Trigger 3	-	Regrowth
+//	Trigger 4	-	rejuvenation
+//	Trigger 5	-	Cat form
+//
+//	Trigger 6	-	Out of cat cat form to cast buffs
+//	Trigger 7	-	Thorns
+//	Trigger 8 	-	Mark of the Wild
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+//Cat Form
+//768;3025
+//Bear Form
+//
+///////////////////////////////////////////////
+
+
+gcd:1600
+
+//~~~~~~~~>>Food & Drink
+
+//Out of Cat form to drink
+castspell:768;3025
+selfbuff=768;3025
+!havetarget
+mana<31
+!incombat
+triggers:1
+channelingtime:1750
+cooldown:10000
+
+//Drink
+//	Triggered while in cat form
+use:drink
+selfbuff!768;3025
+triggeredby:1
+!havetarget
+channelingtime:21000
+cooldown:2500
+!incombat
+breakoncombat
+breakonfullmana
+
+//Drink if not in Cat form
+use:drink
+selfbuff!768;3025
+mana<31
+channelingtime:21000
+cooldown:2500
+!incombat
+breakoncombat
+breakonfullmana
+
+//~~~~~~~~>>Buffs
+
+//Mark of the Wild
+//	Not in cat form
+castspell:1126;5232;6756;5234;8907;9884;9885
+selfbuff!1126;5232;6756;5234;8907;9884;9885
+selfbuff!768;3025
+!incombat
+mana>51
+cooldown:1500
+
+//Thorns
+//	Not in cat form
+castspell:467;782;1075;8914;9756;9910
+selfbuff!467;782;1075;8914;9756;9910
+selfbuff!768;3025
+!incombat
+mana>51
+cooldown:1500
+
+//~~~~~~~~>>Buffs In Cat Form
+
+//Cat form > Thorns
+selfbuff=768;3025
+selfbuff!467;782;1075;8914;9756;9910
+triggers:5
+mana>51
+!incombat
+
+//Thorns
+//	Triggered from cat form > thorns
+castspell:467;782;1075;8914;9756;9910
+selfbuff!467;782;1075;8914;9756;9910
+selfbuff!768;3025
+triggeredby:5
+triggers:6
+
+//Mark of the Wild
+//	Triggered from Thorns
+castspell:1126;5232;6756;5234;8907;9884;9885
+selfbuff!1126;5232;6756;5234;8907;9884;9885
+selfbuff!768;3025
+triggeredby:6
+
+//Tiger's Fury
+//	Always active
+castspell:5217;6793;9845;9846
+selfbuff!5217;6793;9845;9846
+selfbuff=768;3025
+incombat
+energy>30
+autoattacking
+cooldown:1000
+nogcd
+
+//~~~~~~~~>>Heals
+
+//Regrowth
+//	Not in cat form
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!768;3025
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfhp<56
+mana>21
+triggers:7
+cooldown:2200
+
+//Rejuvenation
+//	Not in cat form
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!768;3025
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfhp<71
+mana>16
+triggeredby:7
+
+//Rejuvenation
+//	Not in cat form
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!768;3025
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfhp<71
+mana>16
+cooldown:2200
+
+//Healing Touch
+//	Not in cat form
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!768;3025
+selfhp<41
+mana>21
+cooldown:2200
+
+//~~~~~~~~>>Heals In Cat Form
+
+//Cat form > Regrowth
+//	Cast cat form
+castspell:768;3025
+selfbuff=768;3025
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+triggers:2
+selfhp<51
+cooldown:2200
+
+//Regrowth
+//	Triggered from cat form > regrowth
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!768;3025
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+triggeredby:2
+triggers:3
+
+//Rejuvenation
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!768;3025
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+triggeredby:3
+triggers:4
+
+//Rejuvenation > Cat form
+//	Triggered from regrowth > rejuvenation
+castspell:768;3025
+selfbuff!768;3025
+selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+triggeredby:4
+backpedal:0352
+
+//~~~~~~~~>>Cat Form Attacks
+
+//Auto Attack
+castspell:6603
+selfbuff=768;3025
+!autoattacking
+distance<5
+!incombat
+nogcd
+
+//Auto Attack
+castspell:6603
+selfbuff=768;3025
+!autoattacking
+distance<5
+incombat
+nogcd
+
+//Rake
+castspell:1822;1823;1824;9904
+targetbuff!1822;1823;1824;9904
+selfbuff=768;3025
+energy>35
+incombat
+distance<5
+cooldown:1000
+
+//Rip
+castspell:1079;9492;9493;9752;9894;9896
+targetbuff!1079;9492;9493;9752;9894;9896
+selfbuff=768;3025
+combopoints>2
+energy>30
+distance<5
+incombat
+autoattacking
+
+//Claw
+castspell:1082;3029;5201;9849;9850
+targetbuff=1822;1823;1824;9904
+selfbuff=768;3025
+energy>40
+distance<5
+incombat
+autoattacking
+
+//~~~~~~~~>>Bear Form
+
+//Auto Attack
+castspell:6603
+selfbuff!768;3025
+!autoattacking
+distance<5
+incombat
+nogcd
+
+//~~~~~~~~>>Forms
+
+//Cat Form
+//	Have target not in combat
+castspell:768;3025
+selfbuff!768;3025
+havetarget
+!incombat
+mana>20
+cooldown:1000
+
+//Cat Form
+//	Caught in combat
+castspell:768;3025
+selfbuff!768;3025
+havetarget
+incombat
+mana>20
+cooldown:1000
+backpedal:0623
+
+//~~~~~~~~>>Other ~~~ To Do / Notes

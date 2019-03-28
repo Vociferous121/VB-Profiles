@@ -1,0 +1,324 @@
+gcd:1500
+
+//~>.save
+cast:50
+selfbuff=465;10290;643;10291;1032;10292;10293
+!incombat
+cooldown:150000
+
+//~>Cleanse
+//>...Spell...
+//>Infected Bite??? selfbuff=7367;16128;24339
+cast:19
+selfbuff=8139
+cooldown:20000
+!ismounted
+
+//~>Devotion Aura
+castspell:465;10290;643;10291;1032;10292;10293
+selfbuff!465;10290;643;10291;1032;10292;10293
+!ismounted
+
+//~>Drink
+use:drink
+mana<31
+channelingtime:24000
+cooldown:5000
+breakoncombat
+breakonfullmana
+!incombat
+nostand
+nogcd
+!ismounted
+
+//~>Drink meleepullcount>1
+use:drink
+mana<56
+channelingtime:24000
+cooldown:5000
+breakoncombat
+breakonfullmana
+meleepullcount>1
+distance>29
+!incombat
+nostand
+nogcd
+!ismounted
+
+//~>Lay on Hands
+castspell:633;2800;10310
+selfhp<7
+cooldown:3605000
+incombat
+!ismounted
+
+//~>Divine Protection
+//>	Not with Divine Protection or Forbearance
+castspell:498;5573
+selfbuff!498;5573
+selfbuff!2577
+selfhp<17
+cooldown:305000
+incombat
+level<40
+!ismounted
+
+//~>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<50
+mana>22
+combatcount<2
+cooldown:6000
+!ismounted
+
+//~>Holy Light
+castspell:635;639;647;1026;1042;3472;10328;10329;25292
+selfhp<61
+combatcount>1
+mana>22
+cooldown:7500
+!ismounted
+
+//~>Flash of Light - Low Mana
+castspell:19750;19939;19940;19941;19942;19943
+selfhp<31
+mana<23
+mana>6
+incombat
+!ismounted
+
+//~>Flash of Light - Low Mana
+castspell:19750;19939;19940;19941;19942;19943
+selfhp<85
+mana>26
+addcount>1
+!ismounted
+
+//~>Flash of Light
+castspell:19750;19939;19940;19941;19942;19943
+selfhp<82
+mana>26
+!incombat
+!ismounted
+
+//~>Stone Form (Dwarf Racial)
+castspell:20594;20612
+combatcount>1
+cooldown:180000
+incombat
+!ismounted
+
+//~>Blessing of Wisdom
+//>	Not with Wisdom or Sanctuary
+castspell:19742;19850;19852;19853;19854
+selfbuff!19742;19850;19852;19853;19854
+selfbuff!20217
+cooldown:2500
+!ismounted
+
+//~>Blessing of Sanctuary
+//>	Not with Sanctuary or Wisdom
+//castspell:20911;20912;20913;20914
+//selfbuff!20911;20912;20913;20194
+//mana>51
+//cooldown:2500
+//combatcount>1
+//!ismounted
+
+//KNGS
+//castspell:20217
+//selfbuff!20217
+//selfbuff!20911;20912;20913;20914
+//cooldown:2500
+//incombat
+
+//KNGS
+//castspell:20217
+//selfbuff!20217
+//cooldown:2500
+//!incombat
+
+//~>Mount
+castspell:13819
+selfbuff!13820
+selfhp>80
+mana>80
+!incombat
+!havetarget
+cooldown:15000
+channelingtime:3800
+!ismounted
+level>59
+
+//~>Unmount
+castspell:13819
+selfbuff=13819
+incombat
+cooldown:2500
+ismounted
+level>40
+
+//~>Unmount
+castspell:13819
+selfbuff=13819
+havetarget
+targethp>1
+cooldown:2500
+ismounted
+level>40
+
+/////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+
+//~~~>>>Seal of Light ||	selfbuff!20165;20347;20348;20349
+//~~~>>>Judgement of Light ||	targetbuff!20167;20333;20334;20340
+//~~~>>>Judgemnent of the Crusader ||	targetbuff!21183;20188;20300;20301;20302
+
+//~>Seal of Wisdom
+castspell:20166;20356;20357
+selfbuff!20166;20356;20357
+combatcount>1
+mana<46
+distance<6
+havetarget
+incombat
+!ismounted
+
+//~>Seal of Wisdom
+castspell:20166;20356;20357
+selfbuff!20166;20356;20357
+mana<16
+incombat
+distance<6
+havetarget
+!ismounted
+
+//~>Judgement - Crusader
+//>	Player has Crusader - Target does NOT
+//>Not with light
+//>Not with wisdom
+castspell:20271
+selfbuff=21082;20162;20305;20306;20307;20308
+targetbuff!21183;20188;20300;20301;20302
+targetbuff!20167;20333;20334;20340
+targetbuff!20186;20268;20352;20354;20353;20355
+cooldown:10750;1
+mana>21
+distance<5
+targethp>41
+!ismounted
+
+//~>Judgement - Righteousness
+//>	Player has Righteousness - Target has Crusader
+castspell:20271
+selfbuff=21084;20287;20288;20289;20290;20291;20292;20293
+targetbuff=21183;20188;20300;20301;20302
+cooldown:25000
+mana>36
+distance<5
+targethp>26
+!ismounted
+
+//~>Judgement Light + Wisdom
+castspell:20271
+targetbuff!20167;20333;20334;20340
+targetbuff!20186;20268;20352;20354;20353;20355
+selfbuff=20165;20347;20348;20349
+selfbuff=20166;20356;20357
+cooldown:10750;1
+mana>11
+distance<5
+targethp>21
+!ismounted
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+incombat
+nogcd
+!ismounted
+
+//~>Seal of the Crusader
+//>	Not if Player or Target has Crusader - Not With light
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+targetbuff!21183;20188;20300;20301;20302
+mana>6
+distance<26
+targethp>51
+havetarget
+castonce
+!ismounted
+
+//~>Seal of the Crusader
+//>	Not if Player or Target has Crusader - Not With light
+castspell:21082;20162;20305;20306;20307;20308
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+targetbuff!21183;20188;20300;20301;20302
+mana>6
+distance<26
+targethp>51
+havetarget
+castonce
+!ismounted
+
+//~>Seal of Light
+//>	Not with Seal of Light - Not WITHOUT Crusader on Target
+//>	Selfhp<76
+castspell:20165;20347;20348;20349
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+combatcount>2
+mana>16
+distance<6
+havetarget
+!ismounted
+
+//~>Seal of Righteousness
+//>	Not with Righteouesness - Not with Crusdaer - Not with Light
+//>	Target has Crusader
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+targetbuff=21183;20188;20300;20301;20302
+mana>6
+distance<6
+havetarget
+!ismounted
+
+//~>Hammer of Justice
+castspell:853;5588;5589;10308
+distance<7
+combatcount>1
+mana>19
+cooldown:60000
+incombat
+!ismounted
+
+//~>Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+nogcd
+!ismounted
+
+//~>Seal of Righteousness
+//>	Not with Righteouesness - Not with Crusdaer - Not with Light
+//>	Target has Crusader
+castspell:21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21084;20287;20288;20289;20290;20291;20292;20293
+selfbuff!21082;20162;20305;20306;20307;20308
+selfbuff!20165;20347;20348;20349
+selfbuff!20166;20356;20357
+mana>6
+targethp<46
+distance<6
+havetarget
+!ismounted

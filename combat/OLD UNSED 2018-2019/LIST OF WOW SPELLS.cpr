@@ -1,0 +1,159 @@
+gcd:1500
+//~~~~~~~~>Food Drink Potion Consumable
+Use Drink
+
+Use Food
+
+Use Drink Then Food
+
+Use Food Then Drink
+
+Use Health Potion
+
+Use Mana Potion
+
+Use Healthstone
+
+Use Mana Gem
+
+Elixir of Minor Agility
+2457
+level>2
+
+Elixir of Lesser Agility 
+3390 
+level>18
+
+Elixir of Agility 
+8949 
+level>27
+
+Elixir of Greater Agility
+9187
+level>38
+
+Elixir of Lion's Strength 
+2454
+
+Elixir of Ogre's Strength
+3391 
+level>20
+
+Elixir of Minor Fortitude
+2458
+level>2
+
+Elixir of Fortitude 
+3825 
+level>25
+
+Elixir of the Sages
+13447
+level>44
+
+Scroll of Agility 1 
+3012 
+level>10
+
+Scroll of Agility 2 
+1477 
+level>25
+
+Scroll of Agility 3 
+4425
+level>40
+
+Scroll of Agility 4 
+10309 
+level>55
+
+Scroll of Strength 1 
+954
+level>10
+
+Scroll of Strength 2
+2289 
+level>25
+
+Scroll of Strength 3
+4426
+level>40
+
+Scroll of Strength 4
+10310
+level>55
+
+Scroll of Stamina 1 
+1180
+level>5
+
+Scroll of Stamina 1 
+1711
+level>20
+
+Scroll of Stamina 1 
+4422
+level>35
+
+Scroll of Stamina 1 
+10307
+level>50
+
+Scroll of Intellect 1 
+955
+level>5
+
+Scroll of Intellect 2 
+2290
+level>20
+
+Scroll of Intellect 3 
+4419
+level>35
+
+Scroll of Intellect 4 
+10308
+level>50
+
+Scroll of Protection 1
+3013
+
+Scroll of Protection 2
+1478
+level>15
+
+Scroll of Protection 3
+4421
+level>30
+
+Scroll of Protection 4
+10305
+level>45
+
+Scroll of Spirit 1 
+1181
+
+Scroll of Spirit 2 
+1712
+level>15
+
+Scroll of Spirit 3 
+4424 
+level>30
+
+Scroll of Spirit 4 
+10306 
+level>45
+
+
+
+
+//~~~~~~~~>Debuff Removal
+//~~~~~~~~>Buffs Out of Combat
+//~~~~~~~~>Buffs In Combat
+//~~~~~~~~>Before Combat
+//~~~~~~~~>Crowd Control
+Start Combat
+//~~~~~~~~>In Combat Player Low Health
+//~~~~~~~~>In Combat
+//~~~~~~~~>Other ~~~ To Do / Notes

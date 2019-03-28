@@ -1,0 +1,63 @@
+gcd:1600
+
+//~~>>BEAR FORM TRIGGER
+castspell:5487;9634
+selfbuff!5487;9634
+triggeredby:1
+mana>16
+havetarget
+
+/////////////////// FERAL TANK
+
+//~>Rejuve before combat not in bear form
+castspell:5487;9634
+selfbuff!5487;9634
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+!incombat
+havetarget
+distance<36
+triggers:1
+
+//~>Rejuve before combat FROM bear form
+//castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+//selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+//selfbuff!5487;9634
+//triggeredby:2
+//triggers:1
+
+//~>Bear Form
+//castspell:5487;9634
+//selfbuff!5487;9634
+//selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+//selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+//havetarget
+
+//~>Bear Form
+castspell:5487;9634
+selfbuff!5487;9634
+selfhp>56
+havetarget
+distance<15
+!incombat
+
+//~>Demoralizing Roar
+castspell:99;1735;9490;9747;9898
+selfbuff=5487;9634
+targetbuff!99;1735;9490;9747;9898
+autoattacking
+rage>16
+distance<8
+
+//~>Swipe
+castspell:779;780;769;9754;9908
+selfbuff=5487;9634
+autoattacking
+rage>16
+distance<6
+
+//~>Auto Attack
+castspell:6603
+selfbuff=5487;9634
+!autoattacking
+nogcd
+havetarget

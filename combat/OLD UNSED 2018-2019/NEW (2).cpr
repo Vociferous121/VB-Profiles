@@ -1,0 +1,84 @@
+//~~~~~~>>	Hunter - Beast Mastery	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+
+//~~~~~~~~>>Debuff Removal
+
+
+//~~~~~~~~>>Buffs
+
+//~>Aspect of the Monkey
+
+//~>Aspect of the Hawk
+
+//~~~~~~~~>>Before Combat
+
+//~>Hunter's Mark
+
+
+//~~~~~~~~>>Crowd Control
+
+//~>Disengage
+
+//~>Multi-Shot
+
+//~~~~~~~~>>Start Combat
+
+//~>Auto Shot
+
+//~~~~~~~~>>In Combat Player Low Health
+
+
+//~~~~~~~~>>In Combat Ranged
+
+//~>Auto Shot
+
+//~~~~~~~~>>In Combat Melee
+
+//~>Raptor's Strike
+
+//~>Wing Clip
+
+//~>Auto Attack Melee
+
+//~~~~~~~~>>Other ~~~ To Do / Notes

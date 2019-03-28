@@ -1,0 +1,213 @@
+gcd:1550
+
+//////////////// 	MADE BY GarBear 2018/2019
+//////////////////////////////////////////////////////////////
+
+/////			Triggers List
+
+///////////////
+
+//~~>>	Trigger # 1  ; Into Bear Form
+//~~>>	Trigger # 2  ;
+//~~>>	Trigger # 3  ;
+//~~>>	Trigger # 4  ; Out Of Bear Form MotW
+//~~>>	Trigger # 5  ; Out Of Bear Form Thorns
+//~~>>	Trigger # 6  ; Out Of Bear Form Drink
+//~~>>	Trigger # 7  ; Regrowth Then Rejuvenation
+//~~>>	Trigger # 8  ; Out Of Bear Form Heal
+//~~>>	Trigger # 9  ; Regrowth Then Rejuvenation Bear Form
+//~~>>	Trigger # 10 ; Healing Touch Then Regrowth Trigger
+//~~>>	Trigger # 11 ;
+
+
+///// 			Group Cooldowns
+
+///////////////
+
+//~~>>	group cooldown 1 ; Buffs - Don't spam forms
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+//~~>>	group cooldown
+
+/////////////////////////////////////////////////
+
+///////////// DRINKS AND POTIONS
+
+//~>Out of bear form to drink
+castspell:
+selfbuff=
+basemana<51
+!incombat
+triggers:6
+
+//~>Drink
+use:drink
+triggeredby:6
+channelingtime:21000
+cooldown:2500
+!incombat
+breakoncombat
+breakonfullmana
+
+//~>Drink if not in bear form
+use:drink
+selfbuff!
+mana<51
+channelingtime:21000
+cooldown:2500
+!incombat
+breakoncombat
+breakonfullmana
+
+////////////////  BEAR FORM SPECIFIC CHECKLIST TRIGGERS
+
+//~>Back into bear form trigger stopped
+//~>With regrowth and rejuvenation active
+castspell:
+selfbuff!
+selfbuff=
+incombat
+mana>
+selfhp>66
+
+//~>Into Bear Form Trigger
+castspell:
+selfbuff!
+mana>
+triggeredby:1
+
+//////////////// BUFFS
+
+////////// Buff if not in form anyways
+//~>Mark of the Wild
+//~>Not with Bear Form
+castspell:
+selfbuff!
+selfbuff!
+mana>
+!incombat
+
+//~>Thorns
+//~>Not with Bear Form
+castspell:
+selfbuff!
+selfbuff!
+mana>
+!incombat
+
+////////// Triggers to buff
+
+//~>Out Of Bear Form Trigger
+//~>Mark of the Wild
+castspell:
+selfbuff=
+selfbuff!
+triggers:4
+mana>25
+cooldown:12000;1
+
+//~>Out Of Bear Form Trigger
+//~>Thorns
+castspell:
+selfbuff=
+selfbuff!
+triggers:5
+mana>25
+cooldown:12000;1
+
+////////// BUFFS
+
+//~>Mark of the Wild
+castspell:
+triggeredby:4
+triggers:1
+
+//~>Thorns
+castspell:
+triggeredby:5
+triggers:1
+
+//////////////// HEALS
+
+//////// Heal if not in form
+
+//~>Regrowth
+castspell:
+selfbuff!
+selfbuff!
+selfhp<56
+mana>36
+triggers:7
+
+//~>Rejuvenation
+castspell:
+selfbuff=
+triggeredby:7
+
+///////// Triggers To Heal
+
+//~>Out of bear form
+//~>Healing Touch
+castspell:
+selfbuff=
+selfbuff!
+selfbuff!
+selfhp<51
+triggers:8
+
+//~>Out of bear form
+//~>Regrowth Then Rejuvenation
+castspell:
+selfbuff=
+selfbuff!
+selfbuff!
+selfhp<41
+triggers:10
+
+//~>
+//~>
+//~>
+//~>
+//~>
+//~>
+
+/////// Heals
+
+//~>Healing Touch Low Health
+castspell:
+selfbuff!
+selfbuff!
+selfbuff!
+selfhp<46
+incombat
+mana>18
+triggers:8
+
+//~>Healing Touch Still Low Health IN COMBAT
+//~>With Rejuvenation and Regrowth
+castspell:
+selfbuff!
+selfbuff=
+selfbuff=
+selfhp<67
+mana>18
+triggers:1
+incombat
+
+//~>Regrowth
+castspell:
+selfbuff!
+selfbuff!
+selfhp<56
+mana>36
+triggeredby:8
+triggers:9
+
+//~>Rejuvenation
+castspell:
+selfbuff=
+triggeredby:9
+triggers:1

@@ -1,0 +1,113 @@
+gcd:1525
+
+//>		BUFFS & OTHERS
+
+//>Aspect of the Hawk - Active for combat
+castspell:13165;14318;14319;14320;14321;14322
+selfbuff!13165;14318;14319;14320;14321;14322;5118
+mana>10
+
+//>		OUT OF COMBAT / BEFORE COMBAT COMMANDS	
+
+//>Hunters Mark - Always active on a target
+castspell:1130;14323;14324;14325
+targetbuff!1130;14323;14324;14325
+mana>7
+distance<60
+cooldown:1750
+petalive
+petactive
+triggers:1
+nogcd
+
+//>		STARTING COMBAT COMMANDS
+
+//>Start Auto Shot - Trigger #1 /script#1 (Sends pet first!)	***
+cast:21
+distance>7
+distance<35
+!incombat
+castonce
+triggers:1
+nogcd
+petalive
+petactive
+
+//>Trigger #1 - /script #1 - pet attack	***
+castspell:75
+!wandcasting
+nogcd
+triggeredby:1
+
+//Send Pet Triggeredby 2
+cast:21
+triggeredby:2
+nogcd
+
+//>		IN COMBAT COMMANDS
+
+//>Auto Shot - In Combat
+castspell:75
+!wandcasting
+incombat
+distance>8
+distance<35
+nogcd
+
+//>Serpent Sting
+castspell:1978;13549;13550;13551;13552;13553;13554;13555
+targetbuff!1978;13549;13550;13551;13552;13553;13554;13555
+distance>7
+distance<35
+cooldown:8500
+mana>35
+incombat
+triggers:2
+
+//>Arcane Shot
+castspell:3044;14281;14282;14283;14284;14285;14286;14287
+wandcasting
+mana>55
+distance>7
+distance<35
+cooldown:8400
+incombat
+triggers:2
+
+//>Multi-Shot
+castspell:2643;14288;14289;14290
+wandcasting
+mana>45
+distance>8
+distance<35
+combatcount>2
+cooldown:11000
+incombat
+triggers:2
+
+//>		MELEE RANGE
+
+//>Disengage
+castspell:781;14272;14273
+autoattacking
+mana>20
+distance<7
+cooldown:7000
+incombat
+triggers:2
+
+//>Raptor Strike
+castspell:2973;14260;14261;14262;14263;14264;14265;14266
+autoattacking
+distance<5
+mana>20
+cooldown:6000
+incombat
+triggers:2
+
+//>Auto Attack
+castspell:6603
+!wandcasting
+distance<5
+nogcd
+incombat
