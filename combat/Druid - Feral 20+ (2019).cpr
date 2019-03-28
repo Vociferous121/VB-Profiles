@@ -41,17 +41,6 @@ gcd:1650
 
 //~~~~~~~~>>Food & Drink
 
-//Cat Form
-//	Full health & mana - you're probably wandering
-castspell:768;3025
-selfbuff!768;3025
-selfhp>91
-mana>91
-!incombat
-!havetarget
-cooldown:4200;3
-
-
 //Out of form to drink
 castspell:768;3025
 selfbuff=768;3025
@@ -194,6 +183,17 @@ cooldown:4200
 
 
 //~~~~~~~~>>Quick Switch InCombat Forms
+
+
+//Cat Form
+//	Full health & mana - you're probably wandering
+castspell:768;3025
+selfbuff!768;3025
+selfhp>91
+mana>91
+!incombat
+!havetarget
+cooldown:4200;3
 
 //Cat Form
 //	In combat - Combatcount<2
@@ -438,3 +438,12 @@ incombat
 distance<5
 
 //~~~~~~~~>>Other ~~~ To Do / Notes
+
+//	~~~ don't exit form to heal if target is almost dead
+//	~~~ obviously don't do this if combatcount>1
+//	~~~ try to only exit if a DoT is on target
+//	add seperate heal for higher hP at combatcount>1.. and all form additions with it
+//	mana> and have both HoT then cat form after combat then heal phase (in between don't need to drink)
+//
+//
+//
