@@ -5,7 +5,7 @@
 //	Group Cooldown 2	-	Faerie Fire
 //	Group Cooldown 3	-	Now we're spamming cat form again... Fix it later add a GCD
 //	Group Cooldown 4	-	Just in case bear form wants to spam too
-//	
+//	Group Cooldown 5	-	Cat form reduced GCD cooldown
 //		Triggers List
 //	Trigger 1	-	Regrowth + Cat Form > Rejuvention
 //	Trigger 2	-	More Regrowth + Cat Form
@@ -46,6 +46,7 @@ castspell:768;3025
 selfbuff=768;3025
 mana<36
 !incombat
+!havetarget
 channelingtime:1750
 cooldown:10000
 
@@ -56,6 +57,7 @@ castspell:768;3025
 selfbuff=768;3025
 selfhp<71
 !incombat
+!havetarget
 triggers:1
 cooldown:4200;3
 
@@ -70,6 +72,7 @@ mana>15
 selfhp<81
 cooldown:4200
 !incombat
+!havetarget
 
 //Drink
 use:drink
@@ -79,6 +82,7 @@ mana<36
 channelingtime:21000
 cooldown:2500
 !incombat
+!havetarget
 breakoncombat
 breakonfullmana
 nostand
@@ -246,13 +250,27 @@ castspell:1079;9492;9493;9752;9894;9896
 targetbuff!1079;9492;9493;9752;9894;9896
 selfbuff=5217;6793;9845;9846
 selfbuff=768;3025
-combopoints>3
+combopoints>1
 energy>30
 distance<5
 incombat
 autoattacking
 nogcd
-cooldown:1070
+cooldown:1070;5
+level<30
+
+//Ferocious Bite
+castspell:22568;22827;22828;22829;31018
+selfbuff=5217;6793;9845;9846
+selfbuff=768;3025
+combopoints>2
+energy>35
+distance<5
+incombat
+autoattacking
+nogcd
+cooldown:1070;5
+level>29
 
 //Tiger's Fury
 //	Always active
@@ -263,7 +281,7 @@ selfbuff!5487;9634
 incombat
 energy>30
 autoattacking
-cooldown:1000
+cooldown:1070;5
 nogcd
 
 //Faerie Fire - Feral
@@ -309,7 +327,7 @@ selfbuff=768;3025
 energy>35
 incombat
 distance<5
-cooldown:1070
+cooldown:1070;5
 nogcd
 
 //Claw
@@ -321,7 +339,7 @@ distance<5
 incombat
 autoattacking
 nogcd
-cooldown:1070
+cooldown:1070;5
 
 //~~~~~~~~>>Bear Form
 
