@@ -2,7 +2,7 @@
 //
 //		Group Cooldowns
 //	Group Cooldown 1	-	Regrowth casts twice? even with set cooldown
-//	Group Cooldown 2	-	
+//	Group Cooldown 2	-	Faerie Fire
 //	Group Cooldown 3	-	
 //	Group Cooldown 4	-	
 //	
@@ -44,8 +44,6 @@ gcd:1650
 //Out of form to drink
 castspell:768;3025
 selfbuff=768;3025
-selfbuff=5487;9634
-!havetarget
 mana<36
 !incombat
 channelingtime:1750
@@ -60,6 +58,18 @@ selfhp<71
 !incombat
 triggers:1
 cooldown:4200
+
+//Cheak health before drinking
+//	Why waste mana?
+//	Rejuvenation!
+castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!768;3025
+selfbuff!5487;9634
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+mana>15
+mana<36
+cooldown:4200
+!incombat
 
 //Drink
 use:drink
@@ -115,11 +125,13 @@ triggers:1
 selfhp<51
 mana>26
 cooldown:4200
+incombat
 
 //Regrowth
 //	Not in form
 castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!768;3025
+selfbuff!5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<56
 mana>26
@@ -141,6 +153,7 @@ triggeredby:2
 //	Not in form
 castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!768;3025
+selfbuff!5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<56
 mana>26
@@ -168,14 +181,6 @@ selfhp<31
 mana>13
 cooldown:4200
 
-//Cancel Auto Attack
-//	Target walked or possibly ran away
-castspell:6603
-autoattacking
-distance>5
-incombat
-havetarget
-nogcd
 
 //~~~~~~~~>>Quick Switch InCombat Forms
 
@@ -204,11 +209,25 @@ backpedal:0247
 
 //~~~~~~~~>>Cat Form Attacks
 
+//Rip
+castspell:1079;9492;9493;9752;9894;9896
+targetbuff!1079;9492;9493;9752;9894;9896
+selfbuff=5217;6793;9845;9846
+selfbuff=768;3025
+combopoints>3
+energy>30
+distance<5
+incombat
+autoattacking
+nogcd
+cooldown:1070
+
 //Tiger's Fury
 //	Always active
 castspell:5217;6793;9845;9846
 selfbuff!5217;6793;9845;9846
 selfbuff=768;3025
+selfbuff!5487;9634
 incombat
 energy>30
 autoattacking
@@ -216,11 +235,23 @@ cooldown:1000
 nogcd
 
 //Faerie Fire - Feral
+//	Cat form
 castspell:16857;17390;17391
 targetbuff!16857;17390;17391
 selfbuff=768;3025
 distance<30
-cooldown:6000
+cooldown:6000;2
+autoattacking
+incombat
+
+//Faerie Fire - Feral
+//	Bear form
+castspell:16857;17390;17391
+targetbuff!16857;17390;17391
+selfbuff=5487;9634
+distance<30
+cooldown:6000;2
+autoattacking
 incombat
 
 //Faerie Fire - Feral - meleepullcount>1
@@ -228,11 +259,12 @@ castspell:16857;17390;17391
 targetbuff!16857;17390;17391
 selfbuff=768;3025
 distance<30
-cooldown:6000
+cooldown:6000;2
 meleepullcount>1
 !incombat
 
 //Auto Attack
+//	Not in combat
 castspell:6603
 selfbuff=768;3025
 !autoattacking
@@ -247,18 +279,6 @@ selfbuff=768;3025
 distance<5
 incombat
 nogcd
-
-//Rip
-castspell:1079;9492;9493;9752;9894;9896
-targetbuff!1079;9492;9493;9752;9894;9896
-selfbuff=768;3025
-combopoints>2
-energy>30
-distance<5
-incombat
-autoattacking
-nogcd
-cooldown:1070
 
 //Rake
 castspell:1822;1823;1824;9904
@@ -287,6 +307,7 @@ cooldown:1070
 //	Done with combat
 castspell:5487;9634
 selfbuff=5487;9634
+selfbuff!768;3025
 !incombat
 cooldown:4200
 
@@ -313,15 +334,18 @@ nogcd
 castspell:5229;25503
 selfbuff!5229;25503
 selfbuff=5487;9634
+selfbuff!768;3025
 selfhp>91
 distance<4
 cooldown:60000
 havetarget
 incombat
+autoattacking
 
 //Demoralizing Roar
 castspell:99;1735;9490;9747;9898
 selfbuff=5487;9634
+selfbuff!768;3025
 targetbuff!99;1735;9490;9747;9898
 autoattacking
 distance<4
@@ -333,6 +357,7 @@ incombat
 //Bash
 castspell:5211;6798;8983
 selfbuff=5487;9634
+selfbuff!768;3025
 autoattacking
 rage>10
 selfhp<76
@@ -343,6 +368,7 @@ incombat
 //Maul
 castspell:6807;6808;6809;8972;9745;9880;9881
 selfbuff=5487;9634
+selfbuff!768;3025
 autoattacking
 rage>10
 distance<4
@@ -350,16 +376,6 @@ incombat
 
 
 //~~~~~~~~>>Cat Form
-
-//Cat Form
-//	Max health/mana and wandering
-castspell:768;3025
-selfbuff!768;3025
-selfbuff!5487;9634
-selfhp>90
-mana>81
-cooldown:4200
-!incombat
 
 //Cat Form
 //	HoT's active
@@ -387,18 +403,16 @@ cooldown:4200
 castspell:768;3025
 selfbuff!768;3025
 selfbuff!5487;9634
-havetarget
 incombat
 combatcount<2
 mana>16
 cooldown:4200
 backpedal:0623
 
-//auto attack in no form
+//auto attack
 castspell:6603
 !autoattacking
-selfbuff!768;3025
-selfbuff!5487;9634
-incombat
+!incombat
+distance<5
 
 //~~~~~~~~>>Other ~~~ To Do / Notes
