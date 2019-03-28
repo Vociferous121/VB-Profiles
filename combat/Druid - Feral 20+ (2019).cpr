@@ -93,34 +93,6 @@ selfbuff!768;3025
 mana>51
 cooldown:1500
 
-//Tiger's Fury
-//	Always active
-castspell:5217;6793;9845;9846
-selfbuff!5217;6793;9845;9846
-selfbuff=768;3025
-incombat
-energy>30
-autoattacking
-cooldown:1000
-nogcd
-
-//Faerie Fire - Feral
-castspell:16857;17390;17391
-targetbuff!16857;17390;17391
-selfbuff=768;3025
-distance<30
-cooldown:6000
-incombat
-
-//Faerie Fire - Feral - meleepullcount>1
-castspell:16857;17390;17391
-targetbuff!16857;17390;17391
-selfbuff=768;3025
-distance<30
-cooldown:6000
-meleepullcount>1
-!incombat
-
 //~~~~~~~~>>Heals
 
 
@@ -220,6 +192,34 @@ cooldown:4200
 backpedal:0247
 
 //~~~~~~~~>>Cat Form Attacks
+
+//Tiger's Fury
+//	Always active
+castspell:5217;6793;9845;9846
+selfbuff!5217;6793;9845;9846
+selfbuff=768;3025
+incombat
+energy>30
+autoattacking
+cooldown:1000
+nogcd
+
+//Faerie Fire - Feral
+castspell:16857;17390;17391
+targetbuff!16857;17390;17391
+selfbuff=768;3025
+distance<30
+cooldown:6000
+incombat
+
+//Faerie Fire - Feral - meleepullcount>1
+castspell:16857;17390;17391
+targetbuff!16857;17390;17391
+selfbuff=768;3025
+distance<30
+cooldown:6000
+meleepullcount>1
+!incombat
 
 //Auto Attack
 castspell:6603
