@@ -1,7 +1,7 @@
 //~~~~~~>>	Druid - Feral	<<~~~~~~\\
 //
 //		Group Cooldowns
-//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 1	-	Regrowth casts twice? even with set cooldown
 //	Group Cooldown 2	-	
 //	Group Cooldown 3	-	
 //	Group Cooldown 4	-	
@@ -36,7 +36,7 @@
 ///////////////////////////////////////////////
 
 
-gcd:1600
+gcd:1650
 
 //~~~~~~~~>>Food & Drink
 
@@ -124,7 +124,7 @@ selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<56
 mana>26
 triggers:2
-cooldown:4200
+cooldown:4200;1
 
 //Rejuvenation
 //	Not in form
@@ -132,6 +132,7 @@ castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<61
 mana>15
 triggeredby:2
@@ -145,7 +146,7 @@ selfhp<56
 mana>26
 triggeredby:1
 triggers:2
-cooldown:4200
+cooldown:4200;1
 
 //Rejuvenation
 //	Not in form
@@ -153,6 +154,7 @@ castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<71
 mana>15
 cooldown:4200
@@ -165,6 +167,15 @@ selfbuff!5487;9634
 selfhp<31
 mana>13
 cooldown:4200
+
+//Cancel Auto Attack
+//	Target walked or possibly ran away
+castspell:6603
+autoattacking
+distance>5
+incombat
+havetarget
+nogcd
 
 //~~~~~~~~>>Quick Switch InCombat Forms
 
@@ -246,6 +257,8 @@ energy>30
 distance<5
 incombat
 autoattacking
+nogcd
+cooldown:1070
 
 //Rake
 castspell:1822;1823;1824;9904
@@ -254,7 +267,8 @@ selfbuff=768;3025
 energy>35
 incombat
 distance<5
-cooldown:1000
+cooldown:1070
+nogcd
 
 //Claw
 castspell:1082;3029;5201;9849;9850
@@ -264,6 +278,8 @@ energy>40
 distance<5
 incombat
 autoattacking
+nogcd
+cooldown:1070
 
 //~~~~~~~~>>Bear Form
 
