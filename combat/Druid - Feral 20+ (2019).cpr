@@ -160,7 +160,7 @@ castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
-selfhp<71
+selfhp<61
 mana>15
 triggeredby:2
 
@@ -197,7 +197,7 @@ cooldown:4200
 //~~~~~~~~>>Quick Switch InCombat Forms
 
 //Bear Form
-//	Combatcount>1
+//	In combat - Combatcount>1
 castspell:5487;9634
 selfbuff!5487;9634
 selfbuff!768;3025
@@ -205,6 +205,7 @@ combatcount>1
 mana>26
 cooldown:4200
 backpedal:0247
+incombat
 
 //Cat Form
 //	In combat - combatcount>1
