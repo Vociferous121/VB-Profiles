@@ -67,7 +67,7 @@ selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 mana>15
-mana<36
+selfhp<81
 cooldown:4200
 !incombat
 
@@ -183,6 +183,17 @@ cooldown:4200
 
 
 //~~~~~~~~>>Quick Switch InCombat Forms
+
+//Cat Form
+//	In combat - Combatcount<2
+castspell:768;3025
+selfbuff!768;3025
+selfbuff!5487;9634
+incombat
+combatcount<2
+mana>26
+cooldown:4200
+backpedal:0623
 
 //Bear Form
 //	In combat - Combatcount>1
@@ -412,7 +423,7 @@ backpedal:0623
 //auto attack
 castspell:6603
 !autoattacking
-!incombat
+incombat
 distance<5
 
 //~~~~~~~~>>Other ~~~ To Do / Notes
