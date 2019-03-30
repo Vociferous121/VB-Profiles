@@ -33,7 +33,7 @@
 //Cat Form
 //768;3025
 //Bear Form
-//
+//5487;9634
 ///////////////////////////////////////////////
 
 
@@ -54,11 +54,13 @@ cooldown:10000
 //	Cast cat form
 castspell:768;3025
 selfbuff=768;3025
-selfhp<71
+selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfhp<76
 !incombat
 !havetarget
 triggers:1
-cooldown:4200;3
+cooldown:2200;3
 
 //Cheak health before drinking
 //	Why waste mana?
@@ -81,7 +83,6 @@ mana<36
 channelingtime:21000
 cooldown:2500
 !incombat
-!havetarget
 breakoncombat
 breakonfullmana
 nostand
@@ -93,6 +94,7 @@ nostand
 castspell:1126;5232;6756;5234;8907;9884;9885
 selfbuff!1126;5232;6756;5234;8907;9884;9885
 selfbuff!768;3025
+selfbuff!5487;9634
 !incombat
 mana>51
 cooldown:1500
@@ -102,6 +104,7 @@ cooldown:1500
 castspell:467;782;1075;8914;9756;9910
 selfbuff!467;782;1075;8914;9756;9910
 selfbuff!768;3025
+selfbuff!5487;9634
 !incombat
 mana>51
 cooldown:1500
@@ -110,14 +113,28 @@ cooldown:1500
 
 
 //Low health in cat form
-//	Cast cat form
+//	Cast cat form - combatcount<2
 castspell:768;3025
 selfbuff=768;3025
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+combatcount<2
+triggers:1
+selfhp<51
+targethp>31
+mana>32
+cooldown:2200;3
+incombat
+
+//Low health in cat form
+//	Cast cat form - combatcount>2
+castspell:768;3025
+selfbuff=768;3025
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+combatcount>2
 triggers:1
 selfhp<51
 mana>32
-cooldown:4200;3
+cooldown:2200;3
 incombat
 
 //Low health in bear form
@@ -125,7 +142,7 @@ castspell:5487;9634
 selfbuff=5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 triggers:1
-selfhp<51
+selfhp<31
 mana>26
 cooldown:4200;4
 incombat
@@ -196,7 +213,7 @@ selfhp>91
 mana>91
 !incombat
 !havetarget
-cooldown:4200;3
+cooldown:2200;3
 
 //Cat Form
 //	In combat - Combatcount<2
@@ -206,7 +223,7 @@ selfbuff!5487;9634
 incombat
 combatcount<2
 mana>26
-cooldown:4200;3
+cooldown:2200;3
 backpedal:0623
 
 //Bear Form
@@ -229,13 +246,22 @@ havetarget
 incombat
 combatcount>1
 mana>26
-cooldown:4200;3
+cooldown:2200;3
 backpedal:0247
 
 //~~~~~~~~>>Cat Form Attacks
 
 //Faerie Fire - Feral
-//	Cat form
+//	Cat form - not in combat
+castspell:16857;17390;17391
+targetbuff!16857;17390;17391
+selfbuff=768;3025
+distance<30
+cooldown:6000;2
+!incombat
+
+//Faerie Fire - Feral
+//	Cat form - in combat
 castspell:16857;17390;17391
 targetbuff!16857;17390;17391
 selfbuff=768;3025
@@ -424,7 +450,7 @@ selfbuff!5487;9634
 selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 combatcount<2
 mana>15
-cooldown:4200;3
+cooldown:2200;3
 incombat
 
 //Cat Form
@@ -435,7 +461,7 @@ selfbuff!5487;9634
 havetarget
 !incombat
 mana>16
-cooldown:4200;3
+cooldown:2200;3
 
 //Cat Form
 //	Caught in combat - combatcount<2
@@ -445,7 +471,7 @@ selfbuff!5487;9634
 incombat
 combatcount<2
 mana>16
-cooldown:4200;3
+cooldown:2200;3
 backpedal:0623
 
 //auto attack
