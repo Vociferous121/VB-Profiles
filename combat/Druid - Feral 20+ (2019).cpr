@@ -9,6 +9,7 @@
 //		Triggers List
 //	Trigger 1	-	Regrowth + Cat Form > Rejuvention
 //	Trigger 2	-	More Regrowth + Cat Form
+//	Trigger 3	-	Cat Form > Healing Touch
 //
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
@@ -56,7 +57,7 @@ castspell:768;3025
 selfbuff=768;3025
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
-selfhp<76
+selfhp<61
 !incombat
 !havetarget
 triggers:1
@@ -118,7 +119,7 @@ castspell:768;3025
 selfbuff=768;3025
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 combatcount<2
-triggers:1
+triggers:3
 selfhp<51
 targethp>31
 mana>32
@@ -197,6 +198,15 @@ cooldown:4200
 castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
 selfbuff!768;3025
 selfbuff!5487;9634
+triggeredby:3
+mana>13
+cooldown:4200
+
+//Healing Touch
+//	Not in form
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!768;3025
+selfbuff!5487;9634
 selfhp<31
 mana>13
 cooldown:4200
@@ -268,6 +278,7 @@ selfbuff=768;3025
 distance<30
 cooldown:6000;2
 autoattacking
+backpedal:0473
 incombat
 
 //Tiger's Fury
@@ -292,7 +303,6 @@ energy>30
 distance<5
 incombat
 autoattacking
-nogcd
 cooldown:1070
 level<30
 
@@ -305,7 +315,6 @@ energy>35
 distance<5
 incombat
 autoattacking
-nogcd
 cooldown:1070
 level>29
 
@@ -318,15 +327,6 @@ distance<30
 cooldown:6000;2
 autoattacking
 incombat
-
-//Faerie Fire - Feral - meleepullcount>1
-castspell:16857;17390;17391
-targetbuff!16857;17390;17391
-selfbuff=768;3025
-distance<30
-cooldown:6000;2
-meleepullcount>1
-!incombat
 
 //Auto Attack
 //	Not in combat
@@ -353,7 +353,6 @@ energy>35
 incombat
 distance<5
 cooldown:1070
-nogcd
 
 //Claw
 castspell:1082;3029;5201;9849;9850
@@ -363,7 +362,6 @@ energy>40
 distance<5
 incombat
 autoattacking
-nogcd
 cooldown:1070
 
 //~~~~~~~~>>Bear Form
