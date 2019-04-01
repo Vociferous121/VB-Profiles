@@ -90,6 +90,15 @@ nostand
 
 //~~~~~~~~>>Buffs
 
+//Innervate
+castspell:29166;29167
+selfbuff!29166;29167
+selfbuff!768;3025
+selfbuff!5487;9634
+incombat
+mana<21
+cooldown:350000
+
 //Mark of the Wild
 //	Not in form
 castspell:1126;5232;6756;5234;8907;9884;9885
@@ -111,6 +120,14 @@ mana>51
 cooldown:1500
 
 //~~~~~~~~>>Heals
+
+//Bear Form Frenzied Regeneration
+castspell:22842;22895;22896
+selfbuff=5487;9634
+incombat
+rage>16
+selfhp<41
+cooldown:300000
 
 
 //Low health in cat form
