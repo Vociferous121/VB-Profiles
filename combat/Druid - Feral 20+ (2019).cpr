@@ -88,16 +88,15 @@ breakoncombat
 breakonfullmana
 nostand
 
-//~~~~~~~~>>Buffs
-
 //Innervate
-castspell:29166;29167
-selfbuff!29166;29167
+castspell:29166
 selfbuff!768;3025
 selfbuff!5487;9634
 incombat
-mana<21
+mana<31
 cooldown:350000
+
+//~~~~~~~~>>Buffs
 
 //Mark of the Wild
 //	Not in form
