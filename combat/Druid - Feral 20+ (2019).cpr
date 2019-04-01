@@ -38,7 +38,7 @@
 ///////////////////////////////////////////////
 
 
-gcd:1650
+gcd:1750
 
 //~~~~~~~~>>Food & Drink
 
@@ -161,7 +161,7 @@ selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 triggers:1
 selfhp<31
 mana>26
-cooldown:4200;4
+cooldown:1700;4
 incombat
 
 //Regrowth
@@ -272,12 +272,14 @@ selfbuff!768;3025
 combatcount>1
 mana>26
 backpedal:0247
+cooldown:1700;4
 incombat
 
 //~~~~~~~~>>Cat Form Attacks
 
 //Ferocious Bite
 castspell:22568;22827;22828;22829;31018
+selfbuff=768;3025
 combopoints>2
 energy>35
 level>29
@@ -285,6 +287,7 @@ level>29
 //Rip
 castspell:1079;9492;9493;9752;9894;9896
 targetbuff!1079;9492;9493;9752;9894;9896
+selfbuff=768;3025
 level<30
 combopoints>1
 energy>35
@@ -342,6 +345,7 @@ nogcd
 
 //Ferocious Bite
 castspell:22568;22827;22828;22829;31018
+selfbuff=768;3025
 combopoints>2
 energy>35
 level>29
@@ -349,6 +353,7 @@ level>29
 //Rip
 castspell:1079;9492;9493;9752;9894;9896
 targetbuff!1079;9492;9493;9752;9894;9896
+selfbuff=768;3025
 level<30
 combopoints>1
 energy>35
@@ -388,7 +393,7 @@ castspell:5487;9634
 selfbuff=5487;9634
 selfbuff!768;3025
 !incombat
-cooldown:4200;4
+cooldown:1700;4
 
 //Bear Form
 //	HoT's active
@@ -398,7 +403,7 @@ selfbuff!768;3025
 selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 combatcount>1
 mana>15
-cooldown:4200;4
+cooldown:1700;4
 incombat
 
 //Auto Attack
