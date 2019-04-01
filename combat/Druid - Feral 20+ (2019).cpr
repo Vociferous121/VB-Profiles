@@ -236,17 +236,6 @@ mana>26
 cooldown:2200;3
 backpedal:0623
 
-//Bear Form
-//	In combat - Combatcount>1
-castspell:5487;9634
-selfbuff!5487;9634
-selfbuff!768;3025
-combatcount>1
-mana>26
-cooldown:4200;4
-backpedal:0247
-incombat
-
 //Cat Form
 //	In combat - combatcount>1
 castspell:768;3025
@@ -259,7 +248,31 @@ mana>26
 cooldown:2200;3
 backpedal:0247
 
+//Bear Form
+//	In combat - Combatcount>1
+castspell:5487;9634
+selfbuff!5487;9634
+selfbuff!768;3025
+combatcount>1
+mana>26
+cooldown:4200;4
+backpedal:0247
+incombat
+
 //~~~~~~~~>>Cat Form Attacks
+
+//Ferocious Bite
+castspell:22568;22827;22828;22829;31018
+combopoints>2
+energy>35
+level>29
+
+//Rip
+castspell:1079;9492;9493;9752;9894;9896
+targetbuff!1079;9492;9493;9752;9894;9896
+level<30
+combopoints>1
+energy>35
 
 //Faerie Fire - Feral
 //	Cat form - not in combat
@@ -293,31 +306,6 @@ autoattacking
 cooldown:1070
 nogcd
 
-//Rip
-castspell:1079;9492;9493;9752;9894;9896
-targetbuff!1079;9492;9493;9752;9894;9896
-selfbuff=5217;6793;9845;9846
-selfbuff=768;3025
-combopoints>1
-energy>30
-distance<5
-incombat
-autoattacking
-cooldown:1070
-level<30
-
-//Ferocious Bite
-castspell:22568;22827;22828;22829;31018
-selfbuff=5217;6793;9845;9846
-selfbuff=768;3025
-combopoints>2
-energy>35
-distance<5
-incombat
-autoattacking
-cooldown:1070
-level>29
-
 //Faerie Fire - Feral
 //	Bear form
 castspell:16857;17390;17391
@@ -336,6 +324,19 @@ selfbuff=768;3025
 distance<5
 !incombat
 nogcd
+
+//Ferocious Bite
+castspell:22568;22827;22828;22829;31018
+combopoints>2
+energy>35
+level>29
+
+//Rip
+castspell:1079;9492;9493;9752;9894;9896
+targetbuff!1079;9492;9493;9752;9894;9896
+level<30
+combopoints>1
+energy>35
 
 //Auto Attack
 castspell:6603
