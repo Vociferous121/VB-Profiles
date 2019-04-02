@@ -38,7 +38,7 @@
 ///////////////////////////////////////////////
 
 
-gcd:1750
+gcd:1550
 
 //~~~~~~~~>>Food & Drink
 
@@ -128,7 +128,6 @@ rage>16
 selfhp<41
 cooldown:300000
 
-
 //Low health in cat form
 //	Cast cat form - combatcount<2
 castspell:768;3025
@@ -173,7 +172,7 @@ selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<56
 mana>26
 triggers:2
-cooldown:4200;1
+cooldown:6000;1
 
 //Rejuvenation
 //	Not in form
@@ -196,7 +195,7 @@ selfhp<56
 mana>26
 triggeredby:1
 triggers:2
-cooldown:4200;1
+cooldown:6000;1
 
 //Rejuvenation
 //	Not in form
@@ -233,13 +232,14 @@ cooldown:4200
 
 //Cat Form
 //	Full health & mana - you're probably wandering
-castspell:768;3025
-selfbuff!768;3025
-selfhp>91
-mana>91
-!incombat
-!havetarget
-cooldown:2200;3
+//	CAUSING VENDOR ISSUES WILL NOT SHIFT OUT OF FORM AT VENDOR
+//castspell:768;3025
+//selfbuff!768;3025
+//selfhp>91
+//mana>91
+//!incombat
+//!havetarget
+//cooldown:2200;3
 
 //Cat Form
 //	In combat - Combatcount<2
@@ -319,7 +319,7 @@ selfbuff!5217;6793;9845;9846
 selfbuff=768;3025
 selfbuff!5487;9634
 incombat
-energy>30
+energy>65
 autoattacking
 cooldown:1070
 nogcd
@@ -345,6 +345,7 @@ nogcd
 
 //Ferocious Bite
 castspell:22568;22827;22828;22829;31018
+selfbuff=5217;6793;9845;9846
 selfbuff=768;3025
 combopoints>2
 energy>35
@@ -378,6 +379,7 @@ cooldown:1070
 //Claw
 castspell:1082;3029;5201;9849;9850
 targetbuff=1822;1823;1824;9904
+selfbuff=5217;6793;9845;9846
 selfbuff=768;3025
 energy>40
 distance<5
