@@ -1,0 +1,41 @@
+gcd:1500
+
+//~>Enrage
+castspell:5229;25503
+selfbuff!5229;25503
+selfhp>91
+distance<21
+cooldown:60000
+havetarget
+
+//Bear Form Frenzied Regeneration
+castspell:22842;22895;22896
+rage>15
+selfhp<31
+cooldown:300000
+
+//Bash
+castspell:5211;6798;8983
+enemycasting
+rage>10
+distance<4
+cooldown:60000
+
+//Demoralizing Roar
+castspell:99;1735;9490;9747;9898
+targetbuff!99;1735;9490;9747;9898
+distance<5
+rage>10
+cooldown:22000
+
+//Maul
+castspell:6807;6808;6809;8972;9745;9880;9881
+rage>10
+distance<4
+
+//Auto Attack
+castspell:6603
+!autoattacking
+distance<5
+incombat
+nogcd
