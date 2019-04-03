@@ -284,6 +284,7 @@ combatcount>1
 mana>36
 nogcd
 backpedal:0247
+cooldown:1600
 
 //Bear Form
 //	In combat - Combatcount<2
@@ -296,6 +297,7 @@ mana>21
 backpedal:0247
 incombat
 nogcd
+cooldown:1600
 
 //Bear Form
 //	In combat - Combatcount>1
