@@ -35,10 +35,17 @@
 //768;3025
 //Bear Form
 //5487;9634
+//Swoop Stun Debuff
+//5708;18144;23919
 ///////////////////////////////////////////////
 
 
-gcd:1550
+gcd:1650
+
+//Unmount
+cast:10
+havetarget
+ismounted
 
 //~~~~~~~~>>Food & Drink
 
@@ -123,6 +130,7 @@ cooldown:1500
 //Bear Form Frenzied Regeneration
 castspell:22842;22895;22896
 selfbuff=5487;9634
+selfbuff!5708;18144;23919
 incombat
 rage>16
 selfhp<41
@@ -133,6 +141,7 @@ cooldown:300000
 castspell:768;3025
 selfbuff=768;3025
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5708;18144;23919
 combatcount<2
 triggers:3
 selfhp<51
@@ -146,6 +155,7 @@ incombat
 castspell:768;3025
 selfbuff=768;3025
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5708;18144;23919
 combatcount>2
 triggers:1
 selfhp<51
@@ -157,6 +167,7 @@ incombat
 castspell:5487;9634
 selfbuff=5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5708;18144;23919
 triggers:1
 selfhp<31
 mana>26
@@ -169,6 +180,7 @@ castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5708;18144;23919
 selfhp<56
 mana>26
 triggers:2
@@ -180,6 +192,7 @@ castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!5708;18144;23919
 selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<61
 mana>15
@@ -191,6 +204,7 @@ castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5708;18144;23919
 selfhp<56
 mana>26
 triggeredby:1
@@ -204,6 +218,7 @@ selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5708;18144;23919
 selfhp<71
 mana>15
 cooldown:4200
@@ -213,6 +228,7 @@ cooldown:4200
 castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
 selfbuff!768;3025
 selfbuff!5487;9634
+selfbuff!5708;18144;23919
 triggeredby:3
 mana>13
 cooldown:4200
@@ -222,6 +238,7 @@ cooldown:4200
 castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
 selfbuff!768;3025
 selfbuff!5487;9634
+selfbuff!5708;18144;23919
 selfhp<31
 mana>13
 cooldown:4200
@@ -246,6 +263,7 @@ cooldown:4200
 castspell:768;3025
 selfbuff!768;3025
 selfbuff!5487;9634
+selfbuff!5708;18144;23919
 incombat
 combatcount<2
 mana>26
@@ -257,6 +275,7 @@ backpedal:0623
 castspell:768;3025
 selfbuff=768;3025
 selfbuff!5487;9634
+selfbuff!5708;18144;23919
 havetarget
 incombat
 combatcount>1
@@ -269,6 +288,7 @@ backpedal:0247
 castspell:5487;9634
 selfbuff!5487;9634
 selfbuff!768;3025
+selfbuff!5708;18144;23919
 combatcount>1
 mana>26
 backpedal:0247
@@ -280,6 +300,7 @@ incombat
 //Ferocious Bite
 castspell:22568;22827;22828;22829;31018
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 combopoints>2
 energy>35
 level>29
@@ -288,6 +309,7 @@ level>29
 castspell:1079;9492;9493;9752;9894;9896
 targetbuff!1079;9492;9493;9752;9894;9896
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 level<30
 combopoints>1
 energy>35
@@ -297,6 +319,7 @@ energy>35
 castspell:16857;17390;17391
 targetbuff!16857;17390;17391
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 distance<30
 cooldown:6000;2
 !incombat
@@ -306,6 +329,7 @@ cooldown:6000;2
 castspell:16857;17390;17391
 targetbuff!16857;17390;17391
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 distance<30
 cooldown:6000;2
 autoattacking
@@ -318,6 +342,7 @@ castspell:5217;6793;9845;9846
 selfbuff!5217;6793;9845;9846
 selfbuff=768;3025
 selfbuff!5487;9634
+selfbuff!5708;18144;23919
 incombat
 energy>65
 autoattacking
@@ -329,6 +354,7 @@ nogcd
 castspell:16857;17390;17391
 targetbuff!16857;17390;17391
 selfbuff=5487;9634
+selfbuff!5708;18144;23919
 distance<30
 cooldown:6000;2
 autoattacking
@@ -338,6 +364,7 @@ incombat
 //	Not in combat
 castspell:6603
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 !autoattacking
 distance<5
 !incombat
@@ -347,21 +374,26 @@ nogcd
 castspell:22568;22827;22828;22829;31018
 selfbuff=5217;6793;9845;9846
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 combopoints>2
 energy>35
 level>29
+cooldown:1070
 
 //Rip
 castspell:1079;9492;9493;9752;9894;9896
 targetbuff!1079;9492;9493;9752;9894;9896
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 level<30
 combopoints>1
 energy>35
+cooldown:1070
 
 //Auto Attack
 castspell:6603
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 !autoattacking
 distance<5
 incombat
@@ -371,6 +403,7 @@ nogcd
 castspell:1822;1823;1824;9904
 targetbuff!1822;1823;1824;9904
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 energy>35
 incombat
 distance<5
@@ -381,6 +414,7 @@ castspell:1082;3029;5201;9849;9850
 targetbuff=1822;1823;1824;9904
 selfbuff=5217;6793;9845;9846
 selfbuff=768;3025
+selfbuff!5708;18144;23919
 energy>40
 distance<5
 incombat
@@ -394,6 +428,7 @@ cooldown:1070
 castspell:5487;9634
 selfbuff=5487;9634
 selfbuff!768;3025
+selfbuff!5708;18144;23919
 !incombat
 cooldown:1700;4
 
@@ -403,6 +438,7 @@ castspell:5487;9634
 selfbuff!5487;9634
 selfbuff!768;3025
 selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!5708;18144;23919
 combatcount>1
 mana>15
 cooldown:1700;4
@@ -411,6 +447,7 @@ incombat
 //Auto Attack
 castspell:6603
 selfbuff=5487;9634
+selfbuff!5708;18144;23919
 !autoattacking
 distance<5
 incombat
@@ -421,6 +458,7 @@ castspell:5229;25503
 selfbuff!5229;25503
 selfbuff=5487;9634
 selfbuff!768;3025
+selfbuff!5708;18144;23919
 selfhp>91
 distance<4
 cooldown:60000
@@ -433,6 +471,7 @@ castspell:99;1735;9490;9747;9898
 selfbuff=5487;9634
 selfbuff!768;3025
 targetbuff!99;1735;9490;9747;9898
+selfbuff!5708;18144;23919
 autoattacking
 distance<4
 rage>10
@@ -444,6 +483,7 @@ incombat
 castspell:5211;6798;8983
 selfbuff=5487;9634
 selfbuff!768;3025
+selfbuff!5708;18144;23919
 autoattacking
 rage>10
 selfhp<76
@@ -455,6 +495,7 @@ incombat
 castspell:6807;6808;6809;8972;9745;9880;9881
 selfbuff=5487;9634
 selfbuff!768;3025
+selfbuff!5708;18144;23919
 autoattacking
 rage>10
 distance<4
@@ -469,6 +510,7 @@ castspell:768;3025
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
+selfbuff!5708;18144;23919
 combatcount<2
 mana>15
 cooldown:2200;3
@@ -479,6 +521,7 @@ incombat
 castspell:768;3025
 selfbuff!768;3025
 selfbuff!5487;9634
+selfbuff!5708;18144;23919
 havetarget
 !incombat
 mana>16
@@ -489,6 +532,7 @@ cooldown:2200;3
 castspell:768;3025
 selfbuff!768;3025
 selfbuff!5487;9634
+selfbuff!5708;18144;23919
 incombat
 combatcount<2
 mana>16
@@ -498,6 +542,7 @@ backpedal:0623
 //auto attack
 castspell:6603
 selfbuff!768;3025
+selfbuff!5708;18144;23919
 !autoattacking
 incombat
 distance<5
@@ -509,6 +554,6 @@ distance<5
 //	~~~ try to only exit if a DoT is on target
 //	add seperate heal for higher hP at combatcount>1.. and all form additions with it
 //	mana> and have both HoT then cat form after combat then heal phase (in between don't need to drink)
-//
+//	add entangle roots + backpedal for low health and mana
 //
 //
