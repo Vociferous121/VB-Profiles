@@ -41,7 +41,7 @@
 ///////////////////////////////////////////////
 
 
-gcd:1550
+gcd:1650
 
 //~~~~~~~~>>Food & Drink
 
@@ -50,23 +50,19 @@ castspell:768;3025
 selfbuff=768;3025
 mana<36
 !incombat
-!havetarget
-channelingtime:1750
 cooldown:10000
+nogcd
 
-//Low health not in combat
-//	Cast cat form
+//Out of form to heal
 castspell:768;3025
 selfbuff=768;3025
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<61
 !incombat
-!havetarget
 triggers:1
-nogcd
 
-//Cheak health before drinking
+//Cheak heal before drinking
 //	Why waste mana?
 //	Rejuvenation!
 castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
@@ -83,34 +79,13 @@ cooldown:4200
 use:drink
 selfbuff!768;3025
 selfbuff!5487;9634
-mana<36
+mana<41
 channelingtime:21000
 cooldown:2500
 !incombat
 breakoncombat
 breakonfullmana
 nostand
-
-//Mana Potion
-use:mana potion
-mana<21
-incombat
-cooldown:120000;6
-
-//Health Potion
-use:health potion
-selfhp<21
-mana<21
-incombat
-cooldown:120000;6
-
-//Innervate
-castspell:29166
-selfbuff!768;3025
-selfbuff!5487;9634
-incombat
-mana<31
-cooldown:350000
 
 //~~~~~~~~>>Buffs
 
@@ -134,21 +109,41 @@ selfbuff!5487;9634
 mana>51
 cooldown:1500
 
+//Mana Potion
+use:mana potion
+mana<21
+cooldown:120000;6
+incombat
+
+//Health Potion
+use:health potion
+selfhp<21
+mana<21
+cooldown:120000;6
+incombat
+
+//Innervate
+castspell:29166
+selfbuff!768;3025
+selfbuff!5487;9634
+mana<31
+cooldown:350000
+incombat
+
 //~~~~~~~~>>Heals
 
 //Low health in cat form
-//	Cast cat form - combatcount<2
+//	Cast cat form
 castspell:768;3025
 selfbuff=768;3025
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
-selfbuff!5708;18144;23919
-combatcount<2
+selfbuff!5708;18144;23919
 selfhp<51
-targethp>31
-mana>32
+targethp>21
+mana>36
 incombat
-nogcd
-cooldown:1600;3
+cooldown:2000
+triggers:1
 
 //Low health in bear form
 castspell:5487;9634
@@ -156,11 +151,10 @@ selfbuff=5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!5708;18144;23919
 triggers:1
-selfhp<31
-mana>26
+selfhp<51
+mana>36
 incombat
-nogcd
-cooldown:1700;4
+cooldown:2000
 
 //Regrowth
 //	Not in form
@@ -183,7 +177,7 @@ selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!5708;18144;23919
 selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfhp<61
-mana>15
+mana>31
 triggeredby:2
 
 //Regrowth
@@ -194,7 +188,7 @@ selfbuff!5487;9634
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!5708;18144;23919
 selfhp<56
-mana>26
+mana>21
 triggeredby:1
 triggers:2
 cooldown:6000;1
@@ -208,7 +202,7 @@ selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!5708;18144;23919
 selfhp<71
-mana>15
+mana>31
 cooldown:1800
 
 //Healing Touch
@@ -221,7 +215,6 @@ combatcount>1
 selfhp<41
 mana>13
 cooldown:4200;1
-incombat
 
 //Healing Touch
 //	Not in form
@@ -244,33 +237,9 @@ selfbuff!5487;9634
 selfbuff!5708;18144;23919
 havetarget
 !incombat
-mana>26
-cooldown:1600;3
-nogcd
-
-//Cat Form
-//	Full health & mana - you're probably wandering
-//	CAUSING VENDOR ISSUES WILL NOT SHIFT OUT OF FORM AT VENDOR
-//castspell:768;3025
-//selfbuff!768;3025
-//selfhp>91
-//mana>91
-//!incombat
-//!havetarget
-//cooldown:1600;3
-
-//Cat Form
-//	In combat - Combatcount<2
-castspell:768;3025
-selfbuff!768;3025
-selfbuff!5487;9634
-selfbuff!5708;18144;23919
-incombat
-combatcount<2
-mana>26
-cooldown:1600
-nogcd
-backpedal:0623
+distance<30
+mana>36
+cooldown:2000
 
 //Cat Form
 //	In combat - combatcount>1
@@ -278,13 +247,11 @@ castspell:768;3025
 selfbuff=768;3025
 selfbuff!5487;9634
 selfbuff!5708;18144;23919
-havetarget
 incombat
 combatcount>1
-mana>36
-nogcd
+mana>41
 backpedal:0247
-cooldown:1600
+cooldown:2000
 
 //Bear Form
 //	In combat - Combatcount<2
@@ -293,11 +260,10 @@ selfbuff=5487;9634
 selfbuff!768;3025
 selfbuff!5708;18144;23919
 combatcount<2
-mana>21
+mana>41
 backpedal:0247
 incombat
-nogcd
-cooldown:1600
+cooldown:2000
 
 //Bear Form
 //	In combat - Combatcount>1
@@ -306,10 +272,22 @@ selfbuff!5487;9634
 selfbuff!768;3025
 selfbuff!5708;18144;23919
 combatcount>1
-mana>36
+mana>41
 backpedal:0247
-cooldown:1700
+cooldown:2000
 incombat
+
+//Cat Form
+//	In combat - Combatcount<2
+castspell:768;3025
+selfbuff!768;3025
+selfbuff!5487;9634
+selfbuff!5708;18144;23919
+incombat
+combatcount<2
+mana>41
+cooldown:2000
+backpedal:0623
 
 //~~~~~~~~>>Cat Form Attacks
 
@@ -320,6 +298,7 @@ selfbuff!5708;18144;23919
 combopoints>2
 energy>35
 level>29
+incombat
 
 //Rip
 castspell:1079;9492;9493;9752;9894;9896
@@ -329,6 +308,7 @@ selfbuff!5708;18144;23919
 level<30
 combopoints>1
 energy>35
+incombat
 
 //Faerie Fire - Feral
 //	Cat form - not in combat
@@ -337,22 +317,8 @@ targetbuff!16857;17390;17391
 selfbuff=768;3025
 selfbuff!5708;18144;23919
 distance<30
-meleepullcount>1
-cooldown:6000;2
-backpedal:1241
+cooldown:6000
 !incombat
-nogcd
-
-//Faerie Fire - Feral
-//	Cat form - not in combat
-castspell:16857;17390;17391
-targetbuff!16857;17390;17391
-selfbuff=768;3025
-selfbuff!5708;18144;23919
-distance<30
-cooldown:6000;2
-!incombat
-nogcd
 
 //Faerie Fire - Feral
 //	Cat form - in combat
@@ -360,11 +326,10 @@ castspell:16857;17390;17391
 targetbuff!16857;17390;17391
 selfbuff=768;3025
 selfbuff!5708;18144;23919
-distance<30
-cooldown:6000;2
+distance<11
+cooldown:6000
 autoattacking
 backpedal:0473
-incombat
 
 //Tiger's Fury
 //	Always active
@@ -409,6 +374,7 @@ combopoints>2
 energy>35
 level>29
 cooldown:1070
+incombat
 
 //Rip
 castspell:1079;9492;9493;9752;9894;9896
@@ -419,6 +385,7 @@ level<30
 combopoints>1
 energy>35
 cooldown:1070
+incombat
 
 //Auto Attack
 castspell:6603
@@ -460,7 +427,7 @@ selfbuff=5487;9634
 selfbuff!768;3025
 selfbuff!5708;18144;23919
 !incombat
-cooldown:1700;4
+cooldown:2000
 
 //Bear Form
 //	HoT's active
@@ -471,12 +438,13 @@ selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!5708;18144;23919
 combatcount>1
 mana>15
-cooldown:1700;4
+cooldown:2000
 incombat
 
 //Auto Attack
 castspell:6603
 selfbuff=5487;9634
+selfbuff!768;3025
 selfbuff!5708;18144;23919
 !autoattacking
 distance<5
@@ -508,7 +476,6 @@ autoattacking
 distance<4
 rage>10
 cooldown:22000
-combatcount>1
 incombat
 
 //Bash
@@ -557,30 +524,6 @@ mana>15
 cooldown:1600;3
 incombat
 
-//Cat Form
-//	Have target not in combat
-castspell:768;3025
-selfbuff!768;3025
-selfbuff!5487;9634
-selfbuff!5708;18144;23919
-havetarget
-!incombat
-mana>26
-cooldown:1600;3
-nogcd
-
-//Cat Form
-//	Caught in combat - combatcount<2
-castspell:768;3025
-selfbuff!768;3025
-selfbuff!5487;9634
-selfbuff!5708;18144;23919
-incombat
-combatcount<2
-mana>16
-cooldown:1600;3
-backpedal:0623
-
 //auto attack
 castspell:6603
 selfbuff!768;3025
@@ -588,7 +531,7 @@ selfbuff!5708;18144;23919
 !autoattacking
 incombat
 distance<5
-cooldown:30000
+cooldown:5000
 
 //~~~~~~~~>>Other ~~~ To Do / Notes
 //	add entangle roots + backpedal for low health and mana
