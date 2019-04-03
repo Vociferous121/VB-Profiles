@@ -5,7 +5,6 @@
 //	Group Cooldown 2	-	Faerie Fire
 //	Group Cooldown 3	-	Stop form spamming
 //	Group Cooldown 4	-	Just in case bear form wants to spam too
-//	Group Cooldown 5	-	Demoralizing Roar
 //	Group Cooldown 6	-	Mana + Health Potions
 //
 //		Triggers List
@@ -237,6 +236,17 @@ cooldown:4200;1
 
 //~~~~~~~~>>Quick Switch InCombat Forms
 
+//Cat Form
+//	Have target not in combat
+castspell:768;3025
+selfbuff!768;3025
+selfbuff!5487;9634
+selfbuff!5708;18144;23919
+havetarget
+!incombat
+mana>26
+cooldown:1600;3
+nogcd
 
 //Cat Form
 //	Full health & mana - you're probably wandering
@@ -489,39 +499,13 @@ autoattacking
 castspell:99;1735;9490;9747;9898
 selfbuff=5487;9634
 selfbuff!768;3025
-selfbuff!5708;18144;23919
-selfbuff!22842;22895;22896
-autoattacking
-distance<4
-rage>10
-cooldown:22000;5
-addcount>2
-incombat
-
-//Demoralizing Roar
-castspell:99;1735;9490;9747;9898
-selfbuff=5487;9634
-selfbuff!768;3025
-selfbuff!5708;18144;23919
-selfbuff!22842;22895;22896
-autoattacking
-distance<4
-rage>10
-cooldown:22000;5
-addcount>1
-incombat
-
-//Demoralizing Roar
-castspell:99;1735;9490;9747;9898
-selfbuff=5487;9634
-selfbuff!768;3025
 targetbuff!99;1735;9490;9747;9898
 selfbuff!5708;18144;23919
 selfbuff!22842;22895;22896
 autoattacking
 distance<4
 rage>10
-cooldown:22000;5
+cooldown:22000
 combatcount>1
 incombat
 
