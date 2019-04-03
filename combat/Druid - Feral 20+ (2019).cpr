@@ -40,12 +40,13 @@
 ///////////////////////////////////////////////
 
 
-gcd:1650
+gcd:1550
 
 //Unmount
-cast:10
+cast:57
 havetarget
 ismounted
+nogcd
 
 //~~~~~~~~>>Food & Drink
 
@@ -68,7 +69,7 @@ selfhp<61
 !incombat
 !havetarget
 triggers:1
-cooldown:2200;3
+cooldown:1600;3
 
 //Cheak health before drinking
 //	Why waste mana?
@@ -147,8 +148,8 @@ triggers:3
 selfhp<51
 targethp>31
 mana>32
-cooldown:2200;3
 incombat
+nogcd
 
 //Low health in cat form
 //	Cast cat form - combatcount>2
@@ -160,8 +161,8 @@ combatcount>2
 triggers:1
 selfhp<51
 mana>32
-cooldown:2200;3
 incombat
+nogcd
 
 //Low health in bear form
 castspell:5487;9634
@@ -171,8 +172,8 @@ selfbuff!5708;18144;23919
 triggers:1
 selfhp<31
 mana>26
-cooldown:1700;4
 incombat
+nogcd
 
 //Regrowth
 //	Not in form
@@ -221,7 +222,7 @@ selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!5708;18144;23919
 selfhp<71
 mana>15
-cooldown:4200
+cooldown:1800
 
 //Healing Touch
 //	Not in form
@@ -231,7 +232,7 @@ selfbuff!5487;9634
 selfbuff!5708;18144;23919
 triggeredby:3
 mana>13
-cooldown:4200
+cooldown:1800
 
 //Healing Touch
 //	Not in form
@@ -256,7 +257,19 @@ cooldown:4200
 //mana>91
 //!incombat
 //!havetarget
-//cooldown:2200;3
+//cooldown:1600;3
+
+//Bear Form
+//	In combat - Combatcount<2
+castspell:5487;9634
+selfbuff=5487;9634
+selfbuff!768;3025
+selfbuff!5708;18144;23919
+combatcount<2
+mana>26
+backpedal:0247
+incombat
+nogcd
 
 //Cat Form
 //	In combat - Combatcount<2
@@ -267,7 +280,7 @@ selfbuff!5708;18144;23919
 incombat
 combatcount<2
 mana>26
-cooldown:2200;3
+cooldown:1600;3
 backpedal:0623
 
 //Cat Form
@@ -280,7 +293,7 @@ havetarget
 incombat
 combatcount>1
 mana>26
-cooldown:2200;3
+nogcd
 backpedal:0247
 
 //Bear Form
@@ -496,6 +509,7 @@ castspell:6807;6808;6809;8972;9745;9880;9881
 selfbuff=5487;9634
 selfbuff!768;3025
 selfbuff!5708;18144;23919
+selfbuff!22842;22895;22896
 autoattacking
 rage>10
 distance<4
@@ -513,7 +527,7 @@ selfbuff=774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!5708;18144;23919
 combatcount<2
 mana>15
-cooldown:2200;3
+cooldown:1600;3
 incombat
 
 //Cat Form
@@ -525,7 +539,7 @@ selfbuff!5708;18144;23919
 havetarget
 !incombat
 mana>16
-cooldown:2200;3
+cooldown:1600;3
 
 //Cat Form
 //	Caught in combat - combatcount<2
@@ -536,7 +550,7 @@ selfbuff!5708;18144;23919
 incombat
 combatcount<2
 mana>16
-cooldown:2200;3
+cooldown:1600;3
 backpedal:0623
 
 //auto attack
