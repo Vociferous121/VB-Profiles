@@ -1,0 +1,26 @@
+	FERAL DRUID TALENTS TREE
+
+FERAL TALENTS - 
+
+	5	0
+
+5	0	5
+
+2	1	3
+
+0	3	2	2
+
+2		1
+
+	5	
+	
+	1
+
+
+BALANCE TALENTS AFTER FERAL IS COMPLETE - 
+
+0	1	4
+
+0	0	5	3
+
+0		1	0
