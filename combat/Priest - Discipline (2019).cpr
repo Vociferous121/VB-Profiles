@@ -1,4 +1,4 @@
-//~~~~~~>>	Class - Spec	<<~~~~~~\\
+//~~~~~~>>	Priest - Discipline	<<~~~~~~\\
 //
 //		Group Cooldowns
 //	Group Cooldown #	-	Spell Name
@@ -36,7 +36,7 @@
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 
-gcd:1500
+gcd:1650
 
 
 //~~~~~~~~>>Food Drink Potion Consumable
@@ -56,13 +56,58 @@ breakonfullhp
 
 //~~~~~~~~>>Buffs
 
+//Power Word: Fortitude
+castspell:1243;1244;1245;2791;10937;10938
+selfbuff!1243;1244;1245;2791;10937;10938
+mana>31
+!incombat
+
 //~~~~~~~~>>Heals
+
+//Lesser Heal
+castspell:2050;2052
+selfhp<46
+mana>13
+cooldown:4000
 
 //~~~~~~~~>>Before Combat
 
+//Power Word: Shield
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788
+mana>61
+!incombat
+havetarget
+cooldown:4000
+
 //~~~~~~~~>>Crowd Control
 
+
 //~~~~~~~~>>Start Combat
+
+//Smite
+//	Save cast time and use it to pull
+castspell:585;591;598;984;1004;6060;10933;10934
+mana>26
+distance<30
+!incombat
+
+//Power Word: Pain
+castspell:589;594;970;992;2767;10892;10893;10894
+targetbuff!589;594;970;992;2767;10892;10893;10894
+mana>16
+targethp>8
+distance<30
+cooldown:2000
+
+//Smite
+castspell:585;591;598;984;1004;6060;10933;10934
+targetbuff=589;594;970;992;2767;10892;10893;10894
+mana>26
+targethp>11
+distance<30
+incombat
 
 //Auto Attack
 castspell:6603

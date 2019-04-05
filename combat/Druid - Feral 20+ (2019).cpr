@@ -249,7 +249,7 @@ selfbuff!5487;9634
 selfbuff!5708;18144;23919
 incombat
 combatcount>1
-mana>41
+mana>31
 backpedal:0247
 cooldown:2000
 
@@ -260,7 +260,7 @@ selfbuff=5487;9634
 selfbuff!768;3025
 selfbuff!5708;18144;23919
 combatcount<2
-mana>41
+mana>31
 backpedal:0247
 incombat
 cooldown:2000
@@ -285,7 +285,7 @@ selfbuff!5487;9634
 selfbuff!5708;18144;23919
 incombat
 combatcount<2
-mana>41
+mana>26
 cooldown:2000
 backpedal:0623
 
