@@ -45,6 +45,8 @@ gcd:1150
 cast:51
 ismounted
 havetarget`
+nogcd
+cooldown:1500
 
 //Eat
 use:food
@@ -72,16 +74,6 @@ use:health potion
 selfhp<16
 incombat
 cooldown:120000
-
-//Rest
-cast:23
-selfhp<80
-!incombat
-!havetarget
-channelingtime:7241
-cooldown:45000
-breakonfullhp
-breakoncombat
 
 //~~~~~~~~>>Poisons
 
