@@ -1,0 +1,183 @@
+//~~~~~~>>	Priest - Discipline	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1650
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Drink
+use:drink
+channelingtime:21000
+cooldown:6000
+!incombat
+mana<31
+breakoncombat
+breakonfullmana
+
+
+//~~~~~~~~>>Debuff Removal
+
+
+//~~~~~~~~>>Buffs
+
+//Power Word: Fortitude
+castspell:1243;1244;1245;2791;10937;10938
+selfbuff!1243;1244;1245;2791;10937;10938
+mana>31
+!incombat
+level>1
+
+//~~~~~~~~>>Heals
+
+//Lesser Heal
+castspell:2050;2052
+selfhp<46
+mana>13
+cooldown:4000
+
+//Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfhp<71
+mana>21
+cooldown:4000
+level>7
+
+//~~~~~~~~>>Before Combat
+
+//Power Word: Shield
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788
+!wandcasting
+mana>61
+!incombat
+havetarget
+cooldown:4000
+level>3
+
+//~~~~~~~~>>Crowd Control
+
+
+//~~~~~~~~>>Start Combat
+
+//Smite
+//	Save cast time and use it to pull
+castspell:585;591;598;984;1004;6060;10933;10934
+mana>31
+distance<30
+!incombat
+castonce
+level<9
+
+//Mind Blast
+//	Level 10 - To pull
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+!wandcasting
+!incombat
+cooldown:8100
+level>9
+havetarget
+distance<30
+
+//Smite
+//	Before we have SWP level 2 and lower
+castspell:585;591;598;984;1004;6060;10933;10934
+mana>31
+distance<30
+incombat
+level<3
+
+//Power Word: Pain
+castspell:589;594;970;992;2767;10892;10893;10894
+targetbuff!589;594;970;992;2767;10892;10893;10894
+!wandcasting
+mana>16
+targethp>8
+distance<30
+cooldown:2000
+level>1
+
+//Smite
+castspell:585;591;598;984;1004;6060;10933;10934
+targetbuff=589;594;970;992;2767;10892;10893;10894
+!wandcasting
+mana>61
+targethp>11
+distance<30
+incombat
+level<9
+
+//Mind Blast
+//	Level 10
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+incombat
+nogcd
+triggers:1
+channelingtime:1500
+cooldown:8100
+level>9
+
+//Mind Blast
+//	Level 10
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+triggeredby:2
+incombat
+
+//Wand Casting
+//	Assume we have wand at level 7
+castspell:5019
+targetbuff=589;594;970;992;2767;10892;10893;10894
+!wandcasting
+cooldown:7800
+channelingtime:6000
+incombat
+distance<30
+level>6
+
+//Auto Attack
+castspell:6603
+!autoattacking
+!wandcasting
+distance<5
+incombat
+nogcd
+level<8
+
+//~~~~~~~~>>Other ~~~ To Do / Notes

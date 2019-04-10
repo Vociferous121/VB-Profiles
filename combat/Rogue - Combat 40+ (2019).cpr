@@ -252,6 +252,15 @@ cooldown:10000
 incombat
 distance<5
 
+//Kidney Shot
+castspell:408;8643;14174
+targetbuff!408;8643;14174
+enemycasting
+cooldown:20000
+incombat
+selfhp<25
+combopoints>1
+
 //~~~~~~~~>>Start Combat
 
 //Cheap Shot

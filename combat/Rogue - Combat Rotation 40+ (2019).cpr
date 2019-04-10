@@ -39,12 +39,12 @@
 gcd:1000
 
 //Stealth
-castspell:1784;1785;1786;1787
-selfbuff!1784;1785;1786;1787
-selfbuff!7731;7367;16128;24339
-!incombat
-cooldown:8000
-distance<15
+//castspell:1784;1785;1786;1787
+//selfbuff!1784;1785;1786;1787
+//selfbuff!7731;7367;16128;24339
+//!incombat
+//cooldown:8000
+//distance<15
 
 //Cheap Shot
 castspell:1833

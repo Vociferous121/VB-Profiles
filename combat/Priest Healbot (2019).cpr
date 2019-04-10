@@ -1,0 +1,30 @@
+gcd:1650
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+targethp<76
+mana>12
+
+//>Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+targethp<86
+mana>31
+
+//>Power Word: Shield
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+targetbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+mana>51
+targethp<71
+cooldown:4000
+
+//>Lesser Heal Rank 3
+castspell:2053
+targethp<41
+mana<15
+
+//>Large Heal
+castspell:2054;2055;6063;6064
+targetbuff=17;592;600;3747;6065;6066;10898;10899;10900;10901
+targethp<41
+mana>25
