@@ -1,0 +1,19 @@
+gcd:1000
+
+//Pick Pocket
+castspell:921
+loot
+selfbuff=1784;1785;1786;1787
+distance<5
+nogcd
+channelingtime:0500
+cooldown:1000
+
+//Stealth
+castspell:1784;1785;1786;1787
+selfbuff!1784;1785;1786;1787
+selfbuff!7731;7367;16128;24339
+!incombat
+cooldown:8000
+distance<15
+nogcd

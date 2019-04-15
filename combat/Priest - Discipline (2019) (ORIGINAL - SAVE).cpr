@@ -41,143 +41,312 @@ gcd:1650
 
 //~~~~~~~~>>Food Drink Potion Consumable
 
-//Drink
+//>Drink for Mana
 use:drink
-channelingtime:21000
-cooldown:6000
-!incombat
+selfbuff!15271:15270;15335;15336;15337;15338
 mana<31
+!incombat
 breakoncombat
 breakonfullmana
+cooldown:5000
+channelingtime:21000
+nostand
+level>2
 
+//>Drink for Mana
+use:drink
+mana<21
+!incombat
+breakoncombat
+breakonfullmana
+cooldown:5000
+channelingtime:21000
+nostand
+level>2
+
+//>Drink for Mana - Meleepullcount>1
+use:drink
+selfbuff!15271:15270;15335;15336;15337;15338;
+mana<55
+!incombat
+breakoncombat
+breakonfullmana
+cooldown:5000
+channelingtime:21000
+!wandcasting
+nostand
+meleepullcount>1
+level>2
+
+//>Mana Potion
+use:mana potion
+mana<20
+incombat
+cooldown:120000;3
+!wandcasting
+combatcount>1
+level>9
+
+//>Health Potion
+use:health potion
+selfhp<20
+incombat
+cooldown:120000;3
+!wandcasting
+combatcount>1
+level>9
 
 //~~~~~~~~>>Debuff Removal
 
+//>Cure Disease
+//>Rabies ; Infected Wound 1 ; Infected Wound 2 ; Contagion of Rot ; Fevered Fatigue
+castspell:528
+selfbuff=3150;3427;17230;7102;8139
+mana>15
+cooldown:2500
+!wandcasting
+level>13
+
+//>Dispel Magic
+//>Blood Howel ; 
+//cast:21
+//selfbuff=3264
+//mana>18
+//cooldown:2125
+//!wandcasting
+//level>17
 
 //~~~~~~~~>>Buffs
 
-//Power Word: Fortitude
+//Mana Oil
+cast:19
+triggers:5
+!mainhandbuffed
+channelingtime:1500
+cooldown:4500
+!incombat
+
+//Weapon
+cast:10
+triggeredby:5
+!mainhandbuffed
+
+//>Inner Focus > Triggers Flash Heal
+castspell:14751
+selfbuff!14751
+selfhp<45
+mana<25
+cooldown:180000
+nogcd
+!wandcasting
+triggers:1
+level>20
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+triggeredby:1
+level>19
+
+//>Power Word: Fortitude
 castspell:1243;1244;1245;2791;10937;10938
 selfbuff!1243;1244;1245;2791;10937;10938
-mana>31
+mana>30
 !incombat
 level>1
+
+//>Diving Spirit
+castspell:14752;14818;14819;27841
+selfbuff!14752;14818;14819;27841
+mana>30
+!incombat
+level>29
+
+//>Inner Fire
+castspell:588;7128;602;1006;10951;10952
+selfbuff!588;7128;602;1006;10951;10952
+mana>5
+!incombat
+cooldown:2500
+level>11
+
+//>Power Word: Shield - Before Combat
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+!incombat
+havetarget
+cooldown:4100;1
+level>5
+
+//>Power Word: Shield - Combatcount>1 incombat - Active as much as possible
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+incombat
+havetarget
+!wandcasting
+cooldown:4100;1
+combatcount>1
+level>5
+
+//~~~~~~~~>>Wand Transition
+
+//>Flash Heal - Wand Off
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfhp<57
+mana>15
+wandcasting
+channelingtime:1500
+level>19
+
+//>Lesser Heal Rank 3 - wand off
+castspell:2053
+selfhp<49
+mana>12
+wandcasting
+channelingtime:1500
+level>9
+level<16
 
 //~~~~~~~~>>Heals
 
-//Lesser Heal
-castspell:2050;2052
-selfhp<46
-mana>13
-cooldown:4000
+//>Large Heal - Out Of Combat Only 
+castspell:2054;2055;6063;6064
+selfhp<25
+mana>25
+!incombat
+level>15
 
-//Renew
+//>Large Heal
+castspell:2054;2055;6063;6064
+selfbuff=17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfhp<40
+mana>25
+level>15
+!wandcasting
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfhp<54
+mana>15
+!wandcasting
+level>19
+
+//>Renew
 castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
 selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
-selfhp<71
-mana>21
-cooldown:4000
+selfhp<75
+mana>20
+!incombat
 level>7
+
+//>Lesser Heal Rank 1+2
+//>Ranks 1 ; 2
+castspell:2050;2052
+selfhp<49
+mana>12
+level<10
+
+//>Lesser Heal Rank 3
+castspell:2053
+selfhp<49
+mana>12
+!wandcasting
+level>9
+level<20
+
+//>Power Word: Shield
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+havetarget
+mana>20
+selfhp<40
+distance<40
+cooldown:4100;1
+backpedal:0798
+!wandcasting
+incombat
+level>5
 
 //~~~~~~~~>>Before Combat
 
-//Power Word: Shield
+//>Power Word: Shield - Before Combat
 castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
-selfbuff!17;592;600;3747;6065;6066;10898;10899;10900;10901
-selfbuff!6788
-!wandcasting
-mana>61
-!incombat
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
 havetarget
-cooldown:4000
-level>3
+!incombat
+distance<40
+cooldown:4100;1
+level>5
 
 //~~~~~~~~>>Crowd Control
 
-
-//~~~~~~~~>>Start Combat
-
-//Smite
-//	Save cast time and use it to pull
-castspell:585;591;598;984;1004;6060;10933;10934
-mana>31
-distance<30
-!incombat
-castonce
-level<9
-
-//Mind Blast
-//	Level 10 - To pull
-castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
-!wandcasting
-!incombat
-cooldown:8100
-level>9
-havetarget
-distance<30
-
-//Smite
-//	Before we have SWP level 2 and lower
-castspell:585;591;598;984;1004;6060;10933;10934
-mana>31
-distance<30
+//>Fear combatcount>1
+castspell:8122;8124;10888;10890
+combatcount>1
+mana>10
+distance<6
+cooldown:30000;4
+backpedal:750
 incombat
-level<3
+!wandcasting
+level>15
 
-//Power Word: Pain
+//>Fear selfhp<25
+castspell:8122;8124;10888;10890
+selfhp<30
+mana>10
+distance<6
+cooldown:30000;4
+backpedal:0050
+incombat
+!wandcasting
+level>15
+
+//~~~~~~~~>>Combat
+
+//>Shadow Word: Pain
 castspell:589;594;970;992;2767;10892;10893;10894
 targetbuff!589;594;970;992;2767;10892;10893;10894
-!wandcasting
-mana>16
-targethp>8
+mana>20
+targethp>20
 distance<30
-cooldown:2000
-level>1
+level>3
+
+//>Mind Blast
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+targetbuff=589;594;970;992;2767;10892;10893;10894
+mana>30
+targethp>36
+cooldown:8200
+!wandcasting
+distance<30
+level>9
 
 //Smite
 castspell:585;591;598;984;1004;6060;10933;10934
-targetbuff=589;594;970;992;2767;10892;10893;10894
-!wandcasting
-mana>61
-targethp>11
+chance:5
 distance<30
-incombat
-level<9
+mana>20
+havetarget
+!wandcasting
+level<10
 
-//Mind Blast
-//	Level 10
-castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
-incombat
-nogcd
-triggers:1
-channelingtime:1500
-cooldown:8100
-level>9
 
-//Mind Blast
-//	Level 10
-castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
-triggeredby:2
-incombat
-
-//Wand Casting
-//	Assume we have wand at level 7
+//>Auto Wand
 castspell:5019
-targetbuff=589;594;970;992;2767;10892;10893;10894
 !wandcasting
-cooldown:7800
-channelingtime:6000
-incombat
 distance<30
-level>6
+havetarget
+level>7
+cooldown:3350
+channelingtime:1550
+nogcd
 
-//Auto Attack
+//>Auto Attack
 castspell:6603
 !autoattacking
-!wandcasting
-distance<5
 incombat
-nogcd
+distance<5
 level<8
+nogcd
 
 //~~~~~~~~>>Other ~~~ To Do / Notes

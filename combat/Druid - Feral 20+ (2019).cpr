@@ -48,6 +48,7 @@ gcd:1700
 //Out of form to drink
 castspell:768;3025
 selfbuff=768;3025
+!havetarget
 mana<36
 !incombat
 cooldown:10000
@@ -79,6 +80,7 @@ cooldown:4200
 use:drink
 selfbuff!768;3025
 selfbuff!5487;9634
+!havetarget
 mana<41
 channelingtime:21000
 cooldown:2500
@@ -180,6 +182,17 @@ selfhp<61
 mana>31
 triggeredby:2
 
+//Healing Touch
+//	Not in form
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!768;3025
+selfbuff!5487;9634
+selfbuff!5708;18144;23919
+selfhp<66
+mana>13
+cooldown:4200;1
+triggeredby:1
+
 //Regrowth
 //	Not in form
 castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
@@ -212,7 +225,7 @@ selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!5708;18144;23919
 combatcount>1
-selfhp<41
+selfhp<51
 mana>13
 cooldown:4200;1
 
@@ -222,7 +235,7 @@ castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!5708;18144;23919
-selfhp<26
+selfhp<46
 mana>13
 cooldown:4200;1
 
@@ -273,7 +286,7 @@ selfbuff!768;3025
 selfbuff!5708;18144;23919
 combatcount>1
 mana>41
-backpedal:0247
+backpedal:1747
 cooldown:2000
 incombat
 
@@ -318,6 +331,7 @@ selfbuff=768;3025
 selfbuff!5708;18144;23919
 distance<30
 cooldown:6000
+backpedal:2122
 !incombat
 
 //Faerie Fire - Feral

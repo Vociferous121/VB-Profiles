@@ -41,10 +41,29 @@ gcd:1650
 
 //~~~~~~~~>>Food Drink Potion Consumable
 
+//>Renew Before Drinking
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfhp<75
+mana>20
+!incombat
+level>7
+
 //>Drink for Mana
 use:drink
 selfbuff!15271:15270;15335;15336;15337;15338
 mana<31
+!incombat
+breakoncombat
+breakonfullmana
+cooldown:5000
+channelingtime:21000
+nostand
+level>2
+
+//>Drink for Mana
+use:drink
+mana<21
 !incombat
 breakoncombat
 breakonfullmana
@@ -107,6 +126,23 @@ level>13
 
 //~~~~~~~~>>Buffs
 
+//Mana Oil
+//cast:19
+//triggers:5
+//!mainhandbuffed
+//channelingtime:1500
+//cooldown:500000
+//!incombat
+//breakoncombat
+
+//Weapon
+//cast:10
+//triggeredby:5
+//!mainhandbuffed
+//channelingtime:3000
+//breakoncombat
+//!incombat
+
 //>Inner Focus > Triggers Flash Heal
 castspell:14751
 selfbuff!14751
@@ -165,20 +201,30 @@ level>5
 
 //~~~~~~~~>>Wand Transition
 
+//>Mind Blast
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+targetbuff=589;594;970;992;2767;10892;10893;10894
+cooldown:8200;1
+!wandcasting
+mana>30
+level>9
+
 //>Flash Heal - Wand Off
 castspell:2061;9472;9473;9474;10915;10916;10917
 selfhp<57
 mana>15
 wandcasting
 channelingtime:1500
+backpedal:0600
 level>19
 
-//>Lesser Heal Rank 3 - wand off
+//>Lesser Heal Rank 3 - Wand Off
 castspell:2053
 selfhp<49
 mana>12
 wandcasting
 channelingtime:1500
+backpedal:0600
 level>9
 level<16
 
@@ -197,13 +243,11 @@ selfbuff=17;592;600;3747;6065;6066;10898;10899;10900;10901
 selfhp<40
 mana>25
 level>15
-!wandcasting
 
 //>Flash Heal
 castspell:2061;9472;9473;9474;10915;10916;10917
 selfhp<54
 mana>15
-!wandcasting
 level>19
 
 //>Renew
@@ -282,6 +326,7 @@ level>15
 //>Shadow Word: Pain
 castspell:589;594;970;992;2767;10892;10893;10894
 targetbuff!589;594;970;992;2767;10892;10893;10894
+triggers:2
 mana>20
 targethp>20
 distance<30
@@ -290,11 +335,9 @@ level>3
 //>Mind Blast
 castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
 targetbuff=589;594;970;992;2767;10892;10893;10894
-mana>30
-targethp>36
-cooldown:8200
+triggeredby:2
+cooldown:8200;1
 !wandcasting
-distance<30
 level>9
 
 //Smite
@@ -306,14 +349,13 @@ havetarget
 !wandcasting
 level<10
 
-
 //>Auto Wand
 castspell:5019
 !wandcasting
 distance<30
 havetarget
 level>7
-cooldown:3350
+cooldown:2000
 channelingtime:1550
 nogcd
 
