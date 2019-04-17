@@ -1,0 +1,99 @@
+//~~~~~~>>	Warrior - Spec	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Eat
+use:Food
+selfhp<31
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullhp
+
+//~~~~~~~~>>Debuff Removal
+
+//~~~~~~~~>>Buffs
+
+//Battle Shout
+castspell:6673;5242;6192;11549;1150;25289
+selfbuff!6673;5242;6192;11549;1150;25289
+rage>10
+cooldown:5000
+
+//~~~~~~~~>>Heals
+
+//~~~~~~~~>>Before Combat
+
+//charge
+castspell:100;6178;11578
+distance>8
+distance<25
+cooldown:15000
+!incombat
+
+//~~~~~~~~>>Crowd Control
+
+//~~~~~~~~>>Start Combat
+
+//Auto Attack
+castspell:6603
+!autoattacking
+distance<5
+nogcd
+
+//Rend
+castspell:772;6546;6547;6548;11573;11574
+targetbuff!772;6546;6547;6548;11573;11574
+rage>10
+autoattacking
+distance<5
+
+//Heroic Strike
+castspell:78;284;285;1608;11564;11565;11566;11567
+autoattacking
+distance<5
+nogcd
+rage>15
+
+//~~~~~~~~>>Other ~~~ To Do / Notes
+
