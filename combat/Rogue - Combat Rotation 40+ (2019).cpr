@@ -83,13 +83,13 @@ energy>35
 combopoints>1
 distance<5
 
-//Slice and Dice
-castspell:5171;6774
-combopoints>1
-targethp<21
+//Expose Armor
+castspell:8647;8649;8650;11197;11198
+targetbuff!8650;8651;8652;11199;11120;8647;8649;8650;11197;11198
+selfbuff=5171;6774
+targetbuff!7404;7406;8381;11598;11599
 energy>25
-cooldown:10000
-autoattacking
+targethp>21
 distance<5
 
 //Slice and Dice

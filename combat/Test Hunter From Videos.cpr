@@ -1,0 +1,160 @@
+//~~~~~~>>	Hunter - Beast Mastery	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Eat
+use:Food
+selfhp<31
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullhp
+
+//Drink
+use:drink
+mana<33
+!incombat
+channelingtime:21000
+cooldown:2000
+breakoncombat
+breakonfullmana
+
+//~~~~~~~~>>Debuff Removal
+
+//~~~~~~~~>>Buffs
+//Revive Pet
+castspell:982
+petactive
+!petalive
+mana>50
+cooldown:2000
+
+//Call Pet
+castspell:883
+!petactive
+petalive
+cooldown:2000
+
+//Beasial Wrath
+castspell:
+mana>5
+distance<34
+cooldown:1200000
+petactive
+petalive
+
+//Intimidation
+castspell:19577
+mana>4
+distance<34
+cooldown:60000
+petalive
+petactive
+
+//Hunter's Mark
+castspell:1130;14323;14324;14325
+targetbuff!1130;14323;14324;14325
+mana>2
+distance<34
+
+//Feign Death
+castspell:5384
+selfbuff!5384
+mana>4
+cooldown:30000
+channelingtime:3000
+incombat
+haveaggro
+distance<10
+
+//~~~~~~~~>>Heals
+
+//Mend Pet
+castspell:
+mana>10
+distance<20
+channelingtime:5000
+pethp<51
+
+//~~~~~~~~>>Before Combat
+
+//~~~~~~~~>>Crowd Control
+
+//~~~~~~~~>>Start Combat
+
+//Multishot
+castspell:
+mana>10
+distance>8
+distance<34
+cooldown:10000
+combatcount>1
+
+//Serpent Sting
+castspell:1978;13549;13550;13551;13552;13553;13554;13555
+targetbuff!1978;13549;13550;13551;13552;13553;13554;13555
+mana>6
+distance>8
+distance<34
+
+//Arcane Shot
+castspell:3044;14281;14282;14283;14284;14285;14286;14287
+cooldown:6000
+mana>5
+distance>8
+distance<34
+
+//Raptor Strike
+castspell:2973;14260;14261;14262;14263;14264;14265;14266
+mana>5
+cooldown:6000
+distance<5
+
+//Auto Attack
+castspell:6603
+!autoattacking
+distance<5
+nogcd
+
+//~~~~~~~~>>Other ~~~ To Do / Notes
+

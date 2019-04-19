@@ -41,17 +41,16 @@
 ///////////////////////////////////////////////
 
 
-gcd:1700
+gcd:1750
 
 //~~~~~~~~>>Food & Drink
 
 //Out of form to drink
 castspell:768;3025
 selfbuff=768;3025
-!havetarget
 mana<36
 !incombat
-cooldown:10000
+cooldown:5000;7
 nogcd
 
 //Out of form to heal
@@ -80,7 +79,6 @@ cooldown:4200
 use:drink
 selfbuff!768;3025
 selfbuff!5487;9634
-!havetarget
 mana<41
 channelingtime:21000
 cooldown:2500
@@ -141,8 +139,8 @@ selfbuff=768;3025
 selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
 selfbuff!5708;18144;23919
 selfhp<51
-targethp>21
-mana>36
+targethp>16
+mana>18
 incombat
 cooldown:2000
 triggers:1
@@ -178,7 +176,7 @@ selfbuff!5487;9634
 selfbuff!774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!5708;18144;23919
 selfbuff=8936;8938;8939;8940;8941;9750;9856;9857;9858
-selfhp<61
+selfhp<91
 mana>31
 triggeredby:2
 
@@ -235,7 +233,7 @@ castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
 selfbuff!768;3025
 selfbuff!5487;9634
 selfbuff!5708;18144;23919
-selfhp<46
+selfhp<31
 mana>13
 cooldown:4200;1
 
@@ -251,11 +249,12 @@ selfbuff!5708;18144;23919
 havetarget
 !incombat
 distance<30
-mana>36
-cooldown:2000
+mana>41
+cooldown:5000;7
 
 //Cat Form
 //	In combat - combatcount>1
+//	If another target enters combat
 castspell:768;3025
 selfbuff=768;3025
 selfbuff!5487;9634
@@ -263,11 +262,13 @@ selfbuff!5708;18144;23919
 incombat
 combatcount>1
 mana>31
+targethp>25
 backpedal:0247
 cooldown:2000
 
 //Bear Form
 //	In combat - Combatcount<2
+//	If a target dies in combat
 castspell:5487;9634
 selfbuff=5487;9634
 selfbuff!768;3025
@@ -280,18 +281,20 @@ cooldown:2000
 
 //Bear Form
 //	In combat - Combatcount>1
+//	If another target enters combat
 castspell:5487;9634
 selfbuff!5487;9634
 selfbuff!768;3025
 selfbuff!5708;18144;23919
 combatcount>1
 mana>41
-backpedal:1747
+backpedal:0747
 cooldown:2000
 incombat
 
 //Cat Form
 //	In combat - Combatcount<2
+//	If a target dies in combat
 castspell:768;3025
 selfbuff!768;3025
 selfbuff!5487;9634
@@ -331,7 +334,6 @@ selfbuff=768;3025
 selfbuff!5708;18144;23919
 distance<30
 cooldown:6000
-backpedal:2122
 !incombat
 
 //Faerie Fire - Feral

@@ -42,11 +42,20 @@ gcd:1150
 //~~~~~~~~>>Food Drink Potion Consumable
 
 //>Unmount have target
-cast:51
+cast:10
 ismounted
-havetarget`
+havetarget
+distance<10
 nogcd
-cooldown:1500
+cooldown:2500
+
+//>Mount
+cast:10
+!ismounted
+!havetarget
+nogcd
+cooldown:2500
+!incombat
 
 //Eat
 use:food
@@ -108,11 +117,10 @@ cooldown:10000
 channelingtime:2250
 
 
-//~~~~~~~~>>Buffs
+//~~~~~~~~>>Buffs
 
 //Riposte 1
 castspell:14251
-targetbuff!1833
 incombat
 nogcd
 cooldown:3141
@@ -211,7 +219,7 @@ distance<5
 
 //Auto Attack
 castspell:6603
-distance<5
+distance<4
 !autoattacking
 nogcd
 !incombat

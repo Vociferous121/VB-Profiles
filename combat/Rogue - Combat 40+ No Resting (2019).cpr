@@ -118,7 +118,6 @@ nogcd
 
 //Riposte 1
 castspell:14251
-targetbuff!1833
 incombat
 nogcd
 cooldown:3141

@@ -332,6 +332,14 @@ targethp>20
 distance<30
 level>3
 
+//Smite
+castspell:585;591;598;984;1004;6060;10933;10934
+distance<30
+mana>20
+havetarget
+!wandcasting
+level<10
+
 //>Mind Blast
 castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
 targetbuff=589;594;970;992;2767;10892;10893;10894
@@ -339,15 +347,6 @@ triggeredby:2
 cooldown:8200;1
 !wandcasting
 level>9
-
-//Smite
-castspell:585;591;598;984;1004;6060;10933;10934
-chance:5
-distance<30
-mana>20
-havetarget
-!wandcasting
-level<10
 
 //>Auto Wand
 castspell:5019

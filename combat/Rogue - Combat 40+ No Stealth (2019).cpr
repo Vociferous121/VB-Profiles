@@ -120,7 +120,6 @@ channelingtime:2250
 
 //Riposte 1
 castspell:14251
-targetbuff!1833
 incombat
 nogcd
 cooldown:3141
@@ -219,7 +218,7 @@ distance<5
 
 //Auto Attack
 castspell:6603
-distance<5
+distance<4
 !autoattacking
 nogcd
 !incombat
