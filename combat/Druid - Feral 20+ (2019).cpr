@@ -109,6 +109,17 @@ selfbuff!5487;9634
 mana>51
 cooldown:1500
 
+//Omen of Clarity
+//	Not in form
+castspell:16864
+selfbuff!16864
+selfbuff!768;3025
+selfbuff!5487;9634
+!incombat
+mana>15
+cooldown:5100
+level>29
+
 //Mana Potion
 use:mana potion
 mana<21
@@ -204,8 +215,45 @@ triggeredby:1
 triggers:2
 cooldown:6000;1
 
+//Healing Touch
+//	Not in form
+//	In Combat	 Not Triggered		Combatcount>1
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!768;3025
+selfbuff!5487;9634
+selfbuff!5708;18144;23919
+combatcount>1
+incombat
+selfhp<51
+mana>13
+cooldown:4200;1
+
+//Healing Touch
+//	Not in form
+//	Not Triggered
+castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
+selfbuff!768;3025
+selfbuff!5487;9634
+selfbuff!5708;18144;23919
+selfhp<41
+mana>13
+cooldown:4200;1
+
+//Regrowth
+//	Not in form
+//	Not Triggered
+castspell:8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!768;3025
+selfbuff!5487;9634
+selfbuff!8936;8938;8939;8940;8941;9750;9856;9857;9858
+selfbuff!5708;18144;23919
+selfhp<61
+mana>21
+cooldown:6000;1
+
 //Rejuvenation
 //	Not in form
+//	Not Triggered
 castspell:774;1058;1430;2090;2091;3627;8910;9839;9840;9841;25299
 selfbuff!768;3025
 selfbuff!5487;9634
@@ -215,28 +263,6 @@ selfbuff!5708;18144;23919
 selfhp<71
 mana>31
 cooldown:1800
-
-//Healing Touch
-//	Not in form
-castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
-selfbuff!768;3025
-selfbuff!5487;9634
-selfbuff!5708;18144;23919
-combatcount>1
-selfhp<51
-mana>13
-cooldown:4200;1
-
-//Healing Touch
-//	Not in form
-castspell:5185;5186;5187;5188;5189;6778;8903;9758;9888;9889;25297
-selfbuff!768;3025
-selfbuff!5487;9634
-selfbuff!5708;18144;23919
-selfhp<31
-mana>13
-cooldown:4200;1
-
 
 //~~~~~~~~>>Quick Switch InCombat Forms
 

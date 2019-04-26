@@ -1,0 +1,93 @@
+//~~~~~~>>	Mage - Frost	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Eat
+use:Food
+selfhp<31
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullhp
+
+//Drink
+use:drink
+mana<33
+!incombat
+channelingtime:21000
+cooldown:2000
+breakoncombat
+breakonfullmana
+
+//~~~~~~~~>>Debuff Removal
+
+//~~~~~~~~>>Buffs
+
+//Frost Armor
+castspell:168;7300;7301
+selfbuff!168;7300;7301
+mana>51
+!incombat
+cooldown:2000
+
+//~~~~~~~~>>Heals
+
+//~~~~~~~~>>Before Combat
+
+//~~~~~~~~>>Crowd Control
+
+//~~~~~~~~>>Start Combat
+
+//Fireball
+castspell:133
+mana>12
+distance<34
+
+//Auto Attack
+castspell:6603
+!autoattacking
+incombat
+nogcd
+
+//~~~~~~~~>>Other ~~~ To Do / Notes
+

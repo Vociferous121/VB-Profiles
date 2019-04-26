@@ -41,22 +41,6 @@ gcd:1150
 
 //~~~~~~~~>>Food Drink Potion Consumable
 
-//>Unmount have target
-cast:10
-ismounted
-havetarget
-distance<10
-nogcd
-cooldown:2500
-
-//>Mount
-cast:10
-!ismounted
-!havetarget
-nogcd
-cooldown:2500
-!incombat
-
 //Eat
 use:food
 selfhp<71

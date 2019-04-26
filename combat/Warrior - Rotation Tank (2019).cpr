@@ -1,0 +1,154 @@
+//~~~~~~>>	Warrior - Spec	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown 1	-	Stance Change GCD
+//	Group Cooldown 2	-	Sunder Armor
+//	Group Cooldown 3	-	Battle Shout In/Out Combat
+//	Group Cooldown 4	-	
+//	Group Cooldown 5	-	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1550
+
+//~~~~~~~~>>Battle Stances
+
+//Defensive Stance
+castspell:71
+selfbuff!71
+nogcd
+
+//~~~~~~~~>>Buffs
+
+//Battle Shout
+castspell:6673;5242;6192;11549;1150;25289
+selfbuff!6673;5242;6192;11549;1150;25289
+rage>10
+
+//Bloodrage
+castspell:2687
+selfbuff!2687
+selfhp>80
+targethp>65
+incombat
+cooldown:60000
+nogcd
+
+//~~~~~~~~>>Heals
+
+//~~~~~~~~>>Before Combat
+
+//~~~~~~~~>>Crowd Control
+
+//Shield Bash
+castspell:72;1671;1672
+enemycasting
+rage>10
+distance<5
+cooldown:12000
+
+//Demoralizing Shout
+castspell:1160;6190;11554;11555;11556
+targetbuff!1160;6190;11554;11555;11556
+selfbuff=6673;5242;6192;11549;1150;25289
+rage>10
+distance<5
+autoattacking
+cooldown:5000
+
+//~~~~~~~~>>Start Combat
+
+//Auto Attack
+castspell:6603
+!autoattacking
+distance<4
+nogcd
+
+//Revenge
+castspell:6572;6574;7379;11600;11601;25288
+selfbuff=71
+selfbuff!2457
+rage>5
+distance<5
+autoattacking
+incombat
+cooldown:5000
+nogcd
+
+//Sunder Armor
+castspell:7386;7405;8380;11596;11567
+targetbuff!7386;7405;8380;11596;11567
+rage>15
+distance<5
+autoattacking
+cooldown:1650;2
+
+//Sunder Armor
+//	#2
+castspell:7386;7405;8380;11596;11567
+targetbuff=7386;7405;8380;11596;11567
+rage>15
+distance<5
+autoattacking
+castonce
+cooldown:1650;2
+
+//Sunder Armor
+//	#3
+castspell:7386;7405;8380;11596;11567
+targetbuff=7386;7405;8380;11596;11567
+rage>15
+distance<5
+autoattacking
+castonce
+cooldown:1650;2
+
+//Rend
+//	Sunder Armor Proc
+castspell:772;6546;6547;6548;11573;11574
+targetbuff!772;6546;6547;6548;11573;11574
+targetbuff=7386;7405;8380;11596;11567
+rage>10
+targethp>10
+autoattacking
+distance<5
+
+//Heroic Strike
+//	Sunder Armor Proc
+castspell:78;284;285;1608;11564;11565;11566;11567
+targetbuff=7386;7405;8380;11596;11567
+autoattacking
+distance<5
+targethp>6
+nogcd
+rage>15
+
+//~~~~~~~~>>Other ~~~ To Do / Notes
+

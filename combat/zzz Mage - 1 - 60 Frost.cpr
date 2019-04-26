@@ -1,0 +1,424 @@
+//8:53 PM 11/3/2017
+//Setting Global Cooldown for all spells cast
+//Change this periodically to avoid detection
+//1500-1750
+
+GCD:1500
+
+//|||||||||||||||||	Things To Add?? 	|||||||||||||||||\\
+
+//		Add BackPedal:**** to Fire Blast???
+//		Add ColdSnap And Triggers
+//		Add Blink
+// 		Add Evocation
+//		Add Counterspell
+//		Add Mana Gems
+//		Add Ice Block
+
+//==//Group Cooldowns Set # 1 - Ice Barrier 		(Ranged and Melee Attackers)
+//==//Group Cooldowns Set # 2 - 	*****
+//==//Group Cooldowns Set # 3 - 	*****
+//==//Group Cooldowns Set # 4 - 	*****
+//==//Group Cooldowns Set # 5 - 	*****
+
+//==//Group Triggers Set # 1 - 	*Use Food* then trigger *Use Drink*
+//==//Group Triggers Set # 2 - 	*Use Drink* then trigger *Use Food*
+//==//Group Triggers Set # 3 - 	*****
+//==//Group Triggers Set # 4 - 	*****
+//==//Group Triggers Set # 5 - 	*****
+
+
+//				//====== All Commands While Out Combat ======\\
+//				_______________________________________________
+
+//		////--- Buffs --- \\\\
+
+//	Frost Armor Rank 1 & 2 & 3 - Level<30
+CastSpell:168;7300;7301
+SelfBuff!168;7300;7301
+Mana>40
+CoolDown:3000
+!InCombat
+Level<30
+
+//	Ice Armor - Level>30
+CastSpell:7302;7320;10219;10220
+SelfBuff!7302;7320;10219;10220
+Mana>40
+CoolDown:3000
+!InCombat
+Level>30
+
+//	Arcane Intellect - Level>1
+CastSpell:1459;1460;1461;10156;10157
+SelfBuff!1459;1460;1461;10156;10157
+Mana>40
+Cooldown:3000
+!InCombat
+Level>1
+
+//	Mana Shield - Level>20
+CastSpell:1463;8494;8495;10191;10193
+SelfBuff!1463;8494;8495;10191;10193
+Mana>20
+SelfHP<30
+CoolDown:10000
+InCombat
+Level>20
+Level<40
+
+//	Ice Barrier - Level>40 		(Target is Melee)
+CastSpell:11426;13031;13032;13033
+SelfBuff!11426;13031;13032;13033
+Mana>40
+Distance<10
+CoolDown:30000;1
+InCombat
+Level>40
+
+//	Ice Barrier - Level>40		(Target is Ranged)
+CastSpell:11426;13031;13032;13033
+SelfBuff!11426;13031;13032;13033
+Mana>40
+SelfHP<80
+CoolDown:30000;1
+InCombat
+Level>40
+
+
+//		////--- Conjurables ---\\\\
+
+//	Conjure Water Rank 1 - Level>4
+CastSpell:5504
+HaveItem:5350<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>4
+Level<10
+
+//	Conjure Water Rank 2 - Level>10
+CastSpell:5505
+HaveItem:2288<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>10
+Level<20
+
+//	Conjure Water Rank 3 - Level>20
+CastSpell:5506
+HaveItem:2136<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>20
+Level<30
+
+//	Conjure Water Rank 4 - Level>30
+CastSpell:6127
+HaveItem:3772<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>30
+Level<40
+
+//	Conjure Water Rank 5 - Level>40
+CastSpell:10138
+HaveItem:8077<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>40
+Level<50
+
+//	Conjure Water Rank 6 - Level>50
+CastSpell:10139
+HaveItem:8078<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>50
+
+//	Conjure Water Rank 7 - Level>60
+//CastSpell:10140
+//HaveItem:8079<5
+//Mana>30
+//ChannelingTime:3250
+//CoolDown:3300
+//!InCombat
+//BreakOnCombat
+//Level>60
+
+//	Conjure Food Rank 1 - Level>6
+CastSpell:587
+HaveItem:5349<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>6
+Level<12
+
+//	Conjure Food Rank 2 - Level>12
+CastSpell:597
+HaveItem:1113<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>12
+Level<22
+
+//	Conjure Food Rank 3 - Level>22
+CastSpell:990
+HaveItem:1114<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>22
+Level<32
+
+//	Conjure Food Rank 4 - Level>32
+CastSpell:6129
+HaveItem:1487<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>32
+Level<42
+
+//	Conjure Food Rank 5 - Level>42
+CastSpell:10144
+HaveItem:8075<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>42
+Level<52
+
+//	Conjure Food Rank 6 - Level>52
+CastSpell:10145
+HaveItem:8076<5
+Mana>30
+ChannelingTime:3250
+CoolDown:3300
+!InCombat
+BreakOnCombat
+Level>52
+
+//	Conjure Food Rank 7 - Level>60
+//CastSpell:28612
+//HaveItem:22895<5
+//Mana>30
+//ChannelingTime:3250
+//CoolDown:3300
+//!InCombat
+//BreakOnCombat
+//Level>60
+
+//		////--- Food & Drink & Rest ---\\\
+
+//	Rest For Health - Level<3
+Cast:30
+SelfHP<60
+ChannelingTime:4600
+Cooldown:15000
+!InCombat
+Level<3
+
+//	Rest For Mana - Level<3
+Cast:30
+Mana<40
+ChannelingTime:4600
+Cooldown:15000
+!InCombat
+Level<3
+
+//	Use Food - Health - Level>3
+Use:Food
+SelfHP<75
+Triggers:1
+CoolDown:3000
+NoStand
+!InCombat
+Level>3
+
+//	Use Food - Auto Trigger Drink - Level>3
+Use:Drink
+SelfBuff!430;431;432;1133;1135;1137
+TriggeredBy:1
+CoolDown:10000
+ChannelingTime:30000
+BreakOnCombat
+BreakOnFullHP
+NoStand
+!InCombat
+
+//	Use Drink - Mana - Level>3
+Use:Drink
+SelfBuff!430;431;432;1133;1135;1137
+Mana<60
+Triggers:2
+CoolDown:3000
+NoStand
+!InCombat
+Level>3
+
+//	Use Drink - Auto Trigger Food - Level>3
+Use:Food
+TriggeredBy:2
+CoolDown:10000
+ChannelingTime:30000
+BreakOnCombat
+BreakOnFullMana
+NoStand
+!InCombat
+
+
+
+//				//====== All Commands While In Combat ======\\
+//				_______________________________________________
+
+
+
+//		////--- Attacks To Start Combat ---\\\\
+
+//	Fireball Rank 1 - Level<4
+CastSpell:133
+Distance<32
+TargetHP>80
+Mana>20
+Cooldown:2000
+!InCombat
+Level<4
+
+//	Frostbolt - Level>4
+CastSpell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
+Distance<29
+TargetHP>80
+Mana>20
+Cooldown:2000
+!InCombat
+Level>4
+
+
+//		////--- Attacks After Combat Start ---\\\\
+
+//	Wand Cast - Level>
+//CastSpell: 	*****
+//!WandCasting	*****
+
+//	Auto Attack Melee
+CastSpell:6603
+!AutoAttacking
+!WandCasting
+Distance<5
+Mana<20
+NoGCD
+InCombat
+//Level<60 	*****
+
+//	Fireball Rank 1 - Level<4
+CastSpell:133
+Distance<34
+Mana>20
+InCombat
+Level<4
+
+//	Frost Nova - Level>10
+CastSpell:122;865;6131;10231;10230
+TargetBuff!122;865;6131;10231;10230
+Distance<8
+Mana>20
+BackPedal:1750
+CoolDown:25000
+InCombat
+Level>10
+Level<15
+
+//	Frost Nova Improved 1 - Level>15
+CastSpell:122;865;6131;10231;10230
+TargetBuff!122;865;6131;10231;10230
+Distance<8
+Mana>20
+BackPedal:1750
+CoolDown:24000
+InCombat
+Level>15
+Level<16
+
+//	Frost Nova Improved 2 - Level>16
+CastSpell:122;865;6131;10231;10230
+TargetBuff!122;865;6131;10231;10230
+Distance<8
+Mana>20
+BackPedal:1750
+CoolDown:23000
+InCombat
+Level>16
+
+//	Cone Of Cold - Level>26 		(Don't use if Frost Nova is active)
+CastSpell:120;8492;10159;10160;10161
+TargetBuff!122;865;6131;10231;10230
+Distance<8
+Mana>30
+BackPedal:1324
+CoolDown:10000
+InCombat
+Level>26
+
+//	Fire Blast - Level>6
+CastSpell:2136;2137;2138;8412;8413;10197;10199
+Distance<19
+Mana>15
+CoolDown:8000
+InCombat
+Level>6
+
+//	Arcane Missiles - Level>8			**Chance:5%**
+CastSpell:5143;5144;5145;8416;8417;10211;10212;25345
+Distance<29
+Mana>50
+Chance:5
+ChannelingTime:3200
+Cooldown:5000
+InCombat
+Level>8
+
+//	Arcane Explosion - Level>14			**Chance:5%**
+CastSpell:1449;8437;8438;8439;10201;10202
+Distance<9
+Mana>60
+Chance:5
+Cooldown:5000
+InCombat
+Level>14
+
+//	Frostbolt - Level>4
+CastSpell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
+Distance<29
+Mana>7
+InCombat
+Level>4

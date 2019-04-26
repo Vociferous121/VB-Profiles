@@ -108,11 +108,12 @@ level>9
 
 //>Cure Disease
 //>Rabies ; Infected Wound 1 ; Infected Wound 2 ; Contagion of Rot ; Fevered Fatigue
-castspell:528
-selfbuff=3150;3427;17230;7102;8139
+//>Infected Bite x3 ; 
+castspell:528;552
+selfbuff=3150;3427;17230;7102;8139;7367;16128;24339
 mana>15
 cooldown:2500
-!wandcasting
+!incombat
 level>13
 
 //>Dispel Magic
@@ -189,14 +190,13 @@ havetarget
 cooldown:4100;1
 level>5
 
-//>Power Word: Shield - Combatcount>1 incombat - Active as much as possible
+//>Power Word: Shield - incombat - Active as much as possible
 castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
 selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
 incombat
 havetarget
 !wandcasting
 cooldown:4100;1
-combatcount>1
 level>5
 
 //~~~~~~~~>>Wand Transition
@@ -205,7 +205,16 @@ level>5
 castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
 targetbuff=589;594;970;992;2767;10892;10893;10894
 cooldown:8200;1
-!wandcasting
+triggers:5
+channelingtime:1500
+wandcasting
+mana>30
+level>9
+
+//>Mind Blast
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+triggeredby:5
+cooldown:8200
 mana>30
 level>9
 

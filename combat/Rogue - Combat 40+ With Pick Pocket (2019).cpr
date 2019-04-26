@@ -48,6 +48,7 @@ selfbuff=1784;1785;1786;1787
 distance<4
 nogcd
 channelingtime:0500
+cooldown:5000
 breakoncombat
 !incombat
 
@@ -90,28 +91,6 @@ selfbuff!7731;7367;16128;24339
 selfbuff!14792;14795;14108
 !incombat
 cooldown:8600
-
-//Rest
-cast:23
-selfhp<84
-selfbuff=1784;1785;1786;1787
-!incombat
-!havetarget
-channelingtime:7241
-cooldown:45000
-breakonfullhp
-breakoncombat
-
-//Rest
-cast:23
-selfhp<80
-selfbuff=7731;7367;16128;24339
-!incombat
-!havetarget
-channelingtime:7241
-cooldown:45000
-breakonfullhp
-breakoncombat
 
 //~~~~~~~~>>Poisons
 
@@ -276,7 +255,7 @@ combopoints>1
 //Cheap Shot
 castspell:1833
 selfbuff=1784;1785;1786;1787
-distance<5
+distance<4
 !incombat
 energy>60
 
