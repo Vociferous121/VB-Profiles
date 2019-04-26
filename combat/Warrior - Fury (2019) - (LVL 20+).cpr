@@ -112,6 +112,16 @@ incombat
 cooldown:60000
 nogcd
 
+//Overpower
+castspell:7384;7887;11584;11585
+selfbuff=2457
+rage>5
+distance<5
+autoattacking
+incombat
+cooldown:2260
+nogcd
+
 //~~~~~~~~>>Heals
 
 //~~~~~~~~>>Before Combat
@@ -123,7 +133,7 @@ meleepullcount>1
 havetarget
 distance>8
 distance<34
-channelingtime:2500
+channelingtime:3500
 castonce
 
 //Throw
@@ -148,11 +158,10 @@ cooldown:15050
 //~~~~~~~~>>Crowd Control
 
 //Retaliation
-//	Low HP
+//	3 Or More Targets
 castspell:20230
 selfbuff!20230
-combatcount>1
-selfhp<36
+combatcount>2
 incombat
 cooldown:1800000
 
@@ -210,16 +219,6 @@ cooldown:1500
 castspell:6603
 !autoattacking
 distance<4
-nogcd
-
-//Overpower
-castspell:7384;7887;11584;11585
-selfbuff=2457
-rage>5
-distance<5
-autoattacking
-incombat
-cooldown:2760
 nogcd
 
 //Sunder Armor

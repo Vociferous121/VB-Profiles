@@ -145,7 +145,7 @@ meleepullcount>1
 havetarget
 distance>8
 distance<34
-channelingtime:2500
+channelingtime:3500
 castonce
 
 //Throw
@@ -156,7 +156,7 @@ havetarget
 distance>8
 distance<34
 meleepullcount>1
-channelingtime:2500
+channelingtime:3500
 
 //charge
 castspell:100;6178;11578
@@ -171,11 +171,10 @@ cooldown:15050
 //~~~~~~~~>>Crowd Control
 
 //Retaliation
-//	Low HP
+//	3 Or More Targets
 castspell:20230
 selfbuff!20230
-combatcount>1
-selfhp<36
+combatcount>2
 incombat
 cooldown:1800000
 
