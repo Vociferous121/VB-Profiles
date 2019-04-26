@@ -48,8 +48,18 @@ mana<31
 channelingtime:21000
 cooldown:6000
 breakoncombat
-breakonfullhp
+breakonfullmana
+nostand
 
+//Eat
+use:food
+selfhp<66
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullhp
+nostand
 
 //~~~~~~~~>>Debuff Removal
 
