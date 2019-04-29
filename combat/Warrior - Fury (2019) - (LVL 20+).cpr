@@ -3,11 +3,11 @@
 //		Group Cooldowns
 //	Group Cooldown 1	-	Battle Shout
 //	Group Cooldown 2	-	Sunder Armor
-//	Group Cooldown 3	-	
+//	Group Cooldown 3	-	Rend
 //	Group Cooldown 4	-	
 //	Group Cooldown 5	-	
 //		Triggers List
-//	Trigger 1	-	
+//	Trigger 1	-	Auto Attack
 //	Trigger 2	-	
 //	Trigger 3	-	
 //	Trigger 4	-	
@@ -52,13 +52,13 @@ cooldown:5000;1
 
 //Eat
 use:Food
-selfhp<71
+selfhp<66
 !incombat
 channelingtime:21000
 cooldown:6000
 breakoncombat
 breakonfullhp
-notstand
+nostand
 
 //Health Potion
 use:health potion
@@ -69,12 +69,13 @@ cooldown:120000
 
 //Rest
 cast:20
-selfhp<72
+selfhp<80
 !incombat
 channelingtime:7000
 cooldown:25000
 breakonfullhp
 breakoncombat
+level<19
 
 //~~~~~~~~>>Battle Stances
 
@@ -85,6 +86,18 @@ nogcd
 cooldown:1500
 
 //~~~~~~~~>>Buffs
+
+//FORCE CRITICAL STRIKE FOR BUFFS
+//cast:69
+//selfbuff!12880
+//combatcount<2
+//triggers:1
+//incombat
+//distance<5
+//channelingtime:1350
+//cooldown:3000
+//selfhp>71
+//targethp>51
 
 //Battle Shout
 //	Not in combat
@@ -130,11 +143,10 @@ nogcd
 //	Shoot Bow
 castspell:2480
 meleepullcount>1
-havetarget
 distance>8
 distance<34
-channelingtime:3500
-castonce
+channelingtime:2050
+cooldown:0750
 
 //Throw
 //	Throw Weapon
@@ -157,6 +169,12 @@ cooldown:15050
 
 //~~~~~~~~>>Crowd Control
 
+//Execute
+castspell:5308;20658;20660;20661;20662
+targethp<20
+distance<5
+rage>15
+
 //Retaliation
 //	3 Or More Targets
 castspell:20230
@@ -168,7 +186,6 @@ cooldown:1800000
 //Demoralizing Shout
 castspell:1160;6190;11554;11555;11556
 targetbuff!1160;6190;11554;11555;11556
-selfbuff=6673;5242;6192;11549;1150;25289
 rage>10
 combatcount>1
 distance<5
@@ -184,6 +201,7 @@ rage>10
 targethp<31
 distance<5
 cooldown:5000
+level<23
 
 //Thunder Clap
 castspell:6343;8198;8204;8205;11580;11581
@@ -209,11 +227,11 @@ nogcd
 //Turn Off Auto Attack
 //	Target Ran Away!
 cast:11
-distance>5
+distance>7
 autoattacking
 incombat
 nogcd
-cooldown:1500
+cooldown:2500
 
 //Auto Attack
 castspell:6603
@@ -225,9 +243,7 @@ nogcd
 castspell:7386;7405;8380;11596;11567
 targetbuff!7386;7405;8380;11596;11567
 rage>15
-targethp>76
-distance<5
-backpedal:0570
+distance<4
 autoattacking
 cooldown:1650;2
 
@@ -237,6 +253,7 @@ castspell:7386;7405;8380;11596;11567
 targetbuff=7386;7405;8380;11596;11567
 targetbuff=772;6546;6547;6548;11573;11574
 rage>15
+combatcount<3
 targethp>51
 distance<5
 autoattacking
@@ -252,19 +269,70 @@ rage>10
 targethp>10
 autoattacking
 distance<5
+cooldown:8500;3
+
+//Cleave
+//	2 Targets Or More
+castspell:845;7369;11608;11609;20569
+rage>20
+autoattacking
+distance<5
+combatcount>2
 
 //Heroic Strike
 //	Sunder Armor Proc
+//	Don't Use After 20% HP For Execute Rage
 castspell:78;284;285;1608;11564;11565;11566;11567
 targetbuff=7386;7405;8380;11596;11567
+combatcount<3
 autoattacking
 distance<5
-targethp>6
-nogcd
+targethp>21
 rage>15
+level>23
 
 //Rend
 //	No Sunder Armor
+//	Don't Use After 20% HP For Execute Rage
+castspell:772;6546;6547;6548;11573;11574
+targetbuff!772;6546;6547;6548;11573;11574
+targetbuff!7386;7405;8380;11596;11567
+rage>10
+targethp>21
+targethp<75
+autoattacking
+distance<5
+level>23
+cooldown:8500;3
+
+//Heroic Strike
+//	No Sunder Armor
+//	Don't Use After 20% HP For Execute Rage
+castspell:78;284;285;1608;11564;11565;11566;11567
+targetbuff!7386;7405;8380;11596;11567
+autoattacking
+combatcount<3
+distance<5
+targethp>21
+targethp<75
+rage>15
+level>23
+
+//Heroic Strike
+//	Sunder Armor Proc
+//	Use Until Execute At Level 24
+castspell:78;284;285;1608;11564;11565;11566;11567
+targetbuff=7386;7405;8380;11596;11567
+combatcount<3
+autoattacking
+distance<5
+targethp>6
+rage>15
+level<23
+
+//Rend
+//	No Sunder Armor
+//	Use Until Execute At Level 24
 castspell:772;6546;6547;6548;11573;11574
 targetbuff!772;6546;6547;6548;11573;11574
 targetbuff!7386;7405;8380;11596;11567
@@ -273,17 +341,21 @@ targethp>10
 targethp<75
 autoattacking
 distance<5
+level<23
+cooldown:8500;3
 
 //Heroic Strike
 //	No Sunder Armor
+//	Use Until Execute At Level 24
 castspell:78;284;285;1608;11564;11565;11566;11567
 targetbuff!7386;7405;8380;11596;11567
 autoattacking
+combatcount<3
 distance<5
 targethp>6
 targethp<75
-nogcd
 rage>15
+level<23
 
 //~~~~~~~~>>Other ~~~ To Do / Notes
 
