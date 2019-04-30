@@ -1,0 +1,191 @@
+//~~~~~~>>	Priest - Shadow Level 40+	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown 1	-	Power Word: Shield
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Drink
+use:drink
+mana<21
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullmana
+nostand
+
+//~~~~~~~~>>Debuff Removal
+
+//~~~~~~~~>>Buffs
+
+//>Power Word: Fortitude
+castspell:1243;1244;1245;2791;10937;10938
+selfbuff!1243;1244;1245;2791;10937;10938
+mana>30
+!incombat
+
+//>Inner Fire
+castspell:588;7128;602;1006;10951;10952
+selfbuff!588;7128;602;1006;10951;10952
+mana>5
+!incombat
+cooldown:2500
+
+//>Power Word: Shield - Before Combat
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+!incombat
+havetarget
+cooldown:4100;1
+
+//>Power Word: Shield - incombat
+castspell:17;592;600;3747;6065;6066;10898;10899;10900;10901
+selfbuff!6788;17;592;600;3747;6065;6066;10898;10899;10900;10901
+incombat
+havetarget
+cooldown:4100;1
+
+//Shadow Form - Cancel
+castspell:15473
+selfbuff=15473
+selfhp<53
+mana>20
+
+//~~~~~~~~>>Heals
+
+//>Large Heal
+castspell:2054;2055;6063;6064
+selfbuff!15473
+selfhp<40
+mana>25
+
+//>Flash Heal
+castspell:2061;9472;9473;9474;10915;10916;10917
+selfbuff!15473
+selfhp<54
+mana>15
+
+//>Renew
+castspell:139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!139;6074;6075;6076;6077;6078;10927;10928;10929;25315
+selfbuff!15473
+!incombat
+selfhp<75
+mana>20
+
+//~~~~~~~~>>Before Combat
+
+//Shadow Form
+castspell:15473
+selfbuff!15473
+mana>20
+havetarget
+
+//~~~~~~~~>>Crowd Control
+
+//~~~~~~~~>>Start Combat
+
+//Cancel Wand
+castspell:5019
+selfbuff=17;592;600;3747;6065;6066;10898;10899;10900;10901
+wandcasting
+distance<30
+mana>22
+
+//>Mind Blast
+castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
+cooldown:5700
+mana>24
+targethp>15
+!wandcasting
+havetarget
+
+//Vampiric Embrace
+castspell:15286
+targetbuff!15286
+targethp>81
+distance<30
+cooldown:10000
+!wandcasting
+
+//>Shadow Word: Pain
+castspell:589;594;970;992;2767;10892;10893;10894
+targetbuff!589;594;970;992;2767;10892;10893;10894
+mana>24
+targethp>11
+distance<30
+!wandcasting
+
+//Mind Flay
+castspell:15407;17311;17312;17313;17314;18807
+targetbuff!15407;17311;17312;17313;17314;18807
+selfbuff=17;592;600;3747;6065;6066;10898;10899;10900;10901
+distance<20
+mana>24
+channelingtime:3000
+!wandcasting
+
+//>Auto Wand
+castspell:5019
+selfbuff!17;592;600;3747;6065;6066;10898;10899;10900;10901
+!wandcasting
+distance<30
+cooldown:2000
+channelingtime:1550
+nogcd
+
+//>Auto Wand
+castspell:5019
+!wandcasting
+distance<30
+mana<24
+cooldown:2000
+channelingtime:1550
+nogcd
+
+//Auto Attack
+//castspell:6603
+//!autoattacking
+//!wandcasting
+//distance<5
+//incombat
+//nogcd
+
+//~~~~~~~~>>Other ~~~ To Do / Notes
