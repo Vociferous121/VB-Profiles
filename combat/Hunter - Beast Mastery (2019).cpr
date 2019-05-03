@@ -1,0 +1,239 @@
+//~~~~~~>>	Hunter - Beast Mastery	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Drink
+use:drink
+mana<21
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullmana
+nostand
+
+//Eat
+use:food
+selfhp<51
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullhp
+nostand
+
+//~~~~~~~~>>Debuff Removal
+
+//~~~~~~~~>>Buffs
+
+//Aspect of the Hawk
+castspell:13165;14318;14319;14320;14321;14322
+selfbuff!13165;14318;14319;14320;14321;14322
+cooldown:3000
+
+//~~~~~~~~>>Heals
+
+//Call Pet
+castspell:883
+!petactive
+cooldown:5000
+
+//Revive Pet
+castspell:982
+petactive
+!petalive
+mana>51
+!incombat
+cooldown:5000
+
+//Mend Pet
+castspell:136;3111;3661;3662;13542;13543;13544
+petalive
+petactive
+mana>16
+pethealth<41
+channelingtime:5000
+
+//~~~~~~~~>>Before Combat
+
+//Hunter's Mark
+//You have a target
+castspell:1130;14323;14324;14325
+targetbuff!1130;14323;14324;14325
+triggers:1
+distance<34
+cooldown:3000
+nogcd
+
+// MACRO #1 Send Pet
+//Send pet to attack before you start attacking
+cast:21
+triggeredby:1
+nogcd
+
+//~~~~~~~~>>Crowd Control
+
+//Multi-Shot
+castspell:2643;14288;14289;14290
+combatcount>1
+wandcasting
+chance:50
+mana>41
+distance>9
+distance<34
+
+// MACRO #2 Pet Attack 2nd Target
+//Send pet to attack other target if 2 are in combat
+cast:22
+combatcount>1
+distance<34
+haveaggro
+cooldown:2000
+nogcd
+
+//Rapid Fire
+castspell:3045
+combatcount>1
+wandcasting
+chance:50
+distance>9
+distance<34
+cooldown:300000
+nogcd
+
+//Beastial Wrath
+castspell:19574
+combatcount>1
+wandcasting
+chance:50
+distance<34
+mana>21
+cooldown:120000
+nogcd
+
+//Intimidation
+castspell:19577
+wandcasting
+haveaggro
+distance<34
+cooldown:60000
+
+//Feign Death
+castspell:5384
+selfbuff!5384
+combatcount>1
+haveaggro
+cooldown:30000
+channelingtime:1500
+nogcd
+
+//~~~~~~~~>>Start Combat
+
+//Serpent Sting
+castspell:1978;13549;13550;13551;13552;13553;13554;13555
+targetbuff!1978;13549;13550;13551;13552;13553;13554;13555
+wandcasting
+mana>26
+targethp>21
+distance>9
+distance<34
+cooldown:7000
+
+//Arcane Shot
+castspell:3044;14281;14282;14283;14284;14285;14286;14287
+wandcasting
+mana>26
+targethp>16
+distance>9
+distance<34
+cooldown:6000
+
+//Concussive Shot
+//Target is too close!
+castspell:5116
+targetbuff!5116
+haveaggro
+wandcasting
+mana>41
+distance>9
+distance<26
+cooldown:12000
+
+//Auto Shoot
+castspell:75
+!wandcasting
+distance>9
+distance<34
+nogcd
+
+//Raptor Strike
+castspell:2973;14260;14261;14262;14263;14264;14265;14266
+mana>26
+distance<6
+cooldown:6000
+nogcd
+
+//Wing Clip
+castspell:2974;14267;14268;27633
+targetbuff!2974;14267;14268;27633
+mana>26
+distance<6
+cooldown:3000
+nogcd
+
+//Disengage
+castspell:781;14272;14273
+backpedal:1021
+haveaggro
+mana>26
+distance<6
+cooldown:5000
+
+//Auto Attack
+castspell:6603
+!autoattacking
+!wandcasting
+distance<5
+incombat
+nogcd
+
+//~~~~~~~~>>Other ~~~ To Do / Notes
