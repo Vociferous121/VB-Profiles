@@ -69,6 +69,27 @@ breakonfullmana
 !incombat
 level<3
 
+//Use Drink
+//	Triggers - 1
+use:drink
+selfbuff!430;431;432;1133;1135;1137
+mana<41
+triggers:1
+cooldown:3000;5
+nostand
+!incombat
+level>3
+
+//Use Food
+//	Triggers - 2
+use:food
+selfhp<76
+triggers:2
+cooldown:3000;5
+nostand
+!incombat
+level>3
+
 //Use Food
 //	Triggered By - 1
 use:food
@@ -91,27 +112,6 @@ breakoncombat
 breakonfullhp
 nostand
 !incombat
-
-//Use Drink
-//	Triggers - 1
-use:drink
-selfbuff!430;431;432;1133;1135;1137
-mana<41
-triggers:1
-cooldown:3000;5
-nostand
-!incombat
-level>3
-
-//Use Food
-//	Triggers - 2
-use:food
-selfhp<76
-triggers:2
-cooldown:3000;5
-nostand
-!incombat
-level>3
 
 //~~~~~~~~>>Debuff Removal
 
@@ -147,9 +147,18 @@ cooldown:25000
 
 //~~~~~~~~>>Start Combat
 
+//Auto Wand
+//	Target Low Health
+castspell:5019
+!wandcasting
+targethp<6
+incombat
+distance<30
+
 //Frostbolt
 castspell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
 mana>12
+targethp>6
 distance<30
 castonce
 
@@ -163,11 +172,13 @@ distance<20
 //Fireball
 castspell:133;143;145;3140;8400;8401;8402;10148;10149;10150;10151;25306
 mana>8
+targethp>6
 distance<34
 
 //Auto Wand
 castspell:5019
 !wandcasting
+targethp>6
 mana<10
 incombat
 distance<30
