@@ -38,6 +38,13 @@
 
 gcd:1150
 
+//Unmount
+cast:60
+havetarget
+ismounted
+cooldown:3500
+nogcd
+distance<15
 
 //~~~~~~~~>>Food Drink Potion Consumable
 
@@ -100,17 +107,22 @@ triggers:2
 cooldown:10000
 channelingtime:2250
 
+//Mount
+cast:60
+!ismounted
+!havetarget
+!incombat
+cooldown:3500;5
+
+//AUTO SHOOT
+//castspell:7919
+//!wandcasting
+//distance>10
+//distance<34
+//channelingtime:2400
+//cooldown:1000
 
 //~~~~~~~~>>Buffs
-
-//Riposte 1
-castspell:14251
-incombat
-nogcd
-cooldown:3141
-energy>10
-autoattacking
-distance<5
 
 //Evasion 1
 castspell:5277
@@ -163,7 +175,7 @@ castspell:5171;6774
 selfbuff!5171;6774
 combopoints>1
 energy>25
-targethp>21
+targethp>36
 incombat
 autoattacking
 distance<5
@@ -197,6 +209,15 @@ enemycasting
 energy>25
 cooldown:10000
 incombat
+distance<5
+
+//Riposte
+castspell:14251
+incombat
+nogcd
+cooldown:2641
+energy>10
+targethp<98
 distance<5
 
 //~~~~~~~~>>Start Combat

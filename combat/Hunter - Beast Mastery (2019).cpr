@@ -82,6 +82,7 @@ castspell:982
 petactive
 !petalive
 mana>51
+distance<16
 !incombat
 cooldown:5000
 

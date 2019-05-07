@@ -1,0 +1,124 @@
+//~~~~~~>>	Mage - Fire	<<~~~~~~\\
+//
+//		Group Cooldowns
+//	Group Cooldown #	-	Spell Name
+//	Group Cooldown 2	-	
+//	Group Cooldown 3	-	
+//	Group Cooldown 4	-	
+//	
+//		Triggers List
+//	Trigger #	-	Trigger Description
+//	Trigger 2	-	
+//	Trigger 3	-	
+//	Trigger 4	-	
+//	Trigger 5	-	
+//	Trigger 6	-	
+//	
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+//
+//		Scripting To Add In-Game Using /Macro
+//
+//	Script #	-	Script Description
+// 			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//	Script 2	-	Script Description
+//			^^	Script	^^
+//
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//
+//
+//
+//
+//
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+gcd:1500
+
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Conjure Water Rank 1
+castspell:5504
+haveitem:5350<2
+mana>20
+!incombat
+
+//Rest
+cast:20
+mana<66
+channelingtime:4000
+cooldown:12000
+breakoncombat
+breakonfullmana
+!incombat
+level<3
+
+//Eat
+use:Food
+selfhp<51
+!incombat
+channelingtime:21000
+cooldown:6000
+breakoncombat
+breakonfullhp
+level>4
+
+//Drink
+use:drink
+mana<51
+!incombat
+channelingtime:21000
+cooldown:2000
+breakoncombat
+breakonfullmana
+level>4
+
+//~~~~~~~~>>Debuff Removal
+
+//~~~~~~~~>>Buffs
+
+//Frost Armor
+castspell:168;7300;7301
+selfbuff!168;7300;7301
+mana>51
+!incombat
+cooldown:2000
+
+//Arcane Intellect
+castspell:1459;1460;1461;10156;10157
+selfbuff!1459;1460;1461;10156;10157
+mana>51
+!incombat
+cooldown:2000
+
+//~~~~~~~~>>Heals
+
+//~~~~~~~~>>Before Combat
+
+//~~~~~~~~>>Crowd Control
+
+//~~~~~~~~>>Start Combat
+
+//Frostbolt
+castspell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
+mana>12
+distance<30
+castonce
+
+//Fireball
+castspell:133
+mana>12
+distance<34
+
+//Auto Attack
+castspell:6603
+!autoattacking
+distance<5
+incombat
+nogcd
+
+//~~~~~~~~>>Other ~~~ To Do / Notes

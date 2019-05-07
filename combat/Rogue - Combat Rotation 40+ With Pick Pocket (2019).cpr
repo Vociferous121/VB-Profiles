@@ -62,13 +62,6 @@ selfbuff=1784;1785;1786;1787
 distance<5
 energy>60
 
-//>Kick
-castspell:1766;1767;1768;1769
-enemycasting
-energy>25
-cooldown:10000
-distance<5
-
 //Auto Attack
 castspell:6603
 !autoattacking
@@ -83,6 +76,13 @@ nogcd
 cooldown:3000
 energy>10
 autoattacking
+distance<5
+
+//>Kick
+castspell:1766;1767;1768;1769
+enemycasting
+energy>25
+cooldown:10000
 distance<5
 
 //Eviscerate

@@ -199,44 +199,6 @@ havetarget
 cooldown:4100;1
 level>5
 
-//~~~~~~~~>>Wand Transition
-
-//>Mind Blast
-castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
-targetbuff=589;594;970;992;2767;10892;10893;10894
-cooldown:8200;1
-triggers:5
-channelingtime:1500
-wandcasting
-mana>30
-level>9
-
-//>Mind Blast
-castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
-triggeredby:5
-cooldown:8200
-mana>30
-level>9
-
-//>Flash Heal - Wand Off
-castspell:2061;9472;9473;9474;10915;10916;10917
-selfhp<57
-mana>15
-wandcasting
-channelingtime:1500
-backpedal:0600
-level>19
-
-//>Lesser Heal Rank 3 - Wand Off
-castspell:2053
-selfhp<49
-mana>12
-wandcasting
-channelingtime:1500
-backpedal:0600
-level>9
-level<16
-
 //~~~~~~~~>>Heals
 
 //>Large Heal - Out Of Combat Only 
@@ -332,6 +294,12 @@ level>15
 
 //~~~~~~~~>>Combat
 
+//>Auto Wand OFF
+castspell:5019
+wandcasting
+cooldown:8500
+channelingtime:1500
+
 //>Shadow Word: Pain
 castspell:589;594;970;992;2767;10892;10893;10894
 targetbuff!589;594;970;992;2767;10892;10893;10894
@@ -362,10 +330,6 @@ castspell:5019
 !wandcasting
 distance<30
 havetarget
-level>7
-cooldown:2000
-channelingtime:1550
-nogcd
 
 //>Auto Attack
 castspell:6603

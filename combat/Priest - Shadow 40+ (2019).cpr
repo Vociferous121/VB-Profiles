@@ -128,6 +128,8 @@ selfbuff=17;592;600;3747;6065;6066;10898;10899;10900;10901
 wandcasting
 distance<30
 mana>22
+channelingtime:1500
+cooldown:2500
 
 //>Mind Blast
 castspell:8092;8102;8103;8104;8105;8106;10945;10946;10947
@@ -164,20 +166,9 @@ channelingtime:3000
 
 //>Auto Wand
 castspell:5019
-selfbuff!17;592;600;3747;6065;6066;10898;10899;10900;10901
-!wandcasting
-distance<30
-cooldown:2000
-channelingtime:1550
-nogcd
-
-//>Auto Wand
-castspell:5019
 !wandcasting
 distance<30
 mana<24
-cooldown:2000
-channelingtime:1550
 nogcd
 
 //Auto Attack
