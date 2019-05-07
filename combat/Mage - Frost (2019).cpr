@@ -41,23 +41,82 @@ gcd:1500
 
 //~~~~~~~~>>Food Drink Potion Consumable
 
-//Eat
-use:Food
-selfhp<31
-!incombat
-channelingtime:21000
-cooldown:6000
-breakoncombat
-breakonfullhp
+gcd:1500
 
-//Drink
-use:drink
-mana<33
+
+//~~~~~~~~>>Food Drink Potion Consumable
+
+//Conjure Water Rank 1
+castspell:5504
+haveitem:5350<2
+mana>20
 !incombat
-channelingtime:21000
-cooldown:2000
+
+//Conjure Food Rank 1
+castspell:587
+haveitem:5349<2
+mana>20
+!incombat
+
+//Conjure Water Rank 2
+castspell:5505
+haveitem:2288<2
+mana>20
+!incombat
+
+//Rest
+cast:20
+mana<66
+channelingtime:4000
+cooldown:12000
 breakoncombat
 breakonfullmana
+!incombat
+level<3
+
+//Use Food
+//	Triggered By - 1
+use:food
+triggeredby:1
+cooldown:10000
+channelingtime:18000
+breakoncombat
+breakonfullmana
+nostand
+!incombat
+
+//Use Drink
+//	Triggered By - 2
+use:drink
+selfbuff!430;431;432;1133;1135;1137
+triggeredby:2
+cooldown:10000
+channelingtime:18000
+breakoncombat
+breakonfullhp
+nostand
+!incombat
+
+//Use Drink
+//	Triggers - 1
+use:drink
+selfbuff!430;431;432;1133;1135;1137
+mana<41
+triggers:1
+cooldown:3000;5
+nostand
+!incombat
+level>3
+
+//Use Food
+//	Triggers - 2
+use:food
+selfhp<76
+triggers:2
+cooldown:3000;5
+nostand
+!incombat
+level>3
 
 //~~~~~~~~>>Debuff Removal
 
@@ -70,6 +129,13 @@ mana>51
 !incombat
 cooldown:2000
 
+//Arcane Intellect
+castspell:1459;1460;1461;10156;10157
+selfbuff!1459;1460;1461;10156;10157
+mana>51
+!incombat
+cooldown:2000
+
 //~~~~~~~~>>Heals
 
 //~~~~~~~~>>Before Combat
@@ -78,16 +144,48 @@ cooldown:2000
 
 //~~~~~~~~>>Start Combat
 
-//Fireball
-castspell:133
+//~~~~~~~~>>Crowd Control
+
+//Frost Nova
+castspell:122;865;6131;10231;10230
+targetbuff!122;865;6131;10231;10230
+distance<8
+mana>10
+backpedal:1737
+cooldown:25000
+
+//~~~~~~~~>>Start Combat
+
+//Fireblast
+castspell:2136;2137;2138;8412;8413;10197;10199
+mana>10
+targethp>7
+cooldown:8000
+distance<20
+
+//Frostbolt
+castspell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
 mana>12
+distance<30
+
+//Fireball
+castspell:133;143;145;3140;8400;8401;8402;10148;10149;10150;10151;25306
+mana>15
 distance<34
+
+//Auto Wand
+castspell:5019
+!wandcasting
+mana<10
+incombat
+distance<30
 
 //Auto Attack
 castspell:6603
 !autoattacking
+!wandcasting
+distance<5
 incombat
 nogcd
 
 //~~~~~~~~>>Other ~~~ To Do / Notes
-
