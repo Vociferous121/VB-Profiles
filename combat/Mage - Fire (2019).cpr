@@ -47,6 +47,18 @@ haveitem:5350<2
 mana>20
 !incombat
 
+//Conjure Food Rank 1
+castspell:587
+haveitem:5349<2
+mana>20
+!incombat
+
+//Conjure Water Rank 2
+castspell:5505
+haveitem:2288<2
+mana>20
+!incombat
+
 //Rest
 cast:20
 mana<66
@@ -57,25 +69,49 @@ breakonfullmana
 !incombat
 level<3
 
-//Eat
-use:Food
-selfhp<51
-!incombat
-channelingtime:21000
-cooldown:6000
-breakoncombat
-breakonfullhp
-level>4
-
-//Drink
-use:drink
-mana<51
-!incombat
-channelingtime:21000
-cooldown:2000
+//Use Food
+//	Triggered By - 1
+use:food
+triggeredby:1
+cooldown:10000
+channelingtime:18000
 breakoncombat
 breakonfullmana
-level>4
+nostand
+!incombat
+
+//Use Drink
+//	Triggered By - 2
+use:drink
+selfbuff!430;431;432;1133;1135;1137
+triggeredby:2
+cooldown:10000
+channelingtime:18000
+breakoncombat
+breakonfullhp
+nostand
+!incombat
+
+//Use Drink
+//	Triggers - 1
+use:drink
+selfbuff!430;431;432;1133;1135;1137
+mana<41
+triggers:1
+cooldown:3000;5
+nostand
+!incombat
+level>3
+
+//Use Food
+//	Triggers - 2
+use:food
+selfhp<76
+triggers:2
+cooldown:3000;5
+nostand
+!incombat
+level>3
 
 //~~~~~~~~>>Debuff Removal
 
@@ -101,6 +137,14 @@ cooldown:2000
 
 //~~~~~~~~>>Crowd Control
 
+//Frost Nova
+castspell:122;865;6131;10231;10230
+targetbuff!122;865;6131;10231;10230
+distance<8
+mana>10
+backpedal:1737
+cooldown:25000
+
 //~~~~~~~~>>Start Combat
 
 //Frostbolt
@@ -109,14 +153,29 @@ mana>12
 distance<30
 castonce
 
+//Fireblast
+castspell:2136;2137;2138;8412;8413;10197;10199
+mana>10
+targethp>7
+cooldown:8000
+distance<20
+
 //Fireball
-castspell:133
-mana>12
+castspell:133;143;145;3140;8400;8401;8402;10148;10149;10150;10151;25306
+mana>8
 distance<34
+
+//Auto Wand
+castspell:5019
+!wandcasting
+mana<10
+incombat
+distance<30
 
 //Auto Attack
 castspell:6603
 !autoattacking
+!wandcasting
 distance<5
 incombat
 nogcd
