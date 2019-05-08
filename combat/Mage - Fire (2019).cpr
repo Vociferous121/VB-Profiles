@@ -1,13 +1,13 @@
 //~~~~~~>>	Mage - Fire	<<~~~~~~\\
 //
 //		Group Cooldowns
-//	Group Cooldown #	-	Spell Name
-//	Group Cooldown 2	-	
-//	Group Cooldown 3	-	
+//	Group Cooldown 1	-	Eat / Drink
+//	Group Cooldown 2	-	Health / Mana Potions
+//	Group Cooldown 3	-	Fireblast
 //	Group Cooldown 4	-	
 //	
 //		Triggers List
-//	Trigger #	-	Trigger Description
+//	Trigger 1	-	Frost Nova > Blink
 //	Trigger 2	-	
 //	Trigger 3	-	
 //	Trigger 4	-	
@@ -59,6 +59,12 @@ haveitem:2288<2
 mana>20
 !incombat
 
+//Conjure Food Rank 2
+castspell:597
+haveitem:1113<2
+mana>20
+!incombat
+
 //Rest
 cast:20
 mana<66
@@ -69,33 +75,12 @@ breakonfullmana
 !incombat
 level<3
 
-//Use Drink
-//	Triggers - 1
-use:drink
-selfbuff!430;431;432;1133;1135;1137
-mana<41
-triggers:1
-cooldown:3000;5
-nostand
-!incombat
-level>3
-
-//Use Food
-//	Triggers - 2
-use:food
-selfhp<76
-triggers:2
-cooldown:3000;5
-nostand
-!incombat
-level>3
-
 //Use Food
 //	Triggered By - 1
 use:food
 triggeredby:1
 cooldown:10000
-channelingtime:18000
+channelingtime:19000
 breakoncombat
 breakonfullmana
 nostand
@@ -107,11 +92,44 @@ use:drink
 selfbuff!430;431;432;1133;1135;1137
 triggeredby:2
 cooldown:10000
-channelingtime:18000
+channelingtime:19000
 breakoncombat
 breakonfullhp
 nostand
 !incombat
+
+//Use Drink
+//	Triggers - 1
+use:drink
+selfbuff!430;431;432;1133;1135;1137
+mana<41
+triggers:1
+cooldown:3000;1
+nostand
+!incombat
+level>3
+
+//Use Food
+//	Triggers - 2
+use:food
+selfhp<76
+triggers:2
+cooldown:3000;1
+nostand
+!incombat
+level>3
+
+//>Health Potion
+use:health potion
+selfhp<13
+incombat
+cooldown:120000;2
+
+//>Mana Potion
+use:mana potion
+mana<10
+incombat
+cooldown:120000;2
 
 //~~~~~~~~>>Debuff Removal
 
@@ -137,13 +155,31 @@ cooldown:2000
 
 //~~~~~~~~>>Crowd Control
 
+//Polymorph
+//	/macro combatcount>1
+cast:20
+combatcount>1
+incombat
+distance<9
+cooldown:10000
+
 //Frost Nova
 castspell:122;865;6131;10231;10230
 targetbuff!122;865;6131;10231;10230
 distance<8
 mana>10
+targethp>10
 backpedal:1737
 cooldown:25000
+
+//Blink
+//	Don't use if target is frozen
+//castspell:
+//targetbuff!
+//distance<8
+//mana>26
+//cooldown:30000
+
 
 //~~~~~~~~>>Start Combat
 
@@ -154,20 +190,52 @@ castspell:5019
 targethp<6
 incombat
 distance<30
+channelingtime:5000
+
+//Pyroblast
+castspell:11366;12505;12522;12523;12524;12525;12526;18809
+mana>20
+distance<39
+cooldown:8000
+!incombat
+
+//Pyroblast
+//	In comabat - target is frozen
+castspell:11366;12505;12522;12523;12524;12525;12526;18809
+targetbuff=122;865;6131;10231;10230
+mana>20
+targethp>26
+distance<41
+cooldown:8000
+incombat
+
+//Fireblast
+//	Don't use if target has frost nova
+//	Distance>8
+castspell:2136;2137;2138;8412;8413;10197;10199
+targetbuff!122;865;6131;10231;10230
+mana>10
+distance>8
+cooldown:8000;3
+distance<20
+
+//Fireblast
+//	Don't use if target has frost nova
+//	Targethp<10
+castspell:2136;2137;2138;8412;8413;10197;10199
+targetbuff!122;865;6131;10231;10230
+mana>10
+targethp<10
+cooldown:8000;3
+distance<20
 
 //Frostbolt
 castspell:116;205;837;7322;8406;8407;8408;10179;10180;10181;25304;11070;12473
+targetbuff!11366;12505;12522;12523;12524;12525;12526;18809
 mana>12
 targethp>6
 distance<30
 castonce
-
-//Fireblast
-castspell:2136;2137;2138;8412;8413;10197;10199
-mana>10
-targethp>7
-cooldown:8000
-distance<20
 
 //Fireball
 castspell:133;143;145;3140;8400;8401;8402;10148;10149;10150;10151;25306

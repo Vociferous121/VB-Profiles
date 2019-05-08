@@ -64,6 +64,12 @@ haveitem:2288<2
 mana>20
 !incombat
 
+//Conjure Food Rank 2
+castspell:597
+haveitem:1113<2
+mana>20
+!incombat
+
 //Rest
 cast:20
 mana<66
@@ -73,6 +79,30 @@ breakoncombat
 breakonfullmana
 !incombat
 level<3
+
+//Drink
+//	HP > 76
+//	Don't Waste Food
+use:drink
+mana<41
+selfhp>76
+cooldown:3000;5
+channelingtime:21000
+!incombat
+breakoncombat
+breakonfullmana
+
+//Eat
+//	Mana > 86
+//	Don't Waste Water
+use:food
+selfhp<76
+mana>86
+cooldown:3000;5
+channelingtime:210000
+!incombat
+breakoncombat
+breakonfullhp
 
 //Use Food
 //	Triggered By - 1
@@ -117,6 +147,18 @@ cooldown:3000;5
 nostand
 !incombat
 level>3
+
+//>Health Potion
+use:health potion
+selfhp<13
+incombat
+cooldown:120000;3
+
+//>Mana Potion
+use:mana potion
+mana<10
+incombat
+cooldown:120000;3
 
 //~~~~~~~~>>Debuff Removal
 
