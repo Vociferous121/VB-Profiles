@@ -65,6 +65,18 @@ haveitem:1113<2
 mana>20
 !incombat
 
+//Conjure Water Rank 3
+castspell:5506
+haveitem:2136<2
+mana>20
+!incombat
+
+//Conjure Food Rank 3
+castspell:990
+haveitem:1114<2
+mana>20
+!incombat
+
 //Rest
 cast:20
 mana<66
@@ -149,9 +161,25 @@ mana>51
 !incombat
 cooldown:2000
 
+//Evocation
+castspell:12051
+mana<41
+channelingtime:8000
+cooldown:480000
+!incombat
+breakoncombat
+aftercombat
+
 //~~~~~~~~>>Heals
 
 //~~~~~~~~>>Before Combat
+
+//Mana Shield
+castspell:1463;8494;8495;10191;10193
+selfbuff!1463;8494;8495;10191;10193
+mana>51
+havetarget
+castonce
 
 //~~~~~~~~>>Crowd Control
 
@@ -174,12 +202,13 @@ cooldown:25000
 
 //Blink
 //	Don't use if target is frozen
-//castspell:
-//targetbuff!
-//distance<8
-//mana>26
-//cooldown:30000
-
+castspell:1953
+targetbuff!122;865;6131;10231;10230
+distance<6
+mana>26
+cooldown:15000
+castonce
+incombat
 
 //~~~~~~~~>>Start Combat
 
