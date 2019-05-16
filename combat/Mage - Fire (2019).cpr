@@ -4,16 +4,15 @@
 //	Group Cooldown 1	-	Eat / Drink
 //	Group Cooldown 2	-	Health / Mana Potions
 //	Group Cooldown 3	-	Fireblast
-//	Group Cooldown 4	-	
+//	Group Cooldown 4	-	Frost Nova
 //	
 //		Triggers List
-//	Trigger 1	-	Frost Nova > Blink
-//	Trigger 2	-	
-//	Trigger 3	-	
-//	Trigger 4	-	
-//	Trigger 5	-	
-//	Trigger 6	-	
-//	
+//	Trigger 1	-	Drink > Eat
+//	Trigger 2	-	Scorch
+//	Trigger 3	-	(UNUSED) Cone of Cold > Blink
+//	Trigger 4	-	Drink > Conjure Water
+//	Trigger 5	-	Eat > Conjure Food
+//
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 //
@@ -36,10 +35,104 @@
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 
-gcd:1500
+gcd:1575
 
+//~~~~~~~~>>Buffs
+
+//Frost Armor
+castspell:168;7300;7301
+selfbuff!168;7300;7301
+mana>31
+!incombat
+cooldown:2000
+
+//Ice Armor
+castspell:7302;7320;10219;10220
+selfbuff!7302;7320;10219;10220
+mana>31
+!incombat
+cooldown:2000
+
+//Arcane Intellect
+castspell:1459;1460;1461;10156;10157
+selfbuff!1459;1460;1461;10156;10157
+mana>31
+!incombat
+cooldown:2000
+
+//Evocation
+castspell:12051
+mana<26
+breakonfullmana
+channelingtime:8000
+cooldown:485000
+!incombat
+breakoncombat
+
+//Combustion
+castspell:11129
+selfbuff!11129
+cooldown:180000
+!incombat
+level>40
 
 //~~~~~~~~>>Food Drink Potion Consumable
+
+//Rest
+cast:20
+mana<66
+channelingtime:5000
+cooldown:9000
+breakoncombat
+breakonfullmana
+!incombat
+level<3
+
+//Drink
+use:drink
+mana<41
+channelingtime:0500
+nogcd
+cooldown:0800
+nostand
+triggers:1
+!incombat
+!havetarget
+breakoncombat
+level>4
+
+//Eat
+use:food
+triggeredby:1
+channelingtime:21000
+cooldown:1500
+breakonfullmana
+breakoncombat
+nostand
+!incombat
+
+//Eat
+use:food
+selfhp<86
+channelingtime:10000
+cooldown:5000
+breakoncombat
+breakonfullhp
+nostand
+!incombat
+level>4
+
+//>Health Potion
+use:health potion
+selfhp<13
+incombat
+cooldown:120000;2
+
+//>Mana Potion
+use:mana potion
+mana<10
+incombat
+cooldown:120000;2
 
 //Conjure Water Rank 1
 castspell:5504
@@ -77,140 +170,128 @@ haveitem:1114<2
 mana>20
 !incombat
 
-//Rest
-cast:20
-mana<66
-channelingtime:4000
-cooldown:12000
-breakoncombat
-breakonfullmana
-!incombat
-level<3
-
-//Use Food
-//	Triggered By - 1
-use:food
-triggeredby:1
-cooldown:10000
-channelingtime:19000
-breakoncombat
-breakonfullmana
-nostand
+//Conjure Water Rank 4
+castspell:6127
+haveitem:3772<2
+mana>20
 !incombat
 
-//Use Drink
-//	Triggered By - 2
-use:drink
-selfbuff!430;431;432;1133;1135;1137
-triggeredby:2
-cooldown:10000
-channelingtime:19000
-breakoncombat
-breakonfullhp
-nostand
+//Conjure Food Rank 4
+castspell:6129
+haveitem:1487<2
+mana>20
 !incombat
-
-//Use Drink
-//	Triggers - 1
-use:drink
-selfbuff!430;431;432;1133;1135;1137
-mana<41
-triggers:1
-cooldown:3000;1
-nostand
-!incombat
-level>3
-
-//Use Food
-//	Triggers - 2
-use:food
-selfhp<76
-triggers:2
-cooldown:3000;1
-nostand
-!incombat
-level>3
-
-//>Health Potion
-use:health potion
-selfhp<13
-incombat
-cooldown:120000;2
-
-//>Mana Potion
-use:mana potion
-mana<10
-incombat
-cooldown:120000;2
 
 //~~~~~~~~>>Debuff Removal
-
-//~~~~~~~~>>Buffs
-
-//Frost Armor
-castspell:168;7300;7301
-selfbuff!168;7300;7301
-mana>51
-!incombat
-cooldown:2000
-
-//Arcane Intellect
-castspell:1459;1460;1461;10156;10157
-selfbuff!1459;1460;1461;10156;10157
-mana>51
-!incombat
-cooldown:2000
-
-//Evocation
-castspell:12051
-mana<41
-channelingtime:8000
-cooldown:480000
-!incombat
-breakoncombat
-aftercombat
 
 //~~~~~~~~>>Heals
 
 //~~~~~~~~>>Before Combat
 
 //Mana Shield
+//	Before Combat
 castspell:1463;8494;8495;10191;10193
 selfbuff!1463;8494;8495;10191;10193
-mana>51
-havetarget
-castonce
+mana>81
+distance<40
+cooldown:2500
+!incombat
+
+//Mana Shield
+//	In Combat
+castspell:1463;8494;8495;10191;10193
+selfbuff!1463;8494;8495;10191;10193
+mana>31
+targethp>21
+selfhp<71
+incombat
 
 //~~~~~~~~>>Crowd Control
 
 //Polymorph
 //	/macro combatcount>1
-cast:20
-combatcount>1
-incombat
-distance<9
-cooldown:10000
+//cast:20
+//combatcount>1
+//incombat
+//distance<9
+//cooldown:10000
+
+//Blast Wave
+castspell:11113;13018;13019;13020;13021
+combatcount>2
+distance<8
+mana>15
+cooldown:45000
+backpedal:1041
+
+//Frost Nova
+//	Player has low HP
+castspell:122;865;6131;10231;10230
+targetbuff!122;865;6131;10231;10230
+meleepullcount<1
+distance<8
+mana>10
+selfhp<31
+backpedal:1967
+cooldown:25000;4
+
+//Frost Nova
+//	Seperate Backpedal Chance
+castspell:122;865;6131;10231;10230
+targetbuff!122;865;6131;10231;10230
+chance:22
+meleepullcount<1
+distance<8
+mana>10
+targethp>21
+backpedal:2109
+cooldown:25000;4
 
 //Frost Nova
 castspell:122;865;6131;10231;10230
 targetbuff!122;865;6131;10231;10230
+meleepullcount<1
 distance<8
 mana>10
-targethp>10
+targethp>21
 backpedal:1737
-cooldown:25000
+cooldown:25000;4
+
+//Cone of Cold
+//	Not if target is frozen
+//	Triggers Blink - triggers:3
+//castspell:120;8492;10159;10160;10161
+//targetbuff!122;865;6131;10231;10230
+//distance<7
+//mana>13
+//selfhp<31
+//triggers:1
+//chance:25
 
 //Blink
 //	Don't use if target is frozen
-castspell:1953
-targetbuff!122;865;6131;10231;10230
-distance<6
-mana>26
-cooldown:15000
-castonce
-incombat
+//castspell:1953
+//targetbuff!122;865;6131;10231;10230
+//triggeredby:3
+//cooldown:15000
 
 //~~~~~~~~>>Start Combat
+
+//Fireblast
+//	Target Low Health
+castspell:2136;2137;2138;8412;8413;10197;10199
+!wandcasting
+mana>10
+distance<21
+targethp<21
+cooldown:8000;3
+
+//Scorch
+//	Targethp<26
+castspell:2948;8444;8445;8446;10205;10206;10207
+mana>8
+distance<36
+targethp<26
 
 //Auto Wand
 //	Target Low Health
@@ -222,14 +303,39 @@ distance<30
 channelingtime:5000
 
 //Pyroblast
+//	Before Combat
 castspell:11366;12505;12522;12523;12524;12525;12526;18809
-mana>20
+targetbuff!11366;12505;12522;12523;12524;12525;12526;18809
+mana>41
 distance<39
-cooldown:8000
 !incombat
 
 //Pyroblast
-//	In comabat - target is frozen
+//	In Combat - Target is ranged or far away
+castspell:11366;12505;12522;12523;12524;12525;12526;18809
+mana>41
+distance>15
+distance<40
+incombat
+
+//Scorch
+//	In combat - target is frozen
+castspell:2948;8444;8445;8446;10205;10206;10207
+targetbuff!2948;8444;8445;8446;10205;10206;10207
+targetbuff=122;865;6131;10231;10230
+mana>8
+distance<36
+triggers:2
+cooldown:3000
+
+//Scorch
+//	In combat - Triggered by 2
+castspell:2948;8444;8445;8446;10205;10206;10207
+targetbuff=2948;8444;8445;8446;10205;10206;10207
+triggeredby:2
+
+//Pyroblast
+//	In combat - target is frozen
 castspell:11366;12505;12522;12523;12524;12525;12526;18809
 targetbuff=122;865;6131;10231;10230
 mana>20
@@ -240,21 +346,10 @@ incombat
 
 //Fireblast
 //	Don't use if target has frost nova
-//	Distance>8
 castspell:2136;2137;2138;8412;8413;10197;10199
 targetbuff!122;865;6131;10231;10230
+!wandcasting
 mana>10
-distance>8
-cooldown:8000;3
-distance<20
-
-//Fireblast
-//	Don't use if target has frost nova
-//	Targethp<10
-castspell:2136;2137;2138;8412;8413;10197;10199
-targetbuff!122;865;6131;10231;10230
-mana>10
-targethp<10
 cooldown:8000;3
 distance<20
 
@@ -265,6 +360,7 @@ mana>12
 targethp>6
 distance<30
 castonce
+level<10
 
 //Fireball
 castspell:133;143;145;3140;8400;8401;8402;10148;10149;10150;10151;25306
