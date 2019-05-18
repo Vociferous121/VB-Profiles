@@ -10,8 +10,9 @@
 //	Trigger 1	-	Drink > Eat
 //	Trigger 2	-	Scorch
 //	Trigger 3	-	(UNUSED) Cone of Cold > Blink
-//	Trigger 4	-	Drink > Conjure Water
-//	Trigger 5	-	Eat > Conjure Food
+//	Trigger 4	-	(UNUSED) Drink > Conjure Water
+//	Trigger 5	-	(UNUSED) Eat > Conjure Food
+//	Trigger 6	-	Pyro when frozen > Fireblast
 //
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
@@ -39,6 +40,13 @@ gcd:1575
 
 //~~~~~~~~>>Buffs
 
+//Mage Armor
+castspell:6117;22782;22783
+selfbuff!6117;22782;22783
+mana>31
+!incombat
+cooldown:2000
+
 //Frost Armor
 castspell:168;7300;7301
 selfbuff!168;7300;7301
@@ -63,6 +71,7 @@ cooldown:2000
 //Evocation
 castspell:12051
 mana<26
+selfhp>86
 breakonfullmana
 channelingtime:8000
 cooldown:485000
@@ -182,6 +191,42 @@ haveitem:1487<2
 mana>20
 !incombat
 
+//Conjure Water Rank 5
+castspell:10138
+haveitem:8077<2
+mana>20
+!incombat
+
+//Conjure Food Rank 5
+castspell:10144
+haveitem:8075<2
+mana>20
+!incombat
+
+//Conjure Water Rank 6
+castspell:10139
+haveitem:8078<2
+mana>20
+!incombat
+
+//Conjure Food Rank 6
+castspell:10145
+haveitem:8076<2
+mana>20
+!incombat
+
+//Conjure Water Rank 7
+castspell:10140
+haveitem:8079<2
+mana>20
+!incombat
+
+//Conjure Food Rank 7
+castspell:28612
+haveitem:22895<2
+mana>20
+!incombat
+
 //~~~~~~~~>>Debuff Removal
 
 //~~~~~~~~>>Heals
@@ -246,6 +291,7 @@ mana>10
 targethp>21
 backpedal:2109
 cooldown:25000;4
+breakonkill
 
 //Frost Nova
 castspell:122;865;6131;10231;10230
@@ -256,6 +302,7 @@ mana>10
 targethp>21
 backpedal:1737
 cooldown:25000;4
+breakonkill
 
 //Cone of Cold
 //	Not if target is frozen
@@ -342,7 +389,13 @@ mana>20
 targethp>26
 distance<41
 cooldown:8000
+triggers:6
 incombat
+
+//Fireblast
+//	After Pyroblast - Target is frozen
+castspell:2136;2137;2138;8412;8413;10197;10199
+triggeredby:6
 
 //Fireblast
 //	Don't use if target has frost nova

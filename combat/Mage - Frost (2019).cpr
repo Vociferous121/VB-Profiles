@@ -40,6 +40,13 @@ gcd:1575
 
 //~~~~~~~~>>Buffs
 
+//Mage Armor
+castspell:6117;22782;22783
+selfbuff!6117;22782;22783
+mana>31
+!incombat
+cooldown:2000
+
 //Frost Armor
 castspell:168;7300;7301
 selfbuff!168;7300;7301
